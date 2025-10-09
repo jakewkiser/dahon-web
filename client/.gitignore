@@ -1,0 +1,17 @@
+node_modules
+dist
+.vite
+
+.env
+.env.*
+!.env.example
+!.env.schema
+
+coverage
+*.tsbuildinfo
+
+.vscode/
+.idea/
+.DS_Store
+.vercel/
+.firebase/
