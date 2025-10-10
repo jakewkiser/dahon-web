@@ -1,16 +1,26 @@
 // client/src/components/ui/Button.tsx
 import { motion } from 'framer-motion'
-import type { ButtonHTMLAttributes } from 'react'
+import type React from 'react'
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'glass' | 'primary' | 'primarySoft' | 'ghost'
+type Variant = 'glass' | 'primary' | 'primarySoft' | 'ghost'
+
+// Use Framer Motion’s props to avoid onDrag/onPointer type conflicts
+type MotionButtonProps = React.ComponentProps<typeof motion.button>
+
+type Props = Omit<MotionButtonProps, 'ref'> & {
+  variant?: Variant
 }
 
-export default function Button({ className = '', variant = 'glass', style, ...props }: Props) {
+export default function Button({
+  className = '',
+  variant = 'glass',
+  style,
+  ...props
+}: Props) {
   const base =
     'inline-flex items-center justify-center px-4 py-2 rounded-xl border focus:outline-none focus-visible:ring-2 ring-accent transition font-medium'
 
-  // Loud gradient (kept for places where you want pop)
+  // Loud gradient (kept for places you want pop)
   if (variant === 'primary') {
     return (
       <motion.button
@@ -29,11 +39,9 @@ export default function Button({ className = '', variant = 'glass', style, ...pr
     )
   }
 
-  // NEW: Soft Sage glass chip (higher contrast label)
-  // Palette (light):
-  // chip  #EDF5F1   • text  #1F6A4E   • ring  #A6D8C0   • hover  #DFECE6
-  // Palette (dark):
-  // chip  rgba(15,26,22,0.9) • text  #D3F0E0 • ring  #A6D8C0
+  // Soft Sage glass chip with dark-olive label (your latest request)
+  // Light: chip #EDF5F1 • text #2F3E2C • ring #A6D8C0 • hover #DFECE6
+  // Dark:  chip rgba(15,26,22,0.9) • text #DCE7D7
   if (variant === 'primarySoft') {
     return (
       <motion.button
@@ -41,35 +49,26 @@ export default function Button({ className = '', variant = 'glass', style, ...pr
         className={[
           base,
           className,
-          // darker sage label for strong contrast in light; soft mint in dark
-          'text-[#1F6A4E] dark:text-[#093d20]',
-          // subtle hover in both themes
+          'text-[#2F3E2C] dark:text-[#DCE7D7]',
           'hover:bg-[#DFECE6] dark:hover:bg-[#17241F]',
-          'shadow-sm'
+          'shadow-sm',
         ].join(' ')}
         style={{
-          // light theme chip
           backgroundColor: '#EDF5F1',
-          // faint sage tint to keep it “glassy”
-          backgroundImage: 'linear-gradient(0deg, rgba(166,216,192,0.12), rgba(166,216,192,0.12))',
-          // dark theme base via overlay + higher opacity below
-          // soft glass feel
+          backgroundImage:
+            'linear-gradient(0deg, rgba(166,216,192,0.12), rgba(166,216,192,0.12))',
           backdropFilter: 'blur(12px)',
-          // thin sage ring
           outline: '1px solid rgba(166,216,192,0.35)',
           boxShadow: '0 6px 28px rgba(0,0,0,0.10)',
+          color: '#2F3E2C',
           ...style,
         }}
         {...props}
-        // Dark chip tweak using inline style override at runtime
-        onMouseEnter={props.onMouseEnter}
-        onMouseLeave={props.onMouseLeave}
-        data-theme-aware // no-op marker
       />
     )
   }
 
-  // ghost
+  // Ghost
   if (variant === 'ghost') {
     return (
       <motion.button
@@ -80,7 +79,7 @@ export default function Button({ className = '', variant = 'glass', style, ...pr
     )
   }
 
-  // glass (default)
+  // Glass (default)
   return (
     <motion.button
       whileTap={{ scale: 0.98 }}
@@ -89,4 +88,3 @@ export default function Button({ className = '', variant = 'glass', style, ...pr
     />
   )
 }
-
