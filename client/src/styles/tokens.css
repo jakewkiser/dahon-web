@@ -1,0 +1,20 @@
+/* client/src/styles/tokens.css */
+:root {
+  --surface: #f5f7fa;
+  --surface-alt: rgba(255,255,255,0.6);
+  --ink: #1e2329;
+
+  --accent: #00d4ff;   /* cyan */
+  --accent2: #9b5cff;  /* violet */
+  --accent3: #ff3cac;  /* magenta */
+
+  --ring: 0 0 0 2px var(--accent);
+}
+
+/* Dark tokens apply when ThemeProvider sets class AND/OR data attribute */
+:root[data-theme="dark"],
+html.dark {
+  --surface: #11161b;
+  --surface-alt: rgba(22,28,34,0.65);
+  --ink: #dfe6ee;
+}

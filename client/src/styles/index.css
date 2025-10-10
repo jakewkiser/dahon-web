@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens (defines --surface, --ink, etc.) */
+@import './tokens.css';
+
+/* Base layout & theme binding */
+html, body, #root { height: 100%; }
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* Luminous glass utility */
+.glass {
+  background: var(--surface-alt);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--glass-shadow, 0 8px 30px rgba(0,0,0,0.2));
+}
+
+/* Custom focus ring helper used in components */
+.ring-accent { box-shadow: var(--ring); }
+
+/* Gradient text accent */
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent3), var(--accent2), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Accent chips (used in AI status) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem; /* text-xs */
+  padding: 0.25rem 0.5rem; /* px-2 py-1 */
+  border-radius: 9999px;
+}
+.chip-accent {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent3), var(--accent2), var(--accent));
+}
+
+/* ---- Topbar light-mode override (Tailwind darkMode: 'class') ---- */
+html:not(.dark) .topbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* Keep light hover pills subtle on pure white */
+html:not(.dark) .topbar .hover\:bg-black\/5:hover {
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+/* ---- Primary button legibility on light backgrounds ---- */
+html:not(.dark) .bg-gradient-to-r {
+  color: #ffffff !important; /* ensure white text on gradient buttons */
+}
+
+/* Safety: if something injects .text-ink, we still keep the label white */
+html:not(.dark) .bg-gradient-to-r.text-ink { color: #ffffff !important; }
+
+/* Dark tweak for Mint Glass buttons */
+html.dark .ring-accent ~ .btn-mint {} /* (placeholder if you later add a class) */
+html.dark .topbar + * {} /* no-op; your current look should be fine */
