@@ -36,6 +36,13 @@ export default function SignIn() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
+  // --- Mascot source (hardened) ---
+  const [imgErr, setImgErr] = useState(false)
+  const envSrc = (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) || ''
+  // Only trust env if it's an absolute URL or absolute path; else fallback
+  const resolvedMascotSrc =
+    /^(https?:\/\/|\/)/.test(envSrc) && !imgErr ? envSrc : '/Vector.svg'
+
   useEffect(() => {
     if (user) nav('/dashboard', { replace: true })
   }, [user, nav])
@@ -115,11 +122,21 @@ export default function SignIn() {
         <div className="mt-6 rounded-2xl p-4 glass flex items-center gap-4">
           {/* Mascot + tiny PH flag overlay (bigger wrapper, no clipping) */}
           <div className="relative inline-block w-20 h-20 shrink-0">
-            <img
-              src={(import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string) || '/placeholder-plant.jpg'}
-              alt="Dahon"
-              className="w-20 h-20 rounded-xl object-cover"
-            />
+            {!imgErr ? (
+              <img
+                key={resolvedMascotSrc}        // force rerender if env changes
+                src={resolvedMascotSrc}
+                alt="Dahon"
+                title={resolvedMascotSrc}       // hover to see the actual path in prod
+                className="w-20 h-20 rounded-xl object-cover"
+                onError={() => setImgErr(true)}
+              />
+            ) : (
+              <div
+                className="w-20 h-20 rounded-xl bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400"
+                title="fallback gradient"
+              />
+            )}
             <span
               className="absolute -top-1 -right-1 text-2xl drop-shadow-sm"
               role="img"
