@@ -10,7 +10,7 @@ export default function Topbar() {
   const { pathname } = useLocation()
   const placeholder =
     (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) ||
-    '/placeholder-plant.jpg'
+    '/Vector.svg'
   const [imgErr, setImgErr] = useState(false)
   const brandImg = useMemo(() => (imgErr ? undefined : placeholder), [imgErr, placeholder])
 

@@ -1,9 +1,49 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // Check that the plant at /plants/{plantId} is owned by the caller
+    function ownsPlant(plantId) {
+      return get(/databases/$(database)/documents/plants/$(plantId)).data.userId == request.auth.uid;
+    }
+
     match /plants/{plantId} {
-      allow read, create: if request.auth != null && request.resource.data.userId == request.auth.uid;
-      allow update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+
+      // Read your own plants
+      allow read: if signedIn() && resource.data.userId == request.auth.uid;
+
+      // Create must set owner = caller
+      allow create: if signedIn()
+        && request.resource.data.userId == request.auth.uid;
+
+      // Update/Delete only by the owner
+      allow update, delete: if signedIn()
+        && resource.data.userId == request.auth.uid;
+
+      // ---- careLogs subcollection ----
+      match /careLogs/{logId} {
+
+        // Read care logs only for plants you own
+        allow read: if signedIn() && ownsPlant(plantId);
+
+        // Create care log with rule-friendly shape
+        allow create: if signedIn()
+          && ownsPlant(plantId)
+          && request.resource.data.userId == request.auth.uid
+          // accept both legacy and normalized values from the UI
+          && request.resource.data.type in ['water','sun','sunlight','fertilizer','note','general']
+          // explicit event date must be a Firestore timestamp
+          && request.resource.data.date is timestamp
+          // createdAt should be a server timestamp (timestamp type)
+          && request.resource.data.createdAt is timestamp;
+
+        // Update/Delete your own plant's logs (optional but convenient)
+        allow update, delete: if signedIn() && ownsPlant(plantId);
+      }
     }
   }
 }
