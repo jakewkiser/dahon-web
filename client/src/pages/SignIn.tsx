@@ -108,9 +108,24 @@ export default function SignIn() {
 
         {/* Form */}
         <div className="space-y-3">
-          <Input placeholder="Email" value={email} onChange={(e)=> setEmail(e.target.value)} />
-          <Input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} />
-          <Button className="text-ink w-full" onClick={onEmailSignIn} disabled={loading}>
+          <Input
+            className="signin-field"
+            placeholder="Email"
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
+          />
+          <Input
+            className="signin-field"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
+          />
+          <Button
+            className="signin-field w-full"
+            onClick={onEmailSignIn}
+            disabled={loading}
+          >
             {loading ? 'Signing in…' : 'Sign in'}
           </Button>
 
@@ -120,7 +135,7 @@ export default function SignIn() {
 
         {/* Brand block (layout preserved, larger wrapper to avoid clipping) */}
         <div className="mt-6 rounded-2xl p-4 glass flex items-center gap-4">
-          {/* Mascot + tiny PH flag overlay (bigger wrapper, no clipping) */}
+          {/* Mascot (flag removed per request) */}
           <div className="relative inline-block w-20 h-20 shrink-0">
             {!imgErr ? (
               <img
@@ -137,14 +152,6 @@ export default function SignIn() {
                 title="fallback gradient"
               />
             )}
-            <span
-              className="absolute -top-1 -right-1 text-2xl drop-shadow-sm"
-              role="img"
-              aria-label="Philippines flag"
-              title="Philippines"
-            >
-              🇵🇭
-            </span>
           </div>
 
           <div>

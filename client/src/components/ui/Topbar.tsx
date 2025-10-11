@@ -5,85 +5,90 @@ import { useAuth } from '../../lib/auth'
 import Button from './Button'
 import { useMemo, useState } from 'react'
 
+function PillLink({
+  to,
+  children,
+  active,
+}: { to: string; children: React.ReactNode; active?: boolean }) {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        [
+          'px-3 py-1 rounded-xl transition-colors',
+          'hover:bg-black/5 dark:hover:bg-white/5',
+          (isActive || active) ? 'bg-black/10 dark:bg-white/10' : '',
+        ].join(' ')
+      }
+    >
+      {children}
+    </NavLink>
+  )
+}
+
 export default function Topbar() {
   const { user, signOut } = useAuth()
   const { pathname } = useLocation()
-  const placeholder =
-    (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) ||
-    '/Vector.svg'
-  const [imgErr, setImgErr] = useState(false)
-  const brandImg = useMemo(() => (imgErr ? undefined : placeholder), [imgErr, placeholder])
 
-  const pill = (active: boolean) =>
-    `px-3 py-1 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 ${
-      active ? 'bg-black/5 dark:bg-white/10' : ''
-    }`
+  const [imgErr, setImgErr] = useState(false)
+  const envSrc = (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) || ''
+  const brandSrc = useMemo(
+    () => (/^(https?:\/\/|\/)/.test(envSrc) && !imgErr ? envSrc : '/Vector.svg'),
+    [envSrc, imgErr]
+  )
+
+  const isPlantDetails = pathname.startsWith('/plant')
 
   return (
-    // Bright in light mode; subtle divider; no backdrop tint
-    <header className="topbar sticky top-0 z-40 bg-white dark:bg-[#0b0f14] border-b border-black/10 dark:border-white/10">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
-        {/* Brand: mascot + tiny PH flag overlay (no clipping) */}
+    <header
+      className={[
+        'topbar sticky top-0 z-40',
+        'backdrop-blur',
+        // neutral translucent surface that works in both themes
+        'bg-white/60 dark:bg-[#0b0f14]/60',
+        'supports-[backdrop-filter]:bg-white/60 supports-[backdrop-filter]:dark:bg-[#0b0f14]/60',
+      ].join(' ')}
+    >
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 text-ink">
+        {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="relative inline-block w-8 h-8 shrink-0">
-            {brandImg ? (
-              <img
-                src={brandImg}
-                alt="Dahon"
-                className="w-8 h-8 rounded-lg object-cover ring-1 ring-black/10 dark:ring-white/10"
-                onError={() => setImgErr(true)}
-              />
-            ) : (
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 ring-1 ring-black/10 dark:ring-white/10" />
-            )}
-            <span
-              className="absolute -top-1 -right-1 text-sm drop-shadow-sm"
-              role="img"
-              aria-label="Philippines flag"
-              title="Philippines"
-            >
-              🇵🇭
-            </span>
-          </div>
+          {!imgErr ? (
+            <img
+              src={brandSrc}
+              alt="Dahon"
+              className="w-7 h-7 rounded-lg ring-1 ring-black/10 dark:ring-white/10 object-cover"
+              onError={() => setImgErr(true)}
+            />
+          ) : (
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400" />
+          )}
           <span className="font-semibold tracking-tight">Dahon</span>
         </Link>
 
         {/* Nav */}
         <nav className="ml-4 flex items-center gap-2 text-sm">
-          <NavLink
-            to="/dashboard"
-            className={({ isActive }) => pill(isActive || pathname.startsWith('/plant'))}
-          >
-            Dashboard
-          </NavLink>
-          <NavLink to="/ai" className={({ isActive }) => pill(isActive)}>
-            AI Search
-          </NavLink>
-          <NavLink to="/settings" className={({ isActive }) => pill(isActive)}>
-            Settings
-          </NavLink>
+          <PillLink to="/dashboard" active={isPlantDetails}>Dashboard</PillLink>
+          <PillLink to="/ai">AI Search</PillLink>
+          <PillLink to="/settings">Settings</PillLink>
         </nav>
 
-        {/* Actions (no Add Plant here) */}
+        {/* Actions */}
         <div className="ml-auto flex items-center gap-2">
-          <ThemeToggle />
+          {/* Theme button styled like the pills */}
+          <ThemeToggle
+            className="px-3 py-1 rounded-xl text-sm hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none"
+            pill
+          />
           {user ? (
-            <Button
+            <button
               type="button"
-              onClick={async () => {
-                try {
-                  await signOut()
-                } catch (err) {
-                  console.error('Sign out failed:', err)
-                }
-              }}
+              onClick={signOut}
+              className="px-3 py-1 rounded-xl text-sm hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none"
             >
               Sign out
-            </Button>
+            </button>
           ) : (
-            <Link to="/signin" className="text-sm underline opacity-80">
-              Sign in
-            </Link>
+            <Link to="/signin" className="text-sm underline opacity-80">Sign in</Link>
           )}
         </div>
       </div>

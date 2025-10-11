@@ -68,3 +68,23 @@ html:not(.dark) .bg-gradient-to-r.text-ink { color: #ffffff !important; }
 /* Dark tweak for Mint Glass buttons */
 html.dark .ring-accent ~ .btn-mint {} /* (placeholder if you later add a class) */
 html.dark .topbar + * {} /* no-op; your current look should be fine */
+
+/* --- Sign-in field border harmonization --- */
+.signin-field {
+  border: 1px solid rgba(0,0,0,.10) !important;
+  background: #fff;
+}
+html.dark .signin-field {
+  border: 1px solid rgba(255,255,255,.10) !important;
+  background: var(--surface);
+}
+.signin-field:focus,
+.signin-field:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: rgba(0,0,0,.10) !important;
+}
+html.dark .signin-field:focus,
+html.dark .signin-field:focus-visible {
+  border-color: rgba(255,255,255,.10) !important;
+}
