@@ -2,11 +2,10 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import { useAuth } from '../../lib/auth'
-import Button from './Button'
 import { useMemo, useState } from 'react'
 
 export default function Topbar() {
-  const { user, signOut } = useAuth()
+  const { user } = useAuth()
   const { pathname } = useLocation()
 
   const placeholder =
@@ -46,6 +45,8 @@ export default function Topbar() {
           >
             Dashboard
           </NavLink>
+
+          {/* Renamed label only; still links to /ai */}
           <NavLink
             to="/ai"
             className={({ isActive }) =>
@@ -54,8 +55,9 @@ export default function Topbar() {
               }`
             }
           >
-            AI Search
+            Add Plant
           </NavLink>
+
           <NavLink
             to="/settings"
             className={({ isActive }) =>
@@ -68,13 +70,10 @@ export default function Topbar() {
           </NavLink>
         </nav>
 
-        {/* Actions */}
+        {/* Actions: Theme only (sign-out removed from topbar) */}
         <div className="ml-auto flex items-center gap-2">
-          {/* Do NOT pass className/pill into ThemeToggle; it doesn't accept props */}
           <ThemeToggle />
-          {user ? (
-            <Button onClick={signOut}>Sign out</Button>
-          ) : (
+          {!user && (
             <Link to="/signin" className="text-sm underline opacity-80">
               Sign in
             </Link>
