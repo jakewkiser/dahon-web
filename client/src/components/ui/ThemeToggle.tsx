@@ -1,42 +1,48 @@
+// client/src/components/ui/ThemeToggle.tsx
 import { useEffect, useState } from 'react'
 
-type Props = { className?: string }
+type Theme = 'light' | 'dark'
 
-export default function ThemeToggle({ className = '' }: Props) {
-  const [isDark, setIsDark] = useState(false)
+function applyTheme(next: Theme) {
+  const root = document.documentElement
+  const isDark = next === 'dark'
+  root.classList.toggle('dark', isDark)
+  root.setAttribute('data-theme', isDark ? 'dark' : 'light')
+  localStorage.setItem('theme', next)
+}
 
-  // Initialize from localStorage or system preference, and sync <html> class
+function getInitialTheme(): Theme {
+  const saved = localStorage.getItem('theme') as Theme | null
+  if (saved === 'light' || saved === 'dark') return saved
+  // default to media preference
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
+
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme>(() => getInitialTheme())
+
   useEffect(() => {
-    const root = document.documentElement
-    const saved = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches
-    const dark = saved ? saved === 'dark' : !!prefersDark
-    root.classList.toggle('dark', dark)
-    setIsDark(dark)
-  }, [])
+    // ensure DOM reflects current state on mount
+    applyTheme(theme)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function toggle() {
-    const next = !isDark
-    setIsDark(next)
-    const root = document.documentElement
-    root.classList.toggle('dark', next)
-    localStorage.setItem('theme', next ? 'dark' : 'light')
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    applyTheme(next)
   }
 
   return (
     <button
       type="button"
       onClick={toggle}
-      // Match Topbar nav pill: text-only chip, no border, no ring
-      className={[
-        'px-3 py-1 rounded-lg text-sm',
-        'hover:bg-black/5 dark:hover:bg-white/5',
-        'transition-colors select-none outline-none', // no focus ring
-        className,
-      ].join(' ')}
       aria-label="Toggle theme"
+      className="px-3 py-1.5 rounded-lg text-sm hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none focus-visible:ring-0"
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >
-      Theme: {isDark ? 'dark' : 'light'}
+      {theme === 'dark' ? '🌙' : '☀️'}
     </button>
   )
 }
