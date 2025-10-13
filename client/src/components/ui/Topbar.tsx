@@ -1,4 +1,3 @@
-// client/src/components/ui/Topbar.tsx
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import { useAuth } from '../../lib/auth'
@@ -8,10 +7,9 @@ export default function Topbar() {
   const { user } = useAuth()
   const { pathname } = useLocation()
 
-  const placeholder =
-    (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) || '/Vector.svg'
+  // Brand mascot (same as SignIn)
   const [imgErr, setImgErr] = useState(false)
-  const brandImg = useMemo(() => (imgErr ? undefined : placeholder), [imgErr, placeholder])
+  const brandImg = useMemo(() => (imgErr ? '' : '/mascot_excited.svg'), [imgErr])
 
   const active = (p: string) => pathname.startsWith(p)
 
@@ -45,8 +43,6 @@ export default function Topbar() {
           >
             Dashboard
           </NavLink>
-
-          {/* Renamed label only; still links to /ai */}
           <NavLink
             to="/ai"
             className={({ isActive }) =>
@@ -57,7 +53,6 @@ export default function Topbar() {
           >
             Add Plant
           </NavLink>
-
           <NavLink
             to="/settings"
             className={({ isActive }) =>
@@ -70,7 +65,7 @@ export default function Topbar() {
           </NavLink>
         </nav>
 
-        {/* Actions: Theme only (sign-out removed from topbar) */}
+        {/* Right side: theme toggle only when signed in; show Sign in link when logged out */}
         <div className="ml-auto flex items-center gap-2">
           <ThemeToggle />
           {!user && (

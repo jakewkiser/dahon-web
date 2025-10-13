@@ -5,6 +5,8 @@ import Card from '../components/ui/Card'
 import Input from '../components/ui/Input'
 import Button from '../components/ui/Button'
 import { useAuth } from '../lib/auth'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../lib/firebase'
 // @ts-ignore - vite supports json imports
 import pkg from '../../package.json'
 
@@ -31,27 +33,36 @@ function GoogleGIcon() {
 export default function SignIn() {
   const { emailSignIn, googleSignIn, user } = useAuth()
   const nav = useNavigate()
+
+  const [mode, setMode] = useState<'signin' | 'signup'>('signin')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
-  // --- Mascot source (hardened) ---
+  // Mascot (no flag; robust fallback)
   const [imgErr, setImgErr] = useState(false)
   const envSrc = (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) || ''
-  // Only trust env if it's an absolute URL or absolute path; else fallback
-  const resolvedMascotSrc =
-    /^(https?:\/\/|\/)/.test(envSrc) && !imgErr ? envSrc : '/Vector.svg'
+  const mascotSrc = /^(https?:\/\/|\/)/.test(envSrc) && !imgErr ? envSrc : '/mascot_excited.svg'
 
   useEffect(() => {
     if (user) nav('/dashboard', { replace: true })
   }, [user, nav])
 
-  async function onEmailSignIn() {
+  async function onEmailSubmit() {
     setError(null)
     setLoading(true)
     try {
-      await emailSignIn(email, password)
+      if (mode === 'signin') {
+        await emailSignIn(email, password)
+      } else {
+        // Create account
+        if (password.length < 6) {
+          throw new Error('Password should be at least 6 characters.')
+        }
+        await createUserWithEmailAndPassword(auth, email, password)
+        // on success, auth state changes and effect will redirect
+      }
     } catch (e: any) {
       setError(e?.message || String(e))
     } finally {
@@ -67,21 +78,20 @@ export default function SignIn() {
     } catch (e: any) {
       setError(e?.message || String(e))
       if (e?.code === 'auth/invalid-auth-domain' || e?.code === 'auth/invalid-api-key') {
-        alert('Check Firebase env in client/.env.local and restart the dev server.')
+        alert('Check Firebase env in client/.env.local (local) or Vercel Project Settings (prod), then restart.')
       }
     } finally {
       setLoading(false)
     }
   }
 
-  // Branded Google-style button (visual only; same handler)
   function GoogleButton() {
     return (
       <button
         type="button"
         onClick={onGoogle}
         disabled={loading}
-        className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-surface px-4 py-2 text-sm font-medium text-[#1f1f1f] dark:text-ink shadow-sm hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-surface px-4 py-2 text-sm font-medium text-[#1f1f1f] dark:text-ink shadow-sm hover:bg-white/90 focus:outline-none"
       >
         <GoogleGIcon />
         <span>{loading ? 'Signing in…' : 'Sign in with Google'}</span>
@@ -93,8 +103,7 @@ export default function SignIn() {
     <div className="max-w-md mx-auto pt-16">
       <Card>
         <div className="flex items-center justify-between mb-3">
-          <h1 className="text-xl font-semibold">Sign in</h1>
-          {/* Beta badge (version + date) */}
+          <h1 className="text-xl font-semibold">{mode === 'signin' ? 'Sign in' : 'Create your account'}</h1>
           <span className="text-xs px-2 py-1 rounded-lg bg-cyan-500/15 text-cyan-500 border border-cyan-500/30">
             Beta v{versionFromEnv} • {releaseDateFromEnv}
           </span>
@@ -107,42 +116,72 @@ export default function SignIn() {
         )}
 
         {/* Form */}
-        <div className="space-y-3">
+        <form
+          onSubmit={(e) => { e.preventDefault(); onEmailSubmit() }}
+          className="space-y-3"
+        >
           <Input
-            className="signin-field"
             placeholder="Email"
+            type="email"
             value={email}
             onChange={(e)=> setEmail(e.target.value)}
+            autoComplete="email"
+            required
           />
           <Input
-            className="signin-field"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
+            autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
+            required
           />
-          <Button
-            className="signin-field w-full"
-            onClick={onEmailSignIn}
-            disabled={loading}
-          >
-            {loading ? 'Signing in…' : 'Sign in'}
+          <Button className="text-ink w-full" type="submit" disabled={loading}>
+            {loading ? (mode === 'signin' ? 'Signing in…' : 'Creating…') : (mode === 'signin' ? 'Sign in' : 'Create account')}
           </Button>
+        </form>
 
-          <div className="text-center text-xs opacity-60">or</div>
-          <GoogleButton />
+        <div className="text-center text-xs opacity-60 my-2">or</div>
+        <GoogleButton />
+
+        {/* Mode toggle */}
+        <div className="mt-3 text-xs text-center">
+          {mode === 'signin' ? (
+            <>
+              New here?{' '}
+              <button
+                type="button"
+                onClick={() => setMode('signup')}
+                className="underline hover:opacity-80"
+                disabled={loading}
+              >
+                Create an account
+              </button>
+            </>
+          ) : (
+            <>
+              Have an account?{' '}
+              <button
+                type="button"
+                onClick={() => setMode('signin')}
+                className="underline hover:opacity-80"
+                disabled={loading}
+              >
+                Sign in
+              </button>
+            </>
+          )}
         </div>
 
-        {/* Brand block (layout preserved, larger wrapper to avoid clipping) */}
+        {/* Brand block */}
         <div className="mt-6 rounded-2xl p-4 glass flex items-center gap-4">
-          {/* Mascot (flag removed per request) */}
           <div className="relative inline-block w-20 h-20 shrink-0">
             {!imgErr ? (
               <img
-                key={resolvedMascotSrc}        // force rerender if env changes
-                src={resolvedMascotSrc}
+                key={mascotSrc}
+                src={mascotSrc}
                 alt="Dahon"
-                title={resolvedMascotSrc}       // hover to see the actual path in prod
+                title={mascotSrc}
                 className="w-20 h-20 rounded-xl object-cover"
                 onError={() => setImgErr(true)}
               />
@@ -162,7 +201,7 @@ export default function SignIn() {
           </div>
         </div>
 
-        {/* Note: Feedback link intentionally NOT shown here (Dashboard only). */}
+        {/* Feedback link intentionally NOT shown here (Dashboard only). */}
       </Card>
     </div>
   )

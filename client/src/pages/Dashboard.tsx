@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Card from '../components/ui/Card'
 import { listPlants, Plant } from '../lib/firebase'
 import { useAuth } from '../lib/auth'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import KawaiiMascot from '../components/ui/KawaiiMascot'
 import { formatNextCare } from '../lib/schedule'
 // @ts-ignore
@@ -18,24 +18,18 @@ const fmt = new Intl.DateTimeFormat(undefined, {
 export default function Dashboard() {
   const { user } = useAuth()
   const [plants, setPlants] = useState<Plant[]>([])
+  const nav = useNavigate()
 
   useEffect(() => {
     if (user) listPlants(user.uid).then(setPlants)
   }, [user])
 
-  // Placeholder image (env override or public path)
-  const placeholderUrl =
-    (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) ||
-    '/placeholder-plant.jpg'
+  // Dedicated placeholder for plant cards
+  const placeholderUrl = '/mascot_camera.svg'
 
   const feedbackUrl = import.meta.env.VITE_FEEDBACK_URL as string | undefined
-  const version =
-    (import.meta.env.VITE_APP_VERSION as string | undefined) ||
-    (pkg?.version as string) ||
-    '0.1.0'
-  const releaseDate =
-    (import.meta.env.VITE_RELEASE_DATE as string | undefined) ||
-    new Date().toISOString().slice(0, 10)
+  const version = (import.meta.env.VITE_APP_VERSION as string | undefined) || (pkg?.version as string) || '0.1.0'
+  const releaseDate = (import.meta.env.VITE_RELEASE_DATE as string | undefined) || new Date().toISOString().slice(0, 10)
 
   const Beta = useMemo(() => (
     <span className="text-xs px-2 py-1 rounded-lg bg-cyan-500/15 text-cyan-500 border border-cyan-500/30">
@@ -61,7 +55,7 @@ export default function Dashboard() {
               Give Feedback
             </a>
           )}
-          {/* Removed Dashboard "Add Plant" button (redundant with Topbar “Add Plant”) */}
+          {/* Add Plant CTA was removed per your request */}
         </div>
       </div>
 
@@ -72,7 +66,7 @@ export default function Dashboard() {
 
           return (
             <Card key={p.id} className="overflow-hidden">
-              {/* Photo (or cute mascot / placeholder) */}
+              {/* Photo (or placeholder) */}
               <div className="w-full h-36 rounded-xl overflow-hidden mb-3 bg-surfaceAlt flex items-center justify-center">
                 {p.photoUrl ? (
                   <img
@@ -81,7 +75,7 @@ export default function Dashboard() {
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                ) : placeholderUrl ? (
+                ) : (
                   <img
                     src={placeholderUrl}
                     alt="Placeholder"
@@ -89,8 +83,6 @@ export default function Dashboard() {
                     loading="lazy"
                     onError={(e)=>{ (e.currentTarget as HTMLImageElement).style.display='none' }}
                   />
-                ) : (
-                  <KawaiiMascot className="w-full h-full" />
                 )}
               </div>
 
