@@ -7,6 +7,7 @@ import { db, deletePlant, Plant, listCareLogs, CareLog, addCareLog, HAS_STORAGE,
 import { doc, getDoc } from 'firebase/firestore'
 import { useAuth } from '../lib/auth'
 import { computeNextCareFromLogs, formatNextCare } from '../lib/schedule'
+import GuideBlock from '../components/GuideBlock'
 
 const fmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
 
@@ -110,8 +111,13 @@ export default function PlantDetails() {
 
       {plant.photoUrl && <img src={plant.photoUrl} alt="" className="mt-3 w-56 h-56 object-cover rounded-2xl" />}
 
+      {/* Recommended Care (inline) */}
+      <div className="mt-4">
+        <GuideBlock species={plant.species} />
+      </div>
+
       {/* Action row */}
-      <div className="flex gap-3 mt-4 items-center">
+      <div className="flex gap-3 mt-2 items-center">
         <Link className="underline" to={`/plant/${plant.id}/edit`}>Edit</Link>
         <button
           onClick={remove}
@@ -173,7 +179,7 @@ export default function PlantDetails() {
             <label className="text-sm opacity-70">Notes</label>
             <input className="glass w-full px-3 py-2 rounded-xl" value={n} onChange={e=> setN(e.target.value)} placeholder="e.g., Watered 250ml" />
           </div>
-          <div className="sm:col-span-2">
+            <div className="sm:col-span-2">
             <label className="text-sm opacity-70">Photo (optional)</label>
             <input type="file" accept="image/*" onChange={e=> setF(e.target.files?.[0] ?? null)} />
             {!HAS_STORAGE && <div className="text-xs opacity-70 mt-1">Storage not configured—photo will be skipped.</div>}
