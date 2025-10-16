@@ -1,3 +1,4 @@
+// client/src/pages/AddPlant.tsx
 import { useEffect, useMemo, useState } from 'react'
 import Input from '../components/ui/Input'
 import Button from '../components/ui/Button'
@@ -11,7 +12,7 @@ import {
 } from '../lib/firebase'
 import { useAuth } from '../lib/auth'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { findLocalGuide } from '../data/plants' // ✅ NEW: canonical dataset link
+import { findLocalGuide } from '../data/plants'
 
 export default function AddPlant() {
   const nav = useNavigate()
@@ -32,7 +33,7 @@ export default function AddPlant() {
 
   const [logType, setLogType] = useState<'water' | 'sun' | 'fertilizer' | 'note'>('note')
   const [logNotes, setLogNotes] = useState('')
-  const [logDate, setLogDate] = useState('') // YYYY-MM-DD (required if any care fields are used)
+  const [logDate, setLogDate] = useState('')
   const [logPhoto, setLogPhoto] = useState<File | null>(null)
 
   const [saving, setSaving] = useState(false)
@@ -70,14 +71,16 @@ export default function AddPlant() {
     const warnings: string[] = []
 
     try {
-      // 🔍 1) Resolve canonical plant (by ID, name, or species)
+      // 🔍 Resolve canonical plant (by ID, name, or species)
       const canonical =
         findLocalGuide(preId ?? name.trim()) ?? findLocalGuide(species.trim())
-      const guideRefId = canonical?.plant?.id ?? null
-      const guideRefName = canonical?.plant?.name ?? null
-      const guideRefSpecies = canonical?.plant?.species ?? null
 
-      // 🌱 2) Create Firestore plant record with canonical linkage
+      // Coerce nulls to undefined for type safety
+      const guideRefId = canonical?.plant?.id || undefined
+      const guideRefName = canonical?.plant?.name || undefined
+      const guideRefSpecies = canonical?.plant?.species || undefined
+
+      // 🌱 Create Firestore plant record with canonical linkage
       const created = await addPlant({
         userId: user.uid,
         name: name.trim(),
@@ -89,7 +92,7 @@ export default function AddPlant() {
         guideRefSpecies
       })
 
-      // 📷 3) Optional plant photo
+      // 📷 Optional plant photo
       if (plantPhoto) {
         try {
           const safe = `plants/${user.uid}/${created.id}/cover_${Date.now()}_${plantPhoto.name}`
@@ -101,7 +104,7 @@ export default function AddPlant() {
         }
       }
 
-      // 🧾 4) Optional initial care log (REQUIRES DATE if used)
+      // 🧾 Optional initial care log
       if (careFieldsUsed()) {
         const createdAt = new Date(`${logDate}T00:00:00`).getTime()
         let carePhotoUrl: string | undefined
@@ -122,13 +125,12 @@ export default function AddPlant() {
         })
       }
 
-      // ⚠️ 5) Storage warnings
       if (!HAS_STORAGE && (plantPhoto || logPhoto)) {
         warnings.push('Photos were skipped because Storage is not configured.')
       }
       if (warnings.length) setNotice(warnings.join(' '))
 
-      // ✅ 6) Navigate to detail page
+      // ✅ Navigate to detail page
       nav(`/plant/${created.id}`)
     } catch (err: any) {
       console.error('Add plant failed:', err)
@@ -154,7 +156,6 @@ export default function AddPlant() {
         </div>
       )}
 
-      {/* ✅ Confirmation banner for canonical match */}
       {preId && (
         <div className="mb-3 text-sm text-green-700 bg-green-50 dark:bg-green-900/40 rounded-xl p-2">
           This plant is from the verified database and will automatically include its full care guide.
@@ -163,7 +164,6 @@ export default function AddPlant() {
 
       <form onSubmit={onSubmit} className="space-y-6">
         <section className="grid sm:grid-cols-2 gap-3">
-          {/* --- Locked canonical name/species when preId exists --- */}
           <div>
             <label className="text-sm opacity-70">Name *</label>
             <Input
@@ -210,7 +210,6 @@ export default function AddPlant() {
           </div>
         </section>
 
-        {/* --- Care Log Section --- */}
         <section className="space-y-2">
           <div className="font-medium">Initial Care Log (optional)</div>
           <div className="grid sm:grid-cols-2 gap-3">
