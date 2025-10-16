@@ -146,16 +146,15 @@ export default function PlantDetails() {
     if (canonicalGuide) break
   }
 
-// optional debug log (comment out in production)
-console.log('Guide lookup', {
-  plantName: plant.name,
-  plantSpecies: plant.species,
-  matched:
-    (canonicalGuide as any)?.guide?.name ||
-    (canonicalGuide as any)?.plant?.name ||
-    'Unknown',
-  found: !!canonicalGuide
-})
+  console.log('Guide lookup', {
+    plantName: plant.name,
+    plantSpecies: plant.species,
+    matched:
+      (canonicalGuide as any)?.guide?.name ||
+      (canonicalGuide as any)?.plant?.name ||
+      'Unknown',
+    found: !!canonicalGuide
+  })
 
   return (
     <Card className="max-w-2xl">
@@ -189,33 +188,39 @@ console.log('Guide lookup', {
         <div className="mt-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-500/20">
           <h2 className="font-semibold text-lg mb-2">Care Guide</h2>
           <div className="space-y-1 text-sm">
-          {['light', 'water', 'fertilizer'].map((field) => {
-            const raw = canonicalGuide.guide?.[field as keyof typeof canonicalGuide.guide] ?? ''
-            const clean = String(raw).replace(/\s*\([^)]*\)/g, '').trim() // remove (...) parts
-           const label = field.charAt(0).toUpperCase() + field.slice(1)
-           return (
-            <p key={field}>
-             <strong>
-              {field === 'light' && '☀️ '}
-              {field === 'water' && '💧 '}
-              {field === 'fertilizer' && '🌿 '}
-              {field === 'notes' && '🪴 '}
-              {label}:
-             </strong>{' '}
-             {clean || '—'}
-           </p>
-          )
-        })}
-      </div>
-          {canonicalGuide.sources?.length > 0 && (
+            {['light', 'water', 'fertilizer'].map((field) => {
+              const raw =
+                canonicalGuide.guide?.[field as keyof typeof canonicalGuide.guide] ?? ''
+              const clean = String(raw).replace(/\s*\([^)]*\)/g, '').trim()
+              const label = field.charAt(0).toUpperCase() + field.slice(1)
+              return (
+                <p key={field}>
+                  <strong>
+                    {field === 'light' && '☀️ '}
+                    {field === 'water' && '💧 '}
+                    {field === 'fertilizer' && '🌿 '}
+                    {field === 'notes' && '🪴 '}
+                    {label}:
+                  </strong>{' '}
+                  {clean || '—'}
+                </p>
+              )
+            })}
+          </div>
+          {(canonicalGuide.sources ?? []).length > 0 && (
             <div className="mt-2 text-xs opacity-70">
               Sources:{' '}
-              {canonicalGuide.sources.map((s, i) => (
+              {(canonicalGuide.sources ?? []).map((s, i, arr) => (
                 <span key={i}>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline">
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
                     {s.title}
                   </a>
-                  {i < canonicalGuide.sources.length - 1 ? ', ' : ''}
+                  {i < arr.length - 1 ? ', ' : ''}
                 </span>
               ))}
             </div>
@@ -272,10 +277,14 @@ console.log('Guide lookup', {
       <div className="space-y-2">
         <div className="font-semibold">Add Care Log</div>
         {error && (
-          <div className="text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl p-2">{error}</div>
+          <div className="text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl p-2">
+            {error}
+          </div>
         )}
         {notice && (
-          <div className="text-sm text-amber-700 bg-amber-50 dark:bg-amber-900/40 rounded-xl p-2">{notice}</div>
+          <div className="text-sm text-amber-700 bg-amber-50 dark:bg-amber-900/40 rounded-xl p-2">
+            {notice}
+          </div>
         )}
         <form onSubmit={addLog} className="grid sm:grid-cols-2 gap-3">
           <div>
@@ -311,7 +320,11 @@ console.log('Guide lookup', {
           </div>
           <div className="sm:col-span-2">
             <label className="text-sm opacity-70">Photo (optional)</label>
-            <input type="file" accept="image/*" onChange={(e) => setF(e.target.files?.[0] ?? null)} />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setF(e.target.files?.[0] ?? null)}
+            />
             {!HAS_STORAGE && (
               <div className="text-xs opacity-70 mt-1">
                 Storage not configured—photo will be skipped.
