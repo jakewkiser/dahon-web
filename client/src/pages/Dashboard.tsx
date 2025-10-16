@@ -100,7 +100,7 @@ export default function Dashboard() {
           )
         })}
 
-        {plants.length === 0 && <div className="opacity-70">No plants yet.</div>}
+        {plants.length === 0 && <div className="opacity-70">Add your first plant 🌱</div>}
       </div>
     </div>
   )

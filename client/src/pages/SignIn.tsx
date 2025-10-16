@@ -40,10 +40,9 @@ export default function SignIn() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
-  // Mascot (no flag; robust fallback)
+  // Mascot (always use the new file)
   const [imgErr, setImgErr] = useState(false)
-  const envSrc = (import.meta.env.VITE_PLACEHOLDER_IMAGE_URL as string | undefined) || ''
-  const mascotSrc = /^(https?:\/\/|\/)/.test(envSrc) && !imgErr ? envSrc : '/mascot_excited.svg'
+  const mascotSrc = '/mascot_excited.svg'
 
   useEffect(() => {
     if (user) nav('/dashboard', { replace: true })
@@ -56,12 +55,8 @@ export default function SignIn() {
       if (mode === 'signin') {
         await emailSignIn(email, password)
       } else {
-        // Create account
-        if (password.length < 6) {
-          throw new Error('Password should be at least 6 characters.')
-        }
+        if (password.length < 6) throw new Error('Password should be at least 6 characters.')
         await createUserWithEmailAndPassword(auth, email, password)
-        // on success, auth state changes and effect will redirect
       }
     } catch (e: any) {
       setError(e?.message || String(e))
@@ -181,7 +176,6 @@ export default function SignIn() {
                 key={mascotSrc}
                 src={mascotSrc}
                 alt="Dahon"
-                title={mascotSrc}
                 className="w-20 h-20 rounded-xl object-cover"
                 onError={() => setImgErr(true)}
               />

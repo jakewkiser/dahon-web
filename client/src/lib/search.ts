@@ -1,57 +1,61 @@
-import Fuse from 'fuse.js'
-import type { LocalPlantGuide } from '../data/plants.us-top100'
-import { PLANTS_US_TOP } from '../data/plants.us-top100'
+// client/src/lib/search.ts
+import { ALL_PLANTS, type PlantRecord, findLocalGuide } from '../data/plants'
 
-// Algolia optional wiring
-const ALGOLIA_APP_ID = import.meta.env.VITE_ALGOLIA_APP_ID as string | undefined
-const ALGOLIA_API_KEY = import.meta.env.VITE_ALGOLIA_API_KEY as string | undefined
-const ALGOLIA_INDEX = import.meta.env.VITE_ALGOLIA_INDEX as string | undefined
+export type PlantGuide = PlantRecord // maintain expected type alias
 
-type LocalResult = LocalPlantGuide & { _localId: number }
+/** Report whether local AI search is ready and how many plants are indexed. */
+export function aiSearchStatus() {
+  return { provider: 'local', ready: ALL_PLANTS.length > 0, count: ALL_PLANTS.length }
+}
 
-let fuse: Fuse<LocalResult> | null = null
+function norm(s: string) {
+  return s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+}
 
-function buildFuse() {
-  const base: LocalResult[] = PLANTS_US_TOP.map((p, i) => ({ ...p, _localId: i }))
-  fuse = new Fuse(base, {
-    includeScore: true,
-    threshold: 0.35,
-    ignoreLocation: true,
-    keys: [
-      { name: 'name', weight: 0.6 },
-      { name: 'species', weight: 0.3 },
-      { name: 'guide.water', weight: 0.05 },
-      { name: 'guide.light', weight: 0.05 }
-    ]
+/**
+ * localSearch
+ * Lightweight fuzzy search over plant names and species.
+ */
+export function localSearch(q: string, limit = 30) {
+  const nq = norm(q.trim())
+  if (!nq) return []
+
+  const rows = ALL_PLANTS.map((p, i) => {
+    const hayRaw = `${p.name} ${p.species ?? ''}`.trim()
+    const hay = norm(hayRaw)
+    const starts = hay.startsWith(nq)
+    const includes = !starts && hay.includes(nq)
+
+    // Simple score: starts-with wins, then includes; tie-break by shorter name then original index
+    const score = (starts ? 3 : 0) + (includes ? 1 : 0)
+
+    return { ...p, _localId: i, score, _len: hayRaw.length }
   })
-  return fuse
+    .filter(r => r.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score
+      if (a._len !== b._len) return a._len - b._len
+      return a._localId - b._localId
+    })
+    .slice(0, limit)
+    .map(({ _len, ...rest }) => rest)
+
+  return rows
 }
 
-export function localSearch(query: string, limit = 20): LocalResult[] {
-  if (!fuse) buildFuse()
-  if (query.trim().length < 2) return []
-  const res = fuse!.search(query, { limit })
-  return res.map(r => r.item)
+/**
+ * getLocalGuideByName
+ * Retrieves a guide by normalized common name or species.
+ */
+export function getLocalGuideByName(name?: string): PlantRecord | undefined {
+  if (!name) return
+  const n = norm(name)
+  return (
+    ALL_PLANTS.find(p => norm(p.name) === n) ||
+    ALL_PLANTS.find(p => p.species && norm(p.species) === n)
+  )
 }
 
-export function getLocalGuideByName(name: string): LocalPlantGuide | undefined {
-  return PLANTS_US_TOP.find(p => p.name.toLowerCase() === name.toLowerCase())
-}
-
-export function aiSearchStatus(): 'Algolia Connected' | 'Local Search (Fuse.js)' {
-  if (ALGOLIA_APP_ID && ALGOLIA_API_KEY && ALGOLIA_INDEX) return 'Algolia Connected'
-  return 'Local Search (Fuse.js)'
-}
-
-// Placeholder Algolia search shim for future enablement
-export async function search(query: string, limit = 20) {
-  if (ALGOLIA_APP_ID && ALGOLIA_API_KEY && ALGOLIA_INDEX) {
-    // Dynamically import to avoid bundle when unused
-    const [{ default: algoliasearch }] = await Promise.all([import('algoliasearch')])
-    const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_API_KEY)
-    const index = client.initIndex(ALGOLIA_INDEX)
-    const { hits } = await index.search(query, { hitsPerPage: limit })
-    return hits
-  }
-  return localSearch(query, limit)
-}
+// --- Back-compat exports ---
+export const PLANTS = ALL_PLANTS
+export const findLocalGuideLegacy = findLocalGuide
