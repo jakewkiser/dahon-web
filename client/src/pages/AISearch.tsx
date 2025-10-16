@@ -19,7 +19,10 @@ export default function AISearch() {
     try {
       const s = aiSearchStatus()
       if (!s) return '—'
-      return `${s.provider} • ${s.count} plants • ${s.ready ? 'ready' : 'loading'}`
+      if (typeof s === 'string') return s
+      if (typeof s === 'object' && 'provider' in s)
+        return `${s.provider} • ${s.count ?? '?'} plants • ${s.ready ? 'ready' : 'loading'}`
+      return String(s)
     } catch {
       return '—'
     }
@@ -36,9 +39,9 @@ export default function AISearch() {
   }, [q])
 
   // 🪴 Add plant (passes canonical ID + names)
-  function add(id: string, name: string, species?: string) {
+  function add(id: string | number, name: string, species?: string) {
     const params = new URLSearchParams()
-    params.set('id', id)
+    params.set('id', String(id))
     params.set('name', name)
     if (species) params.set('species', species)
     nav(`/add-plant?${params.toString()}`)
@@ -66,11 +69,11 @@ export default function AISearch() {
         </div>
       </div>
 
-      {/* 🌸 Search Bar */}
+      {/* 🪴 Search Bar */}
       <Card className="p-5">
         <div className="flex gap-2 items-center">
           <Input
-            placeholder="🌱 Find your plant companion (type 2+ letters)…"
+            placeholder="🪴 Find your plant companion (type 2+ letters)…"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="flex-1 rounded-xl text-base"
@@ -83,7 +86,7 @@ export default function AISearch() {
           </Button>
         </div>
 
-        {/* 🌷 Search Results */}
+        {/* 🌱 Search Results */}
         <div className="mt-5 space-y-4">
           {rows.length === 0 && q.trim().length === 0 && (
             <div className="text-center opacity-80 text-sm py-8">
@@ -95,6 +98,7 @@ export default function AISearch() {
 
           {rows.map((r, index) => {
             const id = r._localId
+            const safeId = (r as any).id ?? id
             const isOpen = !!expanded[id]
             const summary = [cleanText(r.guide.water), cleanText(r.guide.light)]
               .filter(Boolean)
@@ -102,7 +106,7 @@ export default function AISearch() {
 
             return (
               <div
-                key={r.id}
+                key={id}
                 className="rounded-2xl p-4 glass transition-all hover:-translate-y-0.5 hover:bg-white/10 dark:hover:bg-white/10 hover:shadow-md"
                 style={{
                   animation: `fadeUp 0.3s ease-out ${(index * 0.03).toFixed(2)}s both`
@@ -122,9 +126,9 @@ export default function AISearch() {
                   <div className="flex items-center gap-2">
                     <Button
                       className="text-ink text-sm px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20 hover:bg-green-500/20 transition-all"
-                      onClick={() => add(r.id, r.name, r.species)}
+                      onClick={() => add(safeId, r.name, r.species)}
                     >
-                      🌿 Add
+                      🪴 Add
                     </Button>
                     <button
                       className="px-3 py-1.5 text-xs rounded-lg border border-white/10 hover:bg-white/5 transition-all"
