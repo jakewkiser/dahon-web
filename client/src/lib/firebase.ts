@@ -41,14 +41,21 @@ export type Plant = {
   createdAt?: number
 }
 
-export type CareLog = {
+export type Plant = {
   id?: string
-  type: 'water' | 'sun' | 'sunlight' | 'fertilizer' | 'note' | 'general'
-  notes?: string
+  userId: string
+  name: string
+  nickname?: string
+  species?: string
+  location?: string
   photoUrl?: string
-  // UI may send a date field separately; we always store event time in `date` (Timestamp) on write,
-  // and map `createdAt` to millis on read for UI sorting.
-  createdAt: number
+  lastCareAt?: number
+  createdAt?: number
+
+  // 🪴 Added fields for canonical care-guide linkage
+  guideRefId?: string
+  guideRefName?: string
+  guideRefSpecies?: string
 }
 
 // ---- Helpers ----

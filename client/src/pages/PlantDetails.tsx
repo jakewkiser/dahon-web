@@ -146,13 +146,16 @@ export default function PlantDetails() {
     if (canonicalGuide) break
   }
 
-  // optional debug log (comment out in production)
-  console.log('Guide lookup', {
-    plantName: plant.name,
-    plantSpecies: plant.species,
-    matched: canonicalGuide?.name,
-    found: !!canonicalGuide
-  })
+// optional debug log (comment out in production)
+console.log('Guide lookup', {
+  plantName: plant.name,
+  plantSpecies: plant.species,
+  matched:
+    (canonicalGuide as any)?.guide?.name ||
+    (canonicalGuide as any)?.plant?.name ||
+    'Unknown',
+  found: !!canonicalGuide
+})
 
   return (
     <Card className="max-w-2xl">
