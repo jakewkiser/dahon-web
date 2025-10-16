@@ -17,7 +17,7 @@ export default function AISearch() {
   // 📊 Search status snapshot
   const status = useMemo(() => {
     try {
-      const s = aiSearchStatus()
+      const s: any = aiSearchStatus() // 👈 explicitly type as any to prevent 'never'
       if (!s) return '—'
       if (typeof s === 'string') return s
       if (typeof s === 'object' && 'provider' in s)
