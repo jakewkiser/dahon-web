@@ -14,18 +14,12 @@ export default function Topbar() {
   const active = (p: string) => pathname.startsWith(p)
 
   return (
-    <header
-      className="sticky top-0 z-40 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--glass-surface)] border-b border-[var(--glass-border)] shadow-[0_2px_8px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.4)] transition-all duration-300"
-    >
+    <header className="sticky top-0 z-40 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--glass-surface)] border-b border-[var(--glass-border)] shadow-[0_2px_8px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.4)] transition-all duration-300">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between">
         {/* Left-aligned group */}
         <div className="flex items-center gap-3 sm:gap-4">
           {/* 🌿 Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 shrink-0 group"
-            title="Home"
-          >
+          <Link to="/" className="flex items-center gap-2 shrink-0 group" title="Home">
             {brandImg ? (
               <img
                 src={brandImg}
@@ -41,20 +35,22 @@ export default function Topbar() {
             </span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="flex items-center gap-2 sm:gap-3 text-sm sm:text-[0.95rem]">
+          {/* 🧭 Navigation */}
+          <nav className="flex items-center gap-1 sm:gap-2 text-sm sm:text-[0.95rem]">
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>
                 [
-                  'nav-btn',
+                  'nav-btn flex items-center justify-center sm:justify-start gap-2 select-none rounded-xl transition-all duration-200',
+                  'min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0', // ✅ tap area
                   isActive || active('/plant')
                     ? 'nav-btn-active text-[var(--accent3)] dark:text-[var(--tint-green)]'
                     : 'nav-btn-idle',
                 ].join(' ')
               }
+              title="Dashboard"
             >
-              <Home size={16} />
+              <Home size={18} className="opacity-85 shrink-0" />
               <span className="hidden sm:inline">Dashboard</span>
             </NavLink>
 
@@ -62,25 +58,29 @@ export default function Topbar() {
               to="/ai"
               className={({ isActive }) =>
                 [
-                  'nav-btn',
+                  'nav-btn flex items-center justify-center sm:justify-start gap-2 select-none rounded-xl transition-all duration-200',
+                  'min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0', // ✅ tap area
                   isActive
                     ? 'nav-btn-active text-[var(--accent2)] dark:text-[var(--tint-teal)]'
                     : 'nav-btn-idle',
                 ].join(' ')
               }
+              title="Add Plant"
             >
-              <Plus size={16} />
+              <Plus size={18} className="opacity-85 shrink-0" />
               <span className="hidden sm:inline">Add Plant</span>
             </NavLink>
           </nav>
         </div>
 
-        {/* Right-aligned group */}
+        {/* 🌗 Right-aligned group */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* 🌓 Theme toggle */}
           <div className="ctrl-btn">
             <ThemeToggle />
           </div>
 
+          {/* ⚙️ Settings */}
           <NavLink
             to="/settings"
             className={({ isActive }) =>
