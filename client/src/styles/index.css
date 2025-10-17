@@ -1,90 +1,278 @@
-/* Design tokens (defines --surface, --ink, etc.) */
+/* ---------------------------------------------------------
+   Dahon Global Styles — v2
+   Minimal Glass + Material + Brutalism Hybrid
+   --------------------------------------------------------- */
 @import "./tokens.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base layout & theme binding */
-html, body, #root { height: 100%; }
+/* ---------------------------------------------------------
+   Layout & Global Theme
+   --------------------------------------------------------- */
+html,
+body,
+#root {
+  height: 100%;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  transition: background-color var(--transition-medium), color var(--transition-medium);
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
-  background: var(--surface);
-  color: var(--ink);
-  transition: background-color .2s ease, color .2s ease;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(110, 231, 183, 0.05), transparent 60%),
+    radial-gradient(circle at 75% 80%, rgba(74, 92, 82, 0.08), transparent 70%),
+    var(--color-bg);
 }
 
-/* Luminous glass utility */
-.glass {
-  background: var(--surface-alt);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: var(--glass-shadow, 0 8px 30px rgba(0,0,0,0.2));
+/* ---------------------------------------------------------
+   Typography Scale
+   --------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
 }
 
-/* Custom focus ring helper used in components */
-.ring-accent { box-shadow: var(--ring); }
+h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+}
 
-/* Gradient text accent */
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* ---------------------------------------------------------
+   Glass & Elevation Utilities
+   --------------------------------------------------------- */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Brutalist highlight frame */
+.brutal-frame {
+  border: 2px solid var(--color-secondary);
+  box-shadow: 3px 3px 0 var(--color-primary);
+  transition: box-shadow var(--transition-medium);
+}
+.brutal-frame:hover {
+  box-shadow: 4px 4px 0 var(--color-primary-light);
+}
+
+/* Glow-on-hover for CTAs */
+.hover-glow {
+  transition: all var(--transition-medium);
+  transform: translateY(0);
+}
+.hover-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ---------------------------------------------------------
+   Buttons & Inputs
+   --------------------------------------------------------- */
+.btn-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(74, 92, 82, 0.2);
+  transition: all var(--transition-fast);
+}
+.btn-glow:hover {
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+/* Neutral subtle button */
+.btn-neutral {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+html.dark .btn-neutral {
+  background: var(--color-surface);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Frosted input field */
+.input-frosted {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.8rem;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(6px);
+}
+html.dark .input-frosted {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.input-frosted:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+/* ---------------------------------------------------------
+   Animations & Transitions
+   --------------------------------------------------------- */
+.soft-fade {
+  animation: fadeUp 0.35s ease-out both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   Chips, Tags, and Highlights
+   --------------------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: var(--color-highlight);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+}
+.chip-accent {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Gradient text used sparingly (titles or special cases) */
 .gradient-text {
-  background: linear-gradient(90deg, var(--accent3), var(--accent2), var(--accent));
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-glow));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Accent chips (used in AI status) */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.75rem; /* text-xs */
-  padding: 0.25rem 0.5rem; /* px-2 py-1 */
-  border-radius: 9999px;
+/* ---------------------------------------------------------
+   Scroll & Misc Utilities
+   --------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
-.chip-accent {
-  color: #fff;
-  background: linear-gradient(90deg, var(--accent3), var(--accent2), var(--accent));
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+/* ---------------------------------------------------------
+   Form Control Parity (Add Plant consistency fix)
+   --------------------------------------------------------- */
+
+/* Normalize select, date, and textarea elements to match .input-frosted */
+input.glass,
+select.glass,
+textarea.glass {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.8rem;
+  color: var(--color-ink);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(6px);
 }
 
-/* ---- Topbar light-mode override (Tailwind darkMode: 'class') ---- */
-html:not(.dark) .topbar {
-  background: #ffffff !important;
-  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+/* Dark mode version */
+html.dark input.glass,
+html.dark select.glass,
+html.dark textarea.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-ink);
 }
 
-/* Keep light hover pills subtle on pure white */
-html:not(.dark) .topbar .hover\:bg-black\/5:hover {
-  background-color: rgba(0,0,0,0.05) !important;
+/* Focus state — subtle and consistent */
+input.glass:focus,
+select.glass:focus,
+textarea.glass:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
 }
 
-/* ---- Primary button legibility on light backgrounds ---- */
-html:not(.dark) .bg-gradient-to-r {
-  color: #ffffff !important; /* ensure white text on gradient buttons */
+/* Match placeholder tone */
+input.glass::placeholder,
+textarea.glass::placeholder {
+  color: var(--color-ink-muted);
+  opacity: 0.7;
 }
 
-/* Safety: if something injects .text-ink, we still keep the label white */
-html:not(.dark) .bg-gradient-to-r.text-ink { color: #ffffff !important; }
+/* Remove native styles from select and date for uniform look */
+select.glass {
+  appearance: none;
+  background-image: none;
+}
 
-/* Dark tweak for Mint Glass buttons */
-html.dark .ring-accent ~ .btn-mint {} /* (placeholder if you later add a class) */
-html.dark .topbar + * {} /* no-op; your current look should be fine */
+input[type="date"].glass {
+  appearance: textfield;
+}
+/* ---------------------------------------------------------
+   Light Mode Brightness Adjustment
+   --------------------------------------------------------- */
+html:not(.dark) {
+  --color-bg: #f9faf9; /* Slightly off-white, easy on the eyes */
+  --color-surface: #f4f5f4; /* Softer surface contrast */
+}
 
-/* --- Sign-in field border harmonization --- */
-.signin-field {
-  border: 1px solid rgba(0,0,0,.10) !important;
-  background: #fff;
-}
-html.dark .signin-field {
-  border: 1px solid rgba(255,255,255,.10) !important;
-  background: var(--surface);
-}
-.signin-field:focus,
-.signin-field:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
-  border-color: rgba(0,0,0,.10) !important;
-}
-html.dark .signin-field:focus,
-html.dark .signin-field:focus-visible {
-  border-color: rgba(255,255,255,.10) !important;
+html:not(.dark) body {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(110, 231, 183, 0.03), transparent 60%),
+    radial-gradient(circle at 75% 80%, rgba(74, 92, 82, 0.05), transparent 70%),
+    var(--color-bg);
 }

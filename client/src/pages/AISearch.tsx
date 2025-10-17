@@ -1,15 +1,14 @@
-// client/src/pages/AISearch.tsx
-import { useEffect, useMemo, useState } from 'react'
-import Card from '../components/ui/Card'
-import Input from '../components/ui/Input'
-import Button from '../components/ui/Button'
-import { useNavigate } from 'react-router-dom'
-import { aiSearchStatus, localSearch } from '../lib/search'
+import { useEffect, useMemo, useState } from "react"
+import Card from "../components/ui/Card"
+import Input from "../components/ui/Input"
+import Button from "../components/ui/Button"
+import { useNavigate } from "react-router-dom"
+import { aiSearchStatus, localSearch } from "../lib/search"
 
 type Row = ReturnType<typeof localSearch>[number]
 
 export default function AISearch() {
-  const [q, setQ] = useState('')
+  const [q, setQ] = useState("")
   const [rows, setRows] = useState<Row[]>([])
   const [expanded, setExpanded] = useState<Record<number, boolean>>({})
   const nav = useNavigate()
@@ -17,14 +16,16 @@ export default function AISearch() {
   // 📊 Search status snapshot
   const status = useMemo(() => {
     try {
-      const s: any = aiSearchStatus() // 👈 explicitly type as any to prevent 'never'
-      if (!s) return '—'
-      if (typeof s === 'string') return s
-      if (typeof s === 'object' && 'provider' in s)
-        return `${s.provider} • ${s.count ?? '?'} plants • ${s.ready ? 'ready' : 'loading'}`
+      const s: any = aiSearchStatus()
+      if (!s) return "—"
+      if (typeof s === "string") return s
+      if (typeof s === "object" && "provider" in s)
+        return `${s.provider} • ${s.count ?? "?"} plants • ${
+          s.ready ? "ready" : "loading"
+        }`
       return String(s)
     } catch {
-      return '—'
+      return "—"
     }
   }, [])
 
@@ -38,61 +39,53 @@ export default function AISearch() {
     setRows(out)
   }, [q])
 
-  // 🪴 Add plant (passes canonical ID + names)
+  // 🌿 Add plant (passes canonical ID + names)
   function add(id: string | number, name: string, species?: string) {
     const params = new URLSearchParams()
-    params.set('id', String(id))
-    params.set('name', name)
-    if (species) params.set('species', species)
+    params.set("id", String(id))
+    params.set("name", name)
+    if (species) params.set("species", species)
     nav(`/add-plant?${params.toString()}`)
   }
 
   // 🧽 Clean parenthetical notes
   function cleanText(s?: string) {
-    return (s || '').replace(/\s*\([^)]*\)/g, '').trim()
+    return (s || "").replace(/\s*\([^)]*\)/g, "").trim()
   }
 
   return (
-    <div className="max-w-3xl mx-auto animate-fadeIn space-y-6">
+    <div className="max-w-4xl mx-auto animate-fadeIn space-y-6">
       {/* 🌿 Header */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img
-            src="/mascot_excited.svg"
-            alt="Dahon mascot"
-            className="w-7 h-7 rounded-md ring-1 ring-black/10 dark:ring-white/10 animate-bounce-slow"
-          />
-          <h1 className="text-2xl font-semibold tracking-tight">Add Plant</h1>
-        </div>
+        <h1 className="text-2xl font-semibold tracking-tight">Add Plant</h1>
         <div className="text-xs px-2 py-1 rounded-lg border border-white/10 bg-white/5 dark:bg-white/5">
           {status}
         </div>
       </div>
 
-      {/* 🪴 Search Bar */}
-      <Card className="p-5">
-        <div className="flex gap-2 items-center">
+      {/* 🔍 Search Bar */}
+      <Card className="p-6 glass">
+        <div className="flex gap-3 items-center">
           <Input
-            placeholder="🪴 Find your plant companion (type 2+ letters)…"
+            placeholder="🔎 Search your plant library (type 2+ letters)…"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="flex-1 rounded-xl text-base"
           />
           <Button
-            className="rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 transition-all"
-            onClick={() => setQ('')}
+            className="rounded-xl px-4 py-2 text-sm bg-white/10 dark:bg-white/10 hover:bg-white/20 border border-white/10 transition-all"
+            onClick={() => setQ("")}
           >
             Clear
           </Button>
         </div>
 
         {/* 🌱 Search Results */}
-        <div className="mt-5 space-y-4">
-          {rows.length === 0 && q.trim().length === 0 && (
-            <div className="text-center opacity-80 text-sm py-8">
-              🪴 Start typing to explore Dahon’s living library of plant guides.  
-              <br />
-              Each plant comes with care wisdom and a little personality.
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {rows.length === 0 && q.trim().length < 2 && (
+            <div className="col-span-full text-center opacity-80 text-sm py-8">
+              🌿 Start typing to explore Dahon’s living library of plant
+              companions. Each one comes with care wisdom and personality.
             </div>
           )}
 
@@ -102,67 +95,87 @@ export default function AISearch() {
             const isOpen = !!expanded[id]
             const summary = [cleanText(r.guide.water), cleanText(r.guide.light)]
               .filter(Boolean)
-              .join(' • ')
+              .join(" • ")
+
+            const imagePath =
+              r.image && r.image.startsWith("/")
+                ? r.image
+                : `/plants_local_examples/${r.image}`
 
             return (
               <div
                 key={id}
-                className="rounded-2xl p-4 glass transition-all hover:-translate-y-0.5 hover:bg-white/10 dark:hover:bg-white/10 hover:shadow-md"
+                className="rounded-2xl p-4 bg-white/5 dark:bg-white/5 border border-white/10 backdrop-blur-md transition-all hover:shadow-glow hover:-translate-y-0.5"
                 style={{
-                  animation: `fadeUp 0.3s ease-out ${(index * 0.03).toFixed(2)}s both`
+                  animation: `fadeUp 0.3s ease-out ${(index * 0.03).toFixed(
+                    2
+                  )}s both`,
                 }}
               >
-                <div className="flex items-start justify-between gap-3">
+                {/* 🖼️ Image */}
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <img
+                    src={imagePath || "/placeholder-plant.jpg"}
+                    alt={r.name}
+                    loading="lazy"
+                    className="w-28 h-28 object-contain rounded-xl bg-white/5 ring-1 ring-black/5 dark:ring-white/10 shadow-inner"
+                  />
+
                   <div>
-                    <div className="font-medium text-lg">{r.name}</div>
+                    <div className="font-medium text-base">{r.name}</div>
                     {r.species && (
-                      <div className="text-xs opacity-80 italic">{r.species}</div>
+                      <div className="text-xs italic opacity-75">
+                        {r.species}
+                      </div>
                     )}
                     {summary && (
-                      <div className="text-xs mt-1 opacity-90">{summary}</div>
+                      <div className="text-xs mt-1 opacity-80 leading-snug">
+                        {summary}
+                      </div>
                     )}
                   </div>
+                </div>
 
-                  <div className="flex items-center gap-2">
-                    <Button
-                      className="text-ink text-sm px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20 hover:bg-green-500/20 transition-all"
-                      onClick={() => add(safeId, r.name, r.species)}
-                    >
-                      🪴 Add
-                    </Button>
-                    <button
-                      className="px-3 py-1.5 text-xs rounded-lg border border-white/10 hover:bg-white/5 transition-all"
-                      onClick={() =>
-                        setExpanded((m) => ({ ...m, [id]: !m[id] }))
-                      }
-                    >
-                      {isOpen ? 'Hide guide' : 'View guide'}
-                    </button>
-                  </div>
+                {/* Actions */}
+                <div className="flex justify-center gap-3 mt-4">
+                  <Button
+                    className="text-sm px-4 py-1.5 rounded-lg border border-emerald-400/30 bg-emerald-400/10 hover:bg-emerald-400/20 transition-all"
+                    onClick={() => add(safeId, r.name, r.species)}
+                  >
+                    Add
+                  </Button>
+                  <button
+                    className="text-xs px-4 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all"
+                    onClick={() =>
+                      setExpanded((m) => ({ ...m, [id]: !m[id] }))
+                    }
+                  >
+                    {isOpen ? "Hide guide" : "View guide"}
+                  </button>
                 </div>
 
                 {/* Expanded Care Details */}
                 {isOpen && (
-                  <div className="mt-3 text-sm space-y-1 animate-fadeIn">
-                    {(['water', 'light', 'fertilizer'] as const).map((field) => {
-                      const raw = r.guide?.[field] ?? ''
+                  <div className="mt-3 text-xs space-y-1 animate-fadeIn">
+                    {(["water", "light", "fertilizer"] as const).map((field) => {
+                      const raw = r.guide?.[field] ?? ""
                       const clean = cleanText(raw)
                       const label =
-                        field === 'light'
-                          ? '☀️ Light'
-                          : field === 'water'
-                          ? '💧 Water'
-                          : '🌿 Fertilizer'
+                        field === "light"
+                          ? "☀️ Light"
+                          : field === "water"
+                          ? "💧 Water"
+                          : "🌿 Fertilizer"
                       return (
                         clean && (
                           <div key={field}>
-                            <span className="opacity-70">{label}:</span> {clean}
+                            <span className="opacity-70">{label}:</span>{" "}
+                            {clean}
                           </div>
                         )
                       )
                     })}
 
-                    {/* Sources */}
                     {r.sources && r.sources.length > 0 && (
                       <div className="pt-2">
                         <div className="text-xs opacity-70">Sources</div>
@@ -170,7 +183,7 @@ export default function AISearch() {
                           {r.sources.map((s, i) => (
                             <li key={i}>
                               <a
-                                className="underline hover:text-green-400 transition-colors"
+                                className="underline hover:text-emerald-400 transition-colors"
                                 href={s.url}
                                 target="_blank"
                                 rel="noreferrer"
@@ -189,7 +202,7 @@ export default function AISearch() {
           })}
 
           {rows.length === 0 && q.trim().length >= 2 && (
-            <div className="text-center opacity-70 text-sm py-6">
+            <div className="col-span-full text-center opacity-70 text-sm py-6">
               😔 No plants matched your search. Try a different name!
             </div>
           )}

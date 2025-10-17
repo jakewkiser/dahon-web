@@ -8,55 +8,74 @@ import { useState, useMemo } from 'react'
 export default function Settings() {
   const { user, signOut } = useAuth()
 
-  // Reuse mascot from /public just like Topbar
+  // Brand mascot (same as Topbar)
   const [imgErr, setImgErr] = useState(false)
   const brandImg = useMemo(() => (imgErr ? '' : '/mascot_excited.svg'), [imgErr])
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
-      <Card>
-        {/* Header with mascot leaf */}
-        <div className="flex items-center gap-2 mb-3">
+    <div className="max-w-2xl mx-auto space-y-6 soft-fade">
+      <Card className="p-5 bg-[var(--glass-surface)] border border-[var(--glass-border)] shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-4">
           {brandImg ? (
             <img
               src={brandImg}
               alt="Dahon mascot"
-              className="w-6 h-6 rounded-md ring-1 ring-black/10 dark:ring-white/10 object-cover transform transition-transform duration-500 ease-out hover:-rotate-12 hover:scale-110"
+              className="w-7 h-7 rounded-lg ring-1 ring-black/10 dark:ring-white/10 object-cover transform transition-transform duration-500 ease-out hover:-rotate-12 hover:scale-110"
               onError={() => setImgErr(true)}
             />
           ) : (
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-green-400 via-emerald-500 to-teal-400 animate-pulse" />
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-green-400 via-emerald-500 to-teal-400 animate-pulse" />
           )}
-          <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
+          <h1 className="text-2xl font-semibold gradient-text tracking-tight">
+            Settings
+          </h1>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-6">
           {/* Theme Section */}
-          <div className="flex items-center justify-between">
+          <section className="flex items-center justify-between">
             <div>
               <div className="font-medium">Theme</div>
-              <div className="text-sm opacity-80">Light / Dark</div>
+              <div className="text-sm opacity-70">Light / Dark</div>
             </div>
-            <ThemeToggle />
-          </div>
+            <div className="transition-transform hover:scale-110 hover:animate-pulse">
+              <ThemeToggle />
+            </div>
+          </section>
 
-          <hr className="border-white/10" />
+          <hr className="border-[var(--glass-border)]" />
 
           {/* Account Section */}
-          <div className="grid grid-cols-2 gap-3 items-center">
+          <section className="grid sm:grid-cols-2 gap-4 items-center">
             <div>
               <div className="font-medium">Account</div>
-              <div className="text-sm opacity-80 break-all">
+              <div className="text-sm opacity-70 break-all">
                 {user?.email || 'Not signed in'}
               </div>
             </div>
             <div className="text-right">
-              <Button className="text-ink" onClick={signOut}>
-                Sign out
-              </Button>
+              {user ? (
+                <Button
+                  onClick={signOut}
+                  variant="primarySoft"
+                  className="text-[var(--ink)]"
+                >
+                  Sign out
+                </Button>
+              ) : (
+                <Button asChild variant="primarySoft">
+                  <a href="/signin">Sign in</a>
+                </Button>
+              )}
             </div>
-          </div>
+          </section>
         </div>
+      </Card>
+
+      {/* Version info footer */}
+      <Card className="text-center text-xs opacity-70 py-3 bg-[var(--surface-alt)] border border-[var(--glass-border)]">
+        Built with <span className="text-[var(--accent2)] font-medium">Dahon</span> 🌿
       </Card>
     </div>
   )

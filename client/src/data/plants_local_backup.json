@@ -1,0 +1,2268 @@
+[
+  {
+    "id": "1",
+    "name": "Snake Plant",
+    "species": "Dracaena trifasciata",
+    "guide": {
+      "water": "Allow soil to dry between waterings. (Iowa State University Extension)",
+      "light": "Bright, indirect to low; adaptable. (Penn State Extension)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average indoor RH is fine. (Penn State Extension)"
+    },
+    "sources": [
+      {
+        "title": "Penn State Extension (2025)",
+        "url": "https://extension.psu.edu/programs/master-gardener/counties/allegheny/news/snake-plants"
+      },
+      {
+        "title": "Iowa State Extension (2025)",
+        "url": "https://www.extension.iastate.edu/news/yard-and-garden-caring-sansevieria"
+      },
+      {
+        "title": "UTIA pet/plant guide (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH Extension (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/1/snake_plant_dracaena_trifasciata.jpg"
+  },
+  {
+    "id": "2",
+    "name": "ZZ Plant",
+    "species": "Zamioculcas zamiifolia",
+    "guide": {
+      "water": "Infrequent; let mix dry; drought tolerant. (Solutions For Your Life)",
+      "light": "Low to bright, indirect. (Solutions For Your Life)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average; tolerates dry indoor air. (Solutions For Your Life)"
+    },
+    "sources": [
+      {
+        "title": "UF/IFAS (Santa Rosa) PDF (2025)",
+        "url": "https://sfyl.ifas.ufl.edu/media/sfylifasufledu/santa-rosa/docs/pdfs/demo-garden-5/ZZ-Plant-Final-02.05.2025.pdf"
+      },
+      {
+        "title": "UTIA pet/plant guide (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH Extension (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/2/zz_plant_zamioculcas_zamiifolia.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Golden Pothos",
+    "species": "Epipremnum aureum",
+    "guide": {
+      "water": "Water when top layer dries. (Home & Garden Information Center)",
+      "light": "Low–bright, indirect. (Home & Garden Information Center)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average. (Home & Garden Information Center)"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC (2025)",
+        "url": "https://hgic.clemson.edu/exciting-houseplant-selections-for-beginners/"
+      },
+      {
+        "title": "UF/IFAS Blog (2025)",
+        "url": "https://blogs.ifas.ufl.edu/orangeco/2025/08/11/floridas-hidden-invaders-2/"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/3/golden_pothos_epipremnum_aureum.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Monstera",
+    "species": "Monstera deliciosa",
+    "guide": {
+      "water": "Evenly moist, then allow partial dry-down. (Care discussed across 2025 edu pieces.) (Illinois Extension)",
+      "light": "Bright, indirect; support as it climbs. (Integrated Pest Management)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Prefers moderate–high. (Illinois Extension)"
+    },
+    "sources": [
+      {
+        "title": "Univ. of Missouri IPM (2025)",
+        "url": "https://ipm.missouri.edu/meg/index.cfm?ID=813"
+      },
+      {
+        "title": "Illinois Extension podcast (2025)",
+        "url": "https://extension.illinois.edu/podcasts/good-growing/ep-200-monstera-rainforest-must-have-houseplant-goodgrowing"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/4/monstera_monstera_deliciosa.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Spider Plant",
+    "species": "Chlorophytum comosum",
+    "guide": {
+      "water": "Keep evenly moist; allow slight dry-down. (PlantTalk Colorado)",
+      "light": "Medium–bright, indirect; avoid hot direct sun. (PlantTalk Colorado)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average; tolerates typical indoor RH. (PlantTalk Colorado)"
+    },
+    "sources": [
+      {
+        "title": "Colorado State Univ. PlantTalk (©2025)",
+        "url": "https://planttalk.colostate.edu/topics/houseplants/1328-spider-plant/"
+      },
+      {
+        "title": "Clemson HGIC beginner picks (2025)",
+        "url": "https://hgic.clemson.edu/exciting-houseplant-selections-for-beginners/"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/5/spider_plant_chlorophytum_comosum.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Philodendron (‘Birkin’ & relatives)",
+    "species": "Philodendron spp.",
+    "guide": {
+      "water": "Water when top soil is dry; avoid waterlogging. (MSU Extension)",
+      "light": "Bright, indirect light. (MSU Extension)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate indoor humidity preferred. (MSU Extension)"
+    },
+    "sources": [
+      {
+        "title": "Mississippi State Extension (2025)",
+        "url": "https://extension.msstate.edu/news/southern-gardening/2025/philodendron-varieties-add-inspiration-indoor-space"
+      },
+      {
+        "title": "Clemson HGIC pet-toxicity explainer (2025)",
+        "url": "https://hgic.clemson.edu/pet-owners-beware-11-poisonous-houseplants-to-avoid/"
+      },
+      {
+        "title": "UNH Extension (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/6/philodendron_birkin_and_relatives_philodendron_spp.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Dragon Tree",
+    "species": "Dracaena marginata",
+    "guide": {
+      "water": "Water when top inch dries. (Home & Garden Information Center)",
+      "light": "Bright, indirect; tolerates medium light. (Home & Garden Information Center)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average indoor RH. (Home & Garden Information Center)"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC (2025)",
+        "url": "https://hgic.clemson.edu/exciting-houseplant-selections-for-beginners/"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/7/dragon_tree_dracaena_marginata.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Areca Palm",
+    "species": "Dypsis lutescens",
+    "guide": {
+      "water": "Keep evenly moist; do not waterlog (general indoor palm guidance in 2025 lists). (CAES Field Report)",
+      "light": "Bright, indirect; some shade tolerant (S/SH per 2025 edu list). (CAES Field Report)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Prefers higher indoor humidity. (CAES Field Report)"
+    },
+    "sources": [
+      {
+        "title": "UGA CAES (2025)",
+        "url": "https://fieldreport.caes.uga.edu/publications/B1338/gardening-in-containers-using-tropical-plants/"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/8/areca_palm_dypsis_lutescens.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Rubber Plant",
+    "species": "Ficus elastica",
+    "guide": {
+      "water": "Water when topsoil begins to dry. (General 2025 extension indoor care.) (Wisconsin Horticulture)",
+      "light": "Bright, indirect; tolerant of interior light. (Wisconsin Horticulture)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average indoor humidity. (Wisconsin Horticulture)"
+    },
+    "sources": [
+      {
+        "title": "UW–Madison Extension (2025)",
+        "url": "https://hort.extension.wisc.edu/2025/01/06/keys-to-healthy-houseplants/"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/9/rubber_plant_ficus_elastica.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Parlor Palm",
+    "species": "Chamaedorea elegans",
+    "guide": {
+      "water": "Keep evenly moist; avoid soggy mix (container tropicals guidance in 2025 doc). (CAES Field Report)",
+      "light": "Shade/partial shade; thrives in indoor light (S/SH in 2025 list). (CAES Field Report)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Likes higher humidity. (CAES Field Report)"
+    },
+    "sources": [
+      {
+        "title": "UGA CAES (2025)",
+        "url": "https://fieldreport.caes.uga.edu/publications/B1338/gardening-in-containers-using-tropical-plants/"
+      },
+      {
+        "title": "UTIA (2025)",
+        "url": "https://utia.tennessee.edu/publications/wp-content/uploads/sites/269/2025/04/W1128C.pdf"
+      },
+      {
+        "title": "UNH (2025)",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/10/parlor_palm_chamaedorea_elegans.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Swiss Cheese Plant (Monstera)",
+    "species": "Monstera deliciosa",
+    "guide": {
+      "water": "Keep evenly moist; allow slight dry-down",
+      "light": "Bright, indirect; avoid full sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Prefers moderate humidity"
+    },
+    "sources": [
+      {
+        "title": "University of Missouri IPM — “2025: Year of the Monstera” (Jan 10, 2025)",
+        "url": "https://ipm.missouri.edu/meg/index.cfm?ID=813"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/11/swiss_cheese_plant_monstera_monstera_deliciosa.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Heartleaf Philodendron",
+    "species": "Philodendron hederaceum",
+    "guide": {
+      "water": "Keep evenly moist; let top layer dry slightly",
+      "light": "Medium, bright indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Likes moderate humidity"
+    },
+    "sources": [
+      {
+        "title": "Mississippi State Extension — “Philodendron varieties add inspiration to indoor space” (Feb 3, 2025)",
+        "url": "https://extension.msstate.edu/news/southern-gardening/2025/philodendron-varieties-add-inspiration-indoor-space"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/12/heartleaf_philodendron_philodendron_hederaceum.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Weeping Fig",
+    "species": "Ficus benjamina",
+    "guide": {
+      "water": "Water when top inch is dry; sensitive to overwatering",
+      "light": "Medium to bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Prefers moderate humidity"
+    },
+    "sources": [
+      {
+        "title": "UW–Madison Extension — “Keys to Healthy Houseplants” (Jan 6, 2025)",
+        "url": "https://hort.extension.wisc.edu/2025/01/06/keys-to-healthy-houseplants/"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/13/weeping_fig_ficus_benjamina.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Chinese Evergreen",
+    "species": "Aglaonema commutatum (and cvs.)",
+    "guide": {
+      "water": "Keep soil moist; let top 1–2″ dry before watering",
+      "light": "Low to moderate, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Tolerates low; prefers moderate humidity"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC — “Chinese Evergreen (Aglaonema) Care, Cultivation & Growing Guide” (Revised Oct 3, 2025)",
+        "url": "https://hgic.clemson.edu/factsheet/chinese-evergreen-aglaonema-care-cultivation-growing-guide/"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/14/chinese_evergreen_aglaonema_commutatum_and_cvs.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Hoya (Wax Plant)",
+    "species": "Hoya carnosa (representative)",
+    "guide": {
+      "water": "Water when soil dries partially; avoid waterlogging",
+      "light": "Bright, indirect; some tolerate medium",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average indoor; enjoys moderate humidity"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC — “Indoor Plants – Waxflowers (Hoya)” (Feb 17, 2025)",
+        "url": "https://hgic.clemson.edu/factsheet/indoor-plants-waxflowers-hoya/"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/15/hoya_wax_plant_hoya_carnosa_representative.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Fiddle Leaf Fig",
+    "species": "Ficus lyrata",
+    "guide": {
+      "water": "Keep soil evenly moist; let top dry slightly",
+      "light": "Bright, indirect light",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average indoor"
+    },
+    "sources": [
+      {
+        "title": "UF/IFAS Extension Santa Rosa – “Fiddleleaf Fig (Ficus lyrata)” (Oct 2024)",
+        "url": "(sfyl.ifas.ufl.edu)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/16/fiddle_leaf_fig_ficus_lyrata.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Aloe Vera",
+    "species": "Aloe barbadensis (syn. Aloe vera)",
+    "guide": {
+      "water": "Water thoroughly, then let soil dry completely",
+      "light": "Bright, indirect light",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "South Dakota State Univ. Extension – “Aloe Vera: Houseplant How-To” (Apr 25, 2024)",
+        "url": "(SDSU Extension)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/17/aloe_vera_aloe_barbadensis_syn_aloe_vera.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Jade Plant",
+    "species": "Crassula ovata",
+    "guide": {
+      "water": "Allow soil to dry between deep waterings",
+      "light": "Bright light",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "South Dakota State Univ. Extension – “Jade Plant: Houseplant How-To” (Jan 29, 2024)",
+        "url": "(SDSU Extension)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/18/jade_plant_crassula_ovata.jpg"
+  },
+  {
+    "id": "19",
+    "name": "Boston Fern",
+    "species": "Nephrolepis exaltata",
+    "guide": {
+      "water": "Keep evenly moist; do not let dry out",
+      "light": "Medium/bright indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "Washington State Univ. Extension – “Houseplants (Tip Sheet 15)” (Jan 2024)",
+        "url": "(Washington State University)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/19/boston_fern_nephrolepis_exaltata.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Dieffenbachia (Dumb Cane)",
+    "species": "Dieffenbachia spp.",
+    "guide": {
+      "water": "Allow soil to dry slightly between waterings",
+      "light": "Low to medium light",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate"
+    },
+    "sources": [
+      {
+        "title": "Washington State Univ. Extension – “Houseplants (Tip Sheet 15)” (Jan 2024)",
+        "url": "(Washington State University)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/20/dieffenbachia_dumb_cane_dieffenbachia_spp.jpg"
+  },
+  {
+    "id": "21",
+    "name": "Bird of Paradise",
+    "species": "Strelitzia reginae",
+    "guide": {
+      "water": "Keep evenly moist; allow slight dry-down",
+      "light": "Bright light; can take some direct sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate"
+    },
+    "sources": [
+      {
+        "title": "UF/IFAS Gardening Solutions – “Plant of the Month: Bird of Paradise” (July 2023)",
+        "url": "(Gardening Solutions)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/21/bird_of_paradise_strelitzia_reginae.jpg"
+  },
+  {
+    "id": "22",
+    "name": "Ponytail Palm",
+    "species": "Beaucarnea recurvata",
+    "guide": {
+      "water": "Infrequent; let soil dry well",
+      "light": "Low to bright light (adaptable)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "UF/IFAS Extension Duval County – “Gardening Q&A: Does joining the houseplant craze tempt you?” (Jul 3, 2023)",
+        "url": "(What's Happening Around Florida)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/22/ponytail_palm_beaucarnea_recurvata.jpg"
+  },
+  {
+    "id": "23",
+    "name": "English Ivy",
+    "species": "Hedera helix",
+    "guide": {
+      "water": "Water when top inch is dry; avoid soggy soil",
+      "light": "Bright indirect to medium",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average; appreciates humidity"
+    },
+    "sources": [
+      {
+        "title": "UF/IFAS Extension Osceola County – “Great Plants for the Office” (May 23, 2023)",
+        "url": "(What's Happening Around Florida)"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/23/english_ivy_hedera_helix.jpg"
+  },
+  {
+    "id": "24",
+    "name": "Boston Fern",
+    "species": "Nephrolepis exaltata",
+    "guide": {
+      "water": "Keep evenly moist; do not let soil fully dry; reduce in winter. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect; avoid harsh sun. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High humidity preferred. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/nephrolepis-exaltata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/24/boston_fern_nephrolepis_exaltata.jpg"
+  },
+  {
+    "id": "25",
+    "name": "Ponytail Palm",
+    "species": "Beaucarnea recurvata",
+    "guide": {
+      "water": "Infrequent; let mix dry well (caudex stores water). (NC Extension Gardener Toolbox)",
+      "light": "Bright light; sunny window ideal. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low–average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/beaucarnea-recurvata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/25/ponytail_palm_beaucarnea_recurvata.jpg"
+  },
+  {
+    "id": "26",
+    "name": "Dracaena Marginata (Dragon Tree)",
+    "species": "Dracaena reflexa var. angustifolia",
+    "guide": {
+      "water": "Allow to dry between waterings; well-drained mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect; tolerates medium. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/dracaena-reflexa-var-angustifolia/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/26/dracaena_marginata_dragon_tree_dracaena_reflexa_var_angustifolia.jpg"
+  },
+  {
+    "id": "27",
+    "name": "Lucky Bamboo",
+    "species": "Dracaena sanderiana",
+    "guide": {
+      "water": "Keep evenly moist if potted; in water, refresh routinely. (species page context) (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect; avoid hot direct sun. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/dracaena-sanderiana/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/27/lucky_bamboo_dracaena_sanderiana.jpg"
+  },
+  {
+    "id": "28",
+    "name": "Jade Plant",
+    "species": "Crassula ovata",
+    "guide": {
+      "water": "Let soil dry between thorough waterings.",
+      "light": "Bright light. (houseplant how-to)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low."
+    },
+    "sources": [
+      {
+        "title": "SDSU Extension",
+        "url": "https://extension.sdstate.edu/jade-plant-houseplant-how"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/28/jade_plant_crassula_ovata.jpg"
+  },
+  {
+    "id": "29",
+    "name": "Schefflera (Umbrella Plant)",
+    "species": "Schefflera arboricola (syn. Heptapleurum arboricola)",
+    "guide": {
+      "water": "Water when top layer dries; avoid soggy soil.",
+      "light": "Bright, indirect; tolerates medium.",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/schefflera-arboricola/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/29/schefflera_umbrella_plant_schefflera_arboricola_syn_heptapleurum_arboricola.jpg"
+  },
+  {
+    "id": "30",
+    "name": "Norfolk Island Pine",
+    "species": "Araucaria heterophylla",
+    "guide": {
+      "water": "Keep evenly moist; well-drained, slightly acidic medium. (NC Extension Gardener Toolbox)",
+      "light": "Bright, cool room; bright light best; light afternoon shade may help indoors. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Cool, average indoor humidity. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/araucaria-heterophylla/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/30/norfolk_island_pine_araucaria_heterophylla.jpg"
+  },
+  {
+    "id": "31",
+    "name": "Cast Iron Plant",
+    "species": "Aspidistra elatior",
+    "guide": {
+      "water": "Moderate; allow top to dry; very forgiving. (NC Extension Gardener Toolbox)",
+      "light": "Low to shade; very tolerant. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average; tolerant of dry air."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/aspidistra-elatior/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/31/cast_iron_plant_aspidistra_elatior.jpg"
+  },
+  {
+    "id": "32",
+    "name": "Peperomia (Baby Rubber Plant)",
+    "species": "Peperomia obtusifolia",
+    "guide": {
+      "water": "Let top dry; avoid overwatering. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect to medium. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average; enjoys warmth. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/peperomia-obtusifolia/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/32/peperomia_baby_rubber_plant_peperomia_obtusifolia.jpg"
+  },
+  {
+    "id": "33",
+    "name": "Croton",
+    "species": "Codiaeum variegatum",
+    "guide": {
+      "water": "Keep evenly moist in growth; reduce in winter. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect to some direct sun for color. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate; appreciates humidity (mist). (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/codiaeum-variegatum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/33/croton_codiaeum_variegatum.jpg"
+  },
+  {
+    "id": "34",
+    "name": "Moth Orchid",
+    "species": "Phalaenopsis (hybrids)",
+    "guide": {
+      "water": "Keep medium damp but not soggy; bark-based mix. (NC Extension Gardener Toolbox)",
+      "light": "Low–medium light; east window ideal; warm temps; high humidity. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High humidity preferred. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/phalaenopsis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/34/moth_orchid_phalaenopsis_hybrids.jpg"
+  },
+  {
+    "id": "35",
+    "name": "Kalanchoe",
+    "species": "Kalanchoe blossfeldiana",
+    "guide": {
+      "water": "Allow mix to dry between waterings (succulent). (NC Extension Gardener Toolbox)",
+      "light": "Bright light. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/kalanchoe-blossfeldiana/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/35/kalanchoe_kalanchoe_blossfeldiana.jpg"
+  },
+  {
+    "id": "36",
+    "name": "Begonia Rex",
+    "species": "Begonia (Rex types)",
+    "guide": {
+      "water": "Even moisture; don’t waterlog; prefers airy mix.",
+      "light": "Bright, indirect; avoid low humidity. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High (≥75% recommended). (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/begonia-rex-types/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/36/begonia_rex_begonia_rex_types.jpg"
+  },
+  {
+    "id": "37",
+    "name": "Oxalis (Purple Shamrock)",
+    "species": "Oxalis triangularis",
+    "guide": {
+      "water": "Allow surface to dry between waterings. (NC Extension Gardener Toolbox)",
+      "light": "Full sun to bright indirect indoors. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average; may go dormant if hot/dry. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/oxalis-triangularis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/37/oxalis_purple_shamrock_oxalis_triangularis.jpg"
+  },
+  {
+    "id": "38",
+    "name": "Pilea (Chinese Money Plant)",
+    "species": "Pilea peperomioides",
+    "guide": {
+      "water": "Water when top dries; well-drained mix.",
+      "light": "Bright, indirect. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/pilea-peperomioides/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/38/pilea_chinese_money_plant_pilea_peperomioides.jpg"
+  },
+  {
+    "id": "39",
+    "name": "Money Tree",
+    "species": "Pachira aquatica",
+    "guide": {
+      "water": "Water when top inch dries; reduce in winter.",
+      "light": "Bright, indirect; avoid hot direct sun.",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average to high."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/pachira-aquatica/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/39/money_tree_pachira_aquatica.jpg"
+  },
+  {
+    "id": "40",
+    "name": "Burro’s Tail",
+    "species": "Sedum morganianum",
+    "guide": {
+      "water": "Infrequent; let mix dry (succulent).",
+      "light": "Bright light; some direct sun.",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/sedum-morganianum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/40/burros_tail_sedum_morganianum.jpg"
+  },
+  {
+    "id": "41",
+    "name": "String of Pearls",
+    "species": "Curio rowleyanus (syn. Senecio rowleyanus)",
+    "guide": {
+      "water": "Sparing; allow mix to dry.",
+      "light": "Bright light; some direct sun.",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/curio-rowleyanus/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/41/string_of_pearls_curio_rowleyanus_syn_senecio_rowleyanus.jpg"
+  },
+  {
+    "id": "42",
+    "name": "String of Hearts",
+    "species": "Ceropegia woodii",
+    "guide": {
+      "water": "Allow to dry between waterings.",
+      "light": "Bright, indirect; some morning sun.",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low–average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/ceropegia-woodii/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/42/string_of_hearts_ceropegia_woodii.jpg"
+  },
+  {
+    "id": "43",
+    "name": "Haworthia (Zebra types)",
+    "species": "Haworthiopsis spp. (e.g., H. fasciata, H. attenuata)",
+    "guide": {
+      "water": "Water sparingly; let soil dry.",
+      "light": "Bright, indirect to some direct; strong light preferred.",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/haworthiopsis-fasciata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/43/haworthia_zebra_types_haworthiopsis_spp_eg_h_fasciata_h_attenuata.jpg"
+  },
+  {
+    "id": "44",
+    "name": "Echeveria",
+    "species": "Echeveria elegans (rep.)",
+    "guide": {
+      "water": "Infrequent; let mix dry thoroughly",
+      "light": "Bright light to full sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/echeveria-elegans/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/44/echeveria_echeveria_elegans_rep.jpg"
+  },
+  {
+    "id": "45",
+    "name": "Sansevieria Moonshine",
+    "species": "Dracaena trifasciata ‘Moonshine’",
+    "guide": {
+      "water": "Sparse; allow soil to dry",
+      "light": "Low to bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low–avg"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/dracaena-trifasciata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/45/sansevieria_moonshine_dracaena_trifasciata_moonshine.jpg"
+  },
+  {
+    "id": "46",
+    "name": "Philodendron Birkin",
+    "species": "Philodendron ‘Birkin’",
+    "guide": {
+      "water": "Water when top inch dries; well-drained mix",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate–high"
+    },
+    "sources": [
+      {
+        "title": "Mississippi State Extension",
+        "url": "https://extension.msstate.edu/news/southern-gardening/2025/philodendron-varieties-add-inspiration-indoor-space"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/46/philodendron_birkin_philodendron_birkin.jpg"
+  },
+  {
+    "id": "47",
+    "name": "Philodendron Brasil",
+    "species": "Philodendron hederaceum ‘Brasil’",
+    "guide": {
+      "water": "Let top dry between waterings",
+      "light": "Medium–bright, indirect; tolerates low",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg–high"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/philodendron-hederaceum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/47/philodendron_brasil_philodendron_hederaceum_brasil.jpg"
+  },
+  {
+    "id": "48",
+    "name": "Aglaonema ‘Silver Bay’",
+    "species": "Aglaonema ‘Silver Bay’",
+    "guide": {
+      "water": "Water when top 1–2″ are dry",
+      "light": "Low–moderate, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC",
+        "url": "https://hgic.clemson.edu/factsheet/chinese-evergreen-aglaonema-care-cultivation-growing-guide/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/48/aglaonema_silver_bay_aglaonema_silver_bay.jpg"
+  },
+  {
+    "id": "49",
+    "name": "Neon Pothos",
+    "species": "Epipremnum aureum ‘Neon’",
+    "guide": {
+      "water": "Water when top ~1″ dries",
+      "light": "Low–bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/epipremnum-aureum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/49/neon_pothos_epipremnum_aureum_neon.jpg"
+  },
+  {
+    "id": "50",
+    "name": "Scindapsus (Satin Pothos)",
+    "species": "Scindapsus pictus",
+    "guide": {
+      "water": "Allow top to dry; avoid soggy mix",
+      "light": "Bright, indirect to medium",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/scindapsus-pictus/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/50/scindapsus_satin_pothos_scindapsus_pictus.jpg"
+  },
+  {
+    "id": "51",
+    "name": "Tradescantia zebrina",
+    "species": "Tradescantia zebrina",
+    "guide": {
+      "water": "Keep evenly moist; slight dry-down ok",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/tradescantia-zebrina/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/51/tradescantia_zebrina_tradescantia_zebrina.jpg"
+  },
+  {
+    "id": "52",
+    "name": "ZZ ‘Raven’",
+    "species": "Zamioculcas zamiifolia Raven™ ‘Dowon’",
+    "guide": {
+      "water": "Infrequent; allow soil to dry",
+      "light": "Low–bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low–avg"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/zamioculcas-zamiifolia-raventm-dowon/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/52/zz_raven_zamioculcas_zamiifolia_raventm_dowon.jpg"
+  },
+  {
+    "id": "53",
+    "name": "Alocasia Polly",
+    "species": "Alocasia × amazonica ‘Polly’",
+    "guide": {
+      "water": "Keep evenly moist; avoid waterlogging",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/alocasia-x-amazonica-polly/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/53/alocasia_polly_alocasia_amazonica_polly.jpg"
+  },
+  {
+    "id": "54",
+    "name": "Calathea Orbifolia",
+    "species": "Goeppertia orbifolia (syn. Calathea)",
+    "guide": {
+      "water": "Keep consistently moist; well-drained",
+      "light": "Bright, indirect; avoid direct sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/goeppertia-orbifolia/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/54/calathea_orbifolia_goeppertia_orbifolia_syn_calathea.jpg"
+  },
+  {
+    "id": "55",
+    "name": "Calathea Lancifolia (Rattlesnake)",
+    "species": "Goeppertia insignis",
+    "guide": {
+      "water": "Even moisture; don’t let fully dry",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/goeppertia-insignis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/55/calathea_lancifolia_rattlesnake_goeppertia_insignis.jpg"
+  },
+  {
+    "id": "56",
+    "name": "Calathea Makoyana (Peacock)",
+    "species": "Goeppertia makoyana",
+    "guide": {
+      "water": "Keep evenly moist; high humidity preferred",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/goeppertia-makoyana/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/56/calathea_makoyana_peacock_goeppertia_makoyana.jpg"
+  },
+  {
+    "id": "57",
+    "name": "Philodendron ‘Xanadu’",
+    "species": "Thaumatophyllum xanadu (syn. Philodendron)",
+    "guide": {
+      "water": "Water when top dries; avoid soggy mix",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg–high"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/thaumatophyllum-xanadu/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/57/philodendron_xanadu_thaumatophyllum_xanadu_syn_philodendron.jpg"
+  },
+  {
+    "id": "58",
+    "name": "Bird’s Nest Fern",
+    "species": "Asplenium nidus",
+    "guide": {
+      "water": "Keep evenly moist; hates drying out",
+      "light": "Low–medium, indirect; no hot sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/asplenium-nidus/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/58/birds_nest_fern_asplenium_nidus.jpg"
+  },
+  {
+    "id": "59",
+    "name": "Maidenhair Fern",
+    "species": "Adiantum raddianum",
+    "guide": {
+      "water": "Keep consistently moist; high humidity",
+      "light": "Bright, indirect; avoid drafts",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/adiantum-raddianum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/59/maidenhair_fern_adiantum_raddianum.jpg"
+  },
+  {
+    "id": "60",
+    "name": "Swiss Cheese Vine",
+    "species": "Monstera adansonii",
+    "guide": {
+      "water": "Water when top layer dries; well-drained",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Avg–high"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/monstera-adansonii/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/60/swiss_cheese_vine_monstera_adansonii.jpg"
+  },
+  {
+    "id": "61",
+    "name": "Rhaphidophora tetrasperma",
+    "species": "Rhaphidophora tetrasperma",
+    "guide": {
+      "water": "Water when top ~1″ dries; moist but not soggy",
+      "light": "Bright, indirect; a bit of morning sun ok",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/rhaphidophora-tetrasperma/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/61/rhaphidophora_tetrasperma_rhaphidophora_tetrasperma.jpg"
+  },
+  {
+    "id": "62",
+    "name": "Stromanthe Triostar",
+    "species": "Stromanthe sanguinea ‘Triostar’",
+    "guide": {
+      "water": "Even moisture; never bone-dry",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/stromanthe-sanguinea/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/62/stromanthe_triostar_stromanthe_sanguinea_triostar.jpg"
+  },
+  {
+    "id": "63",
+    "name": "Dieffenbachia ‘Camille’",
+    "species": "Dieffenbachia ‘Camille’ (rep. of D. seguine cvs.)",
+    "guide": {
+      "water": "Keep evenly moist; allow slight dry-down",
+      "light": "Low–medium, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/dieffenbachia/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/63/dieffenbachia_camille_dieffenbachia_camille_rep_of_d_seguine_cvs.jpg"
+  },
+  {
+    "id": "64",
+    "name": "Aglaonema ‘Red Siam’",
+    "species": "Aglaonema ‘Red Siam’ (Chinese evergreen cv.)",
+    "guide": {
+      "water": "Water when top 1–2″ are dry; avoid soggy soil",
+      "light": "Low–moderate, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/aglaonema/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/64/aglaonema_red_siam_aglaonema_red_siam_chinese_evergreen_cv.jpg"
+  },
+  {
+    "id": "65",
+    "name": "Yucca Cane",
+    "species": "Yucca gigantea (syn. Y. elephantipes)",
+    "guide": {
+      "water": "Infrequent; allow mix to dry",
+      "light": "Bright light; tolerates some direct sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/yucca-gigantea/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/65/yucca_cane_yucca_gigantea_syn_y_elephantipes.jpg"
+  },
+  {
+    "id": "66",
+    "name": "Ficus Audrey",
+    "species": "Ficus benghalensis",
+    "guide": {
+      "water": "Water when topsoil dries; avoid overwatering",
+      "light": "Bright, indirect; some direct ok",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average–high"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/ficus-benghalensis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/66/ficus_audrey_ficus_benghalensis.jpg"
+  },
+  {
+    "id": "67",
+    "name": "Ficus Alii",
+    "species": "Ficus maclellandii (syn. F. binnendijkii)",
+    "guide": {
+      "water": "Water when top inch is dry; steady schedule",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average"
+    },
+    "sources": [
+      {
+        "title": "UW–Madison Extension",
+        "url": "https://hort.extension.wisc.edu/articles/ficus-ornamental-figs/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/67/ficus_alii_ficus_maclellandii_syn_f_binnendijkii.jpg"
+  },
+  {
+    "id": "68",
+    "name": "Schefflera ‘Amate’",
+    "species": "Schefflera arboricola ‘Amate’",
+    "guide": {
+      "water": "Water when surface dries",
+      "light": "Bright, indirect; tolerates medium",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/schefflera-arboricola/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/68/schefflera_amate_schefflera_arboricola_amate.jpg"
+  },
+  {
+    "id": "69",
+    "name": "Nerve Plant (Fittonia)",
+    "species": "Fittonia albivenis",
+    "guide": {
+      "water": "Keep evenly moist; do not let fully dry",
+      "light": "Bright, indirect; avoid direct sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/fittonia-albivenis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/69/nerve_plant_fittonia_fittonia_albivenis.jpg"
+  },
+  {
+    "id": "70",
+    "name": "Polka Dot Plant",
+    "species": "Hypoestes phyllostachya",
+    "guide": {
+      "water": "Keep evenly moist; slight dry-down ok",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/hypoestes-phyllostachya/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/70/polka_dot_plant_hypoestes_phyllostachya.jpg"
+  },
+  {
+    "id": "71",
+    "name": "Zebra Haworthia",
+    "species": "Haworthiopsis attenuata (syn. Haworthia)",
+    "guide": {
+      "water": "Sparse; let soil dry",
+      "light": "Bright light; some direct",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/haworthiopsis-attenuata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/71/zebra_haworthia_haworthiopsis_attenuata_syn_haworthia.jpg"
+  },
+  {
+    "id": "72",
+    "name": "Cactus (Golden Barrel)",
+    "species": "Echinocactus grusonii",
+    "guide": {
+      "water": "Very infrequent; dry completely",
+      "light": "Full sun to very bright light",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "Univ. of Arizona (CALS) Extension",
+        "url": "https://cals.arizona.edu/yavapai/anr/hort/byg/archive/goldenbarrel.html"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/72/cactus_golden_barrel_echinocactus_grusonii.jpg"
+  },
+  {
+    "id": "73",
+    "name": "Christmas Cactus",
+    "species": "Schlumbergera × buckleyi (holiday cactus grp.)",
+    "guide": {
+      "water": "Keep evenly moist during bloom; reduce after",
+      "light": "Bright, indirect; short days for bloom",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC",
+        "url": "https://hgic.clemson.edu/factsheet/holiday-cactus/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/73/christmas_cactus_schlumbergera_buckleyi_holiday_cactus_grp.jpg"
+  },
+  {
+    "id": "74",
+    "name": "Thanksgiving Cactus",
+    "species": "Schlumbergera truncata",
+    "guide": {
+      "water": "Keep evenly moist during active growth",
+      "light": "Bright, indirect; autumn short-day bloomer",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC",
+        "url": "https://hgic.clemson.edu/factsheet/holiday-cactus/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/74/thanksgiving_cactus_schlumbergera_truncata.jpg"
+  },
+  {
+    "id": "75",
+    "name": "Euphorbia trigona (African Milk Tree)",
+    "species": "Euphorbia trigona",
+    "guide": {
+      "water": "Infrequent; let soil dry",
+      "light": "Bright light; some direct",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/euphorbia-trigona/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/75/euphorbia_trigona_african_milk_tree_euphorbia_trigona.jpg"
+  },
+  {
+    "id": "76",
+    "name": "Peruvian Apple Cactus",
+    "species": "Cereus repandus (syn. C. peruvianus)",
+    "guide": {
+      "water": "Very infrequent; dry thoroughly",
+      "light": "Full sun to very bright",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "Univ. of Arizona (CALS) Extension",
+        "url": "https://cals.arizona.edu/yavapai/anr/hort/byg/archive/peruvianapplecactus.html"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/76/peruvian_apple_cactus_cereus_repandus_syn_c_peruvianus.jpg"
+  },
+  {
+    "id": "77",
+    "name": "Prickly Pear",
+    "species": "Opuntia spp.",
+    "guide": {
+      "water": "Very infrequent; gritty, fast-draining soil",
+      "light": "Full sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "Univ. of Arizona (CALS) Extension",
+        "url": "https://cals.arizona.edu/yavapai/anr/hort/byg/archive/pricklypearcactus.html"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/77/prickly_pear_opuntia_spp.jpg"
+  },
+  {
+    "id": "78",
+    "name": "Jelly Bean Plant",
+    "species": "Sedum rubrotinctum",
+    "guide": {
+      "water": "Infrequent; allow to dry",
+      "light": "Bright light to full sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/sedum-rubrotinctum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/78/jelly_bean_plant_sedum_rubrotinctum.jpg"
+  },
+  {
+    "id": "79",
+    "name": "Gasteria ‘Little Warty’",
+    "species": "Gasteria ‘Little Warty’ (cv.)",
+    "guide": {
+      "water": "Sparse; allow mix to dry",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/gasteria/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/79/gasteria_little_warty_gasteria_little_warty_cv.jpg"
+  },
+  {
+    "id": "80",
+    "name": "Aeonium arboreum",
+    "species": "Aeonium arboreum",
+    "guide": {
+      "water": "Infrequent; allow to dry (winter grower)",
+      "light": "Bright light; some direct",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/aeonium-arboreum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/80/aeonium_arboreum_aeonium_arboreum.jpg"
+  },
+  {
+    "id": "81",
+    "name": "Tillandsia (Air Plant)",
+    "species": "Tillandsia spp.",
+    "guide": {
+      "water": "Mist/soak 1–2× weekly; dry thoroughly",
+      "light": "Bright, indirect; good air circulation",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate–high"
+    },
+    "sources": [
+      {
+        "title": "Clemson HGIC",
+        "url": "https://hgic.clemson.edu/factsheet/air-plants-tillandsia/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/81/tillandsia_air_plant_tillandsia_spp.jpg"
+  },
+  {
+    "id": "82",
+    "name": "Bromeliad Guzmania",
+    "species": "Guzmania lingulata",
+    "guide": {
+      "water": "Keep central cup filled; water potting mix lightly",
+      "light": "Bright, indirect; avoid harsh sun",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate–high"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/guzmania-lingulata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/82/bromeliad_guzmania_guzmania_lingulata.jpg"
+  },
+  {
+    "id": "83",
+    "name": "Bromeliad Aechmea",
+    "species": "Aechmea fasciata",
+    "guide": {
+      "water": "Keep central cup filled; light, even moisture in mix",
+      "light": "Bright, indirect",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Moderate–high"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/aechmea-fasciata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/83/bromeliad_aechmea_aechmea_fasciata.jpg"
+  },
+  {
+    "id": "84",
+    "name": "Banana Plant (Dwarf Cavendish)",
+    "species": "Musa acuminata (cv. ‘Dwarf Cavendish’)",
+    "guide": {
+      "water": "Keep evenly moist; well-drained mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright light; some direct sun. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/musa-acuminata/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/84/banana_plant_dwarf_cavendish_musa_acuminata_cv_dwarf_cavendish.jpg"
+  },
+  {
+    "id": "85",
+    "name": "Citrus (Meyer Lemon)",
+    "species": "Citrus × limon ‘Meyer’",
+    "guide": {
+      "water": "Water when top inch dries; avoid waterlogging. (NC Extension Gardener Toolbox)",
+      "light": "Bright light; full sun indoors best. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/citrus-x-limon-meyer/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/85/citrus_meyer_lemon_citrus_limon_meyer.jpg"
+  },
+  {
+    "id": "86",
+    "name": "Olive Tree (Indoor)",
+    "species": "Olea europaea",
+    "guide": {
+      "water": "Infrequent; allow surface to dry; excellent drainage. (NC Extension Gardener Toolbox)",
+      "light": "Full sun/very bright light. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low–average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/olea-europaea/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/86/olive_tree_indoor_olea_europaea.jpg"
+  },
+  {
+    "id": "87",
+    "name": "Lavender (Indoor)",
+    "species": "Lavandula angustifolia",
+    "guide": {
+      "water": "Infrequent; let soil dry some; avoid soggy media. (newcropsorganics.ces.ncsu.edu)",
+      "light": "Full sun/very bright; needs excellent drainage. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low; dislikes high indoor humidity. (newcropsorganics.ces.ncsu.edu)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/lavandula-angustifolia/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/87/lavender_indoor_lavandula_angustifolia.jpg"
+  },
+  {
+    "id": "88",
+    "name": "Rosemary (Indoor)",
+    "species": "Salvia rosmarinus",
+    "guide": {
+      "water": "Allow to dry slightly; avoid constant wet. (NC Extension Gardener Toolbox)",
+      "light": "Full sun/very bright light. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Low–average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/salvia-rosmarinus/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/88/rosemary_indoor_salvia_rosmarinus.jpg"
+  },
+  {
+    "id": "89",
+    "name": "Bay Laurel (Indoor)",
+    "species": "Laurus nobilis",
+    "guide": {
+      "water": "Water when top layer dries; good drainage. (NC Extension Gardener Toolbox)",
+      "light": "Bright light to full sun. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/laurus-nobilis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/89/bay_laurel_indoor_laurus_nobilis.jpg"
+  },
+  {
+    "id": "90",
+    "name": "Coffee Plant",
+    "species": "Coffea arabica",
+    "guide": {
+      "water": "Keep evenly moist; do not waterlog. (NC State Extension)",
+      "light": "Bright, indirect light. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High humidity preferred. (NC State Extension)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/coffea-arabica/"
+      },
+      {
+        "title": "Extension Gardener Handbook",
+        "url": "https://content.ces.ncsu.edu/extension-gardener-handbook/18-plants-grown-in-containers"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/90/coffee_plant_coffea_arabica.jpg"
+  },
+  {
+    "id": "91",
+    "name": "Tea Plant",
+    "species": "Camellia sinensis",
+    "guide": {
+      "water": "Even moisture; well-drained acidic mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright light; morning sun/afternoon shade; containers in cool climates. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/camellia-sinensis/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/91/tea_plant_camellia_sinensis.jpg"
+  },
+  {
+    "id": "92",
+    "name": "Jasmine (Indoor)",
+    "species": "Jasminum spp. (e.g., J. sambac)",
+    "guide": {
+      "water": "Keep evenly moist; well-drained mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect to full sun depending on species. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average to high. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/jasminum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/92/jasmine_indoor_jasminum_spp_eg_j_sambac.jpg"
+  },
+  {
+    "id": "93",
+    "name": "Gardenia (Indoor)",
+    "species": "Gardenia jasminoides",
+    "guide": {
+      "water": "Keep evenly moist; avoid alkaline water. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect light; avoid hot direct sun; acidic medium. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High humidity favored. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/gardenia-jasminoides/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/93/gardenia_indoor_gardenia_jasminoides.jpg"
+  },
+  {
+    "id": "94",
+    "name": "Camellia japonica (Indoor)",
+    "species": "Camellia japonica",
+    "guide": {
+      "water": "Even moisture; well-drained acidic mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright light; cool temps ideal; acidic soil. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/camellia-japonica/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/94/camellia_japonica_indoor_camellia_japonica.jpg"
+  },
+  {
+    "id": "95",
+    "name": "Paperwhite Narcissus",
+    "species": "Narcissus tazetta (Paperwhite group)",
+    "guide": {
+      "water": "Water lightly; keep evenly moist during growth; good drainage. (NC Extension Gardener Toolbox)",
+      "light": "Bright light; indoors for forcing. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/narcissus-tazetta/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/95/paperwhite_narcissus_narcissus_tazetta_paperwhite_group.jpg"
+  },
+  {
+    "id": "96",
+    "name": "Amaryllis",
+    "species": "Hippeastrum hybrids",
+    "guide": {
+      "water": "Water when mix begins to dry; good drainage; reduce after bloom. (pender.ces.ncsu.edu)",
+      "light": "Bright, indirect to bright sun indoors. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/hippeastrum/"
+      },
+      {
+        "title": "N.C. Cooperative Extension",
+        "url": "https://pender.ces.ncsu.edu/2021/12/amaryllis-a-gift-that-keeps-on-giving/"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/96/amaryllis_hippeastrum_hybrids.jpg"
+  },
+  {
+    "id": "97",
+    "name": "Orchid (Oncidium)",
+    "species": "Oncidium spp.",
+    "guide": {
+      "water": "Water, then allow to drain/dry somewhat; epiphytic medium. (NC Extension Gardener Toolbox)",
+      "light": "Bright light; can tolerate slight drying between waterings. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High humidity preferred. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/oncidium/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/97/orchid_oncidium_oncidium_spp.jpg"
+  },
+  {
+    "id": "98",
+    "name": "Orchid (Dendrobium)",
+    "species": "Dendrobium spp.",
+    "guide": {
+      "water": "Water regularly in growth; allow medium to drain. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect; specifics vary by section. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High humidity appreciated. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/dendrobium/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/98/orchid_dendrobium_dendrobium_spp.jpg"
+  },
+  {
+    "id": "99",
+    "name": "Anthurium clarinervium",
+    "species": "Anthurium clarinervium (in Anthurium genus)",
+    "guide": {
+      "water": "Keep evenly moist; well-drained aroid mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect; avoid direct sun. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/anthurium/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/99/anthurium_clarinervium_anthurium_clarinervium_in_anthurium_genus.jpg"
+  },
+  {
+    "id": "100",
+    "name": "Alocasia ‘Frydek’",
+    "species": "Alocasia micholitziana ‘Frydek’ (represented by Alocasia genus)",
+    "guide": {
+      "water": "Keep evenly moist; do not let fully dry. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect; warm; avoid drafts. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "High. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/alocasia/"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/100/alocasia_frydek_alocasia_micholitziana_frydek_represented_by_alocasia_genus.jpg"
+  },
+  {
+    "id": "101",
+    "name": "Pothos ‘Marble Queen’",
+    "species": "Epipremnum aureum ‘Marble Queen’",
+    "guide": {
+      "water": "Water when top ~1″ dries; avoid overwatering. (NC Extension Gardener Toolbox)",
+      "light": "Low–bright, indirect. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average."
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/epipremnum-aureum/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/101/pothos_marble_queen_epipremnum_aureum_marble_queen.jpg"
+  },
+  {
+    "id": "102",
+    "name": "Syngonium (Arrowhead Plant)",
+    "species": "Syngonium podophyllum",
+    "guide": {
+      "water": "Keep moist; slight dry-down ok. (NC State Extension)",
+      "light": "Medium–bright, indirect. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average–high. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/syngonium-podophyllum/"
+      },
+      {
+        "title": "Extension Gardener Handbook",
+        "url": "https://content.ces.ncsu.edu/extension-gardener-handbook/18-plants-grown-in-containers"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/102/syngonium_arrowhead_plant_syngonium_podophyllum.jpg"
+  },
+  {
+    "id": "103",
+    "name": "Philodendron ‘Pink Princess’",
+    "species": "Philodendron erubescens ‘Pink Princess’",
+    "guide": {
+      "water": "Water when top layer dries; well-drained aroid mix. (NC Extension Gardener Toolbox)",
+      "light": "Bright, indirect. (NC Extension Gardener Toolbox)",
+      "fertilizer": "Balanced houseplant fertilizer during growing season",
+      "notes": "Average–high. (NC Extension Gardener Toolbox)"
+    },
+    "sources": [
+      {
+        "title": "NC State Extension",
+        "url": "https://plants.ces.ncsu.edu/plants/philodendron-erubescens/"
+      },
+      {
+        "title": "UNH Extension",
+        "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
+      }
+    ],
+    "image": "/src/assets/plants_local_examples/103/philodendron_pink_princess_philodendron_erubescens_pink_princess.jpg"
+  }
+]

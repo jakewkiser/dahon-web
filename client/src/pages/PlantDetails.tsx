@@ -1,3 +1,4 @@
+// client/src/pages/PlantDetails.tsx
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import Card from '../components/ui/Card'
@@ -43,7 +44,7 @@ export default function PlantDetails() {
 
   // lightbox
   const [lbOpen, setLbOpen] = useState(false)
-  const [lbSrc, setLbSrc] = useState<string | undefined>(undefined)
+  const [lbSrc, setLbSrc] = useState<string | undefined>()
 
   useEffect(() => {
     async function load() {
@@ -80,8 +81,7 @@ export default function PlantDetails() {
         try {
           const path = `plants/${user.uid}/${id}/care/${Date.now()}_${f.name}`
           url = await uploadFileAndGetURL(f, path)
-        } catch (err: any) {
-          console.warn('Care photo upload skipped:', err)
+        } catch {
           setNotice('Care photo upload skipped (Storage not configured).')
         }
       }
@@ -113,19 +113,15 @@ export default function PlantDetails() {
     setLbOpen(true)
   }
 
-  if (loading || !plant) return <div>Loading...</div>
+  if (loading) return <div className="opacity-70 text-sm text-center mt-10">Loading plant details…</div>
+  if (!plant) return <div className="opacity-70 text-sm text-center mt-10">Plant not found.</div>
 
   const next = computeNextCareFromLogs(plant, logs)
 
-  // 🌿 --- Care Guide Lookup ----------------------------------------------------
+  // Normalize + find canonical guide
   function normalize(input?: string) {
-    return (input || '')
-      .toLowerCase()
-      .replace(/[‘’“”']/g, '')
-      .replace(/\s+/g, ' ')
-      .trim()
+    return (input || '').toLowerCase().replace(/[‘’“”']/g, '').replace(/\s+/g, ' ').trim()
   }
-
   const searchKeys = [
     (plant as any).guideRefId,
     (plant as any).guideRefName,
@@ -133,7 +129,6 @@ export default function PlantDetails() {
     plant.name,
     plant.species
   ].filter(Boolean)
-
   let canonicalGuide
   for (const key of searchKeys) {
     const n = normalize(String(key))
@@ -141,68 +136,54 @@ export default function PlantDetails() {
       findLocalGuide(n) ||
       findLocalGuide(n.replace(/['"].*$/, '').trim()) ||
       findLocalGuide(n.split('(')[0].trim()) ||
-      // genus fallback: take first word (e.g. "Alocasia micholitziana" -> "Alocasia")
       findLocalGuide(n.split(' ')[0])
     if (canonicalGuide) break
   }
 
-  console.log('Guide lookup', {
-    plantName: plant.name,
-    plantSpecies: plant.species,
-    matched:
-      (canonicalGuide as any)?.guide?.name ||
-      (canonicalGuide as any)?.plant?.name ||
-      'Unknown',
-    found: !!canonicalGuide
-  })
-
   return (
-    <Card className="max-w-2xl">
+    <Card className="max-w-2xl mx-auto soft-fade p-5 bg-[var(--glass-surface)] border border-[var(--glass-border)] shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
       {/* Header */}
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
         <div>
-          <h1 className="text-2xl font-semibold">{plant.name}</h1>
-          <div className="opacity-70">{plant.species}</div>
-          {plant.nickname && <div className="opacity-80">Nickname: {plant.nickname}</div>}
+          <h1 className="text-2xl font-semibold gradient-text">{plant.name}</h1>
+          {plant.species && <div className="opacity-70 text-sm">{plant.species}</div>}
+          {plant.nickname && <div className="opacity-80 text-sm">“{plant.nickname}”</div>}
           {(plant as any).location && (
-            <div className="opacity-80">Location: {(plant as any).location}</div>
+            <div className="opacity-80 text-sm">📍 {(plant as any).location}</div>
           )}
           {plant.lastCareAt && (
-            <div className="text-sm opacity-70 mt-1">
+            <div className="text-xs opacity-70 mt-1">
               Last cared: {fmt.format(new Date(plant.lastCareAt))}
             </div>
           )}
         </div>
-
-        <div className="shrink-0 text-xs px-2 py-1 rounded-lg bg-cyan-500/15 text-cyan-500 border border-cyan-500/30">
+        <div className="shrink-0 text-xs px-2 py-1 rounded-lg bg-[var(--tint-teal)]/25 text-[var(--accent2)] border border-[var(--accent2)]/30 font-medium">
           {formatNextCare(next)}
         </div>
       </div>
 
+      {/* Main photo */}
       {plant.photoUrl && (
-        <img src={plant.photoUrl} alt="" className="mt-3 w-56 h-56 object-cover rounded-2xl" />
+        <img
+          src={plant.photoUrl}
+          alt={`${plant.name} photo`}
+          className="w-full h-60 object-cover rounded-2xl mb-4 transition-transform duration-500 hover:scale-[1.02]"
+        />
       )}
 
-      {/* 🌱 Care Guide */}
+      {/* Care Guide */}
       {canonicalGuide ? (
-        <div className="mt-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-500/20">
-          <h2 className="font-semibold text-lg mb-2">Care Guide</h2>
+        <div className="mt-5 rounded-2xl glass p-4 border border-emerald-400/20">
+          <h2 className="font-semibold text-lg mb-2 text-[var(--accent3)]">Care Guide</h2>
           <div className="space-y-1 text-sm">
             {['light', 'water', 'fertilizer'].map((field) => {
-              const raw =
-                canonicalGuide.guide?.[field as keyof typeof canonicalGuide.guide] ?? ''
+              const raw = canonicalGuide.guide?.[field as keyof typeof canonicalGuide.guide] ?? ''
               const clean = String(raw).replace(/\s*\([^)]*\)/g, '').trim()
               const label = field.charAt(0).toUpperCase() + field.slice(1)
               return (
                 <p key={field}>
-                  <strong>
-                    {field === 'light' && '☀️ '}
-                    {field === 'water' && '💧 '}
-                    {field === 'fertilizer' && '🌿 '}
-                    {field === 'notes' && '🪴 '}
-                    {label}:
-                  </strong>{' '}
-                  {clean || '—'}
+                  <span className="opacity-70">{label}:</span>{' '}
+                  <span className="font-medium">{clean || '—'}</span>
                 </p>
               )
             })}
@@ -216,7 +197,7 @@ export default function PlantDetails() {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline"
+                    className="underline decoration-[var(--accent2)]/40 hover:decoration-[var(--accent2)] hover:text-[var(--accent2)]"
                   >
                     {s.title}
                   </a>
@@ -227,12 +208,17 @@ export default function PlantDetails() {
           )}
         </div>
       ) : (
-        <div className="mt-6 text-sm opacity-70 italic">No matching care guide found.</div>
+        <div className="mt-6 text-sm opacity-70 italic">
+          No matching care guide found.
+        </div>
       )}
 
       {/* Actions */}
-      <div className="flex gap-3 mt-4 items-center">
-        <Link className="underline" to={`/plant/${plant.id}/edit`}>
+      <div className="flex gap-3 mt-5">
+        <Link
+          to={`/plant/${plant.id}/edit`}
+          className="text-sm underline hover:text-[var(--accent2)] transition"
+        >
           Edit
         </Link>
         <button
@@ -243,22 +229,31 @@ export default function PlantDetails() {
         </button>
       </div>
 
-      <hr className="my-6 border-white/10" />
+      <hr className="my-6 border-[var(--glass-border)]" />
 
       {/* Care Logs */}
       <div className="space-y-3">
-        <div className="font-semibold">Care Logs</div>
-        {logs.length === 0 && <div className="opacity-70 text-sm">No logs yet.</div>}
+        <div className="font-semibold text-lg">Care Logs</div>
+        {logs.length === 0 && (
+          <div className="opacity-70 text-sm">No logs yet.</div>
+        )}
         {logs.map((l) => (
-          <div key={l.id} className="text-sm flex items-center justify-between gap-3">
+          <div
+            key={l.id}
+            className="text-sm flex items-center justify-between gap-3 bg-[var(--surface-alt)]/50 rounded-xl p-2"
+          >
             <div className="flex items-center gap-3">
               {l.photoUrl && (
                 <button
                   onClick={() => openLightbox(l.photoUrl)}
-                  className="relative rounded-lg overflow-hidden ring-1 ring-black/10 dark:ring-white/10 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="relative rounded-lg overflow-hidden ring-1 ring-black/10 dark:ring-white/10 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[var(--accent2)]"
                   title="View photo"
                 >
-                  <img src={l.photoUrl} alt="" className="w-20 h-20 object-cover" />
+                  <img
+                    src={l.photoUrl}
+                    alt=""
+                    className="w-20 h-20 object-cover transition-transform duration-300 hover:scale-[1.03]"
+                  />
                 </button>
               )}
               <div>
@@ -266,23 +261,23 @@ export default function PlantDetails() {
                 {l.notes && <div className="opacity-80">{l.notes}</div>}
               </div>
             </div>
-            <div className="opacity-70">{fmt.format(new Date(l.createdAt))}</div>
+            <div className="opacity-70 text-xs">{fmt.format(new Date(l.createdAt))}</div>
           </div>
         ))}
       </div>
 
-      <hr className="my-6 border-white/10" />
+      <hr className="my-6 border-[var(--glass-border)]" />
 
       {/* Add Care Log */}
       <div className="space-y-2">
-        <div className="font-semibold">Add Care Log</div>
+        <div className="font-semibold text-lg">Add Care Log</div>
         {error && (
-          <div className="text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl p-2">
+          <div className="text-sm text-red-600 bg-red-50 dark:bg-red-900/30 border border-red-500/30 rounded-xl p-2">
             {error}
           </div>
         )}
         {notice && (
-          <div className="text-sm text-amber-700 bg-amber-50 dark:bg-amber-900/40 rounded-xl p-2">
+          <div className="text-sm text-amber-700 bg-amber-50 dark:bg-amber-900/30 border border-amber-400/30 rounded-xl p-2">
             {notice}
           </div>
         )}
@@ -324,15 +319,20 @@ export default function PlantDetails() {
               type="file"
               accept="image/*"
               onChange={(e) => setF(e.target.files?.[0] ?? null)}
+              className="text-sm mt-1"
             />
             {!HAS_STORAGE && (
               <div className="text-xs opacity-70 mt-1">
-                Storage not configured—photo will be skipped.
+                Storage not configured — photo will be skipped.
               </div>
             )}
           </div>
           <div className="sm:col-span-2">
-            <Button className="text-ink" disabled={saving} type="submit">
+            <Button
+              className="text-[var(--ink)] w-full"
+              disabled={saving}
+              type="submit"
+            >
               {saving ? 'Saving…' : 'Add log'}
             </Button>
           </div>

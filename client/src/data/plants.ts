@@ -1,7 +1,7 @@
 // client/src/data/plants.ts
 // Unified loader and local search across the 100-plant dataset.
 
-import raw from './plants_local.json'
+import raw from "./plants_local.json"
 
 export type Source = { title?: string; url?: string }
 export type Guide = {
@@ -16,36 +16,46 @@ export type PlantRecord = {
   species?: string
   guide: Guide
   sources?: Source[]
+  image?: string
 }
 
 function slug(input: string) {
-  return input.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
+  return input.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "")
 }
 
 function normalizeRow(row: any, idx: number): PlantRecord {
-  const name = String(row?.name || '').trim()
+  const name = String(row?.name || "").trim()
   const species = row?.species ? String(row.species).trim() : undefined
 
   const guide: Guide = {
     water: row?.guide?.water ?? row?.water ?? undefined,
     light: row?.guide?.light ?? row?.light ?? undefined,
     fertilizer: row?.guide?.fertilizer ?? row?.fertilizer ?? undefined,
-    notes: row?.guide?.notes ?? row?.notes ?? undefined
+    notes: row?.guide?.notes ?? row?.notes ?? undefined,
   }
 
   const sources: Source[] | undefined = Array.isArray(row?.sources)
     ? row.sources.map((s: any) => ({
         title: s?.title || undefined,
-        url: s?.url || undefined
+        url: s?.url || undefined,
       }))
     : undefined
+
+  // 🖼️ Preserve or infer image path
+  const image =
+    row?.image && typeof row.image === "string"
+      ? row.image.startsWith("/")
+        ? row.image
+        : `/plants_local_examples/${row.id ?? idx}/${row.image}`
+      : `/plants_local_examples/${row.id ?? idx}/placeholder.jpg`
 
   return {
     id: row?.id ? String(row.id) : slug(name || species || `plant-${idx}`),
     name: name || species || `Plant ${idx + 1}`,
     species,
     guide,
-    sources
+    sources,
+    image, // ✅ include image in the normalized record
   }
 }
 
@@ -62,10 +72,10 @@ export function findLocalGuide(
   if (!name && !species) return undefined
 
   const normalize = (s?: string) =>
-    (s || '')
+    (s || "")
       .toLowerCase()
-      .replace(/[‘’“”']/g, '')
-      .replace(/\s+/g, ' ')
+      .replace(/[‘’“”']/g, "")
+      .replace(/\s+/g, " ")
       .trim()
 
   const keys = [species, name].filter(Boolean).map(normalize)
@@ -74,17 +84,14 @@ export function findLocalGuide(
     const pname = normalize(p.name)
     const pspecies = normalize(p.species)
 
-    // --- 1. Exact match (name or species)
-    if (keys.some(k => pname === k || pspecies === k))
+    if (keys.some((k) => pname === k || pspecies === k))
       return { guide: p.guide, sources: p.sources, plant: p }
 
-    // --- 2. Partial match (cultivar or subspecies)
-    if (keys.some(k => pname.includes(k) || pspecies.includes(k)))
+    if (keys.some((k) => pname.includes(k) || pspecies.includes(k)))
       return { guide: p.guide, sources: p.sources, plant: p }
 
-    // --- 3. Genus fallback (first word)
-    const pgenus = pname.split(' ')[0]
-    if (keys.some(k => k.startsWith(pgenus)))
+    const pgenus = pname.split(" ")[0]
+    if (keys.some((k) => k.startsWith(pgenus)))
       return { guide: p.guide, sources: p.sources, plant: p }
   }
 
@@ -97,12 +104,15 @@ export function findLocalGuide(
 
 export function localSearch(query: string, limit = 30) {
   const q = query.trim().toLowerCase()
-  if (q.length < 2) return [] as Array<PlantRecord & { _localId: number; score: number }>
+  if (q.length < 2)
+    return [] as Array<PlantRecord & { _localId: number; score: number }>
   const scored: Array<PlantRecord & { _localId: number; score: number }> = []
   ALL_PLANTS.forEach((p, i) => {
-    const hay = `${p.name} ${p.species || ''}`.toLowerCase()
+    const hay = `${p.name} ${p.species || ""}`.toLowerCase()
     if (hay.includes(q)) {
-      const starts = p.name.toLowerCase().startsWith(q) || (p.species || '').toLowerCase().startsWith(q)
+      const starts =
+        p.name.toLowerCase().startsWith(q) ||
+        (p.species || "").toLowerCase().startsWith(q)
       const score = starts ? 2 : 1
       scored.push({ ...p, _localId: i, score })
     }
@@ -120,7 +130,7 @@ export function listAllSources(): Source[] {
   const out: Source[] = []
   for (const p of ALL_PLANTS) {
     for (const s of p.sources || []) {
-      const key = `${s.url || ''}|${s.title || ''}`
+      const key = `${s.url || ""}|${s.title || ""}`
       if (!seen.has(key)) {
         seen.add(key)
         out.push({ title: s.title, url: s.url })

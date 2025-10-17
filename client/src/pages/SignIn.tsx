@@ -40,7 +40,6 @@ export default function SignIn() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
-  // Mascot (always use the new file)
   const [imgErr, setImgErr] = useState(false)
   const mascotSrc = '/mascot_excited.svg'
 
@@ -73,7 +72,7 @@ export default function SignIn() {
     } catch (e: any) {
       setError(e?.message || String(e))
       if (e?.code === 'auth/invalid-auth-domain' || e?.code === 'auth/invalid-api-key') {
-        alert('Check Firebase env in client/.env.local (local) or Vercel Project Settings (prod), then restart.')
+        alert('⚠️ Firebase configuration issue. Check your .env or Vercel project settings.')
       }
     } finally {
       setLoading(false)
@@ -86,7 +85,7 @@ export default function SignIn() {
         type="button"
         onClick={onGoogle}
         disabled={loading}
-        className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-surface px-4 py-2 text-sm font-medium text-[#1f1f1f] dark:text-ink shadow-sm hover:bg-white/90 focus:outline-none"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-surface px-4 py-2 text-sm font-medium text-[#1f1f1f] dark:text-ink shadow-sm hover:bg-white/90 focus:outline-none transition-all duration-200"
       >
         <GoogleGIcon />
         <span>{loading ? 'Signing in…' : 'Sign in with Google'}</span>
@@ -95,31 +94,37 @@ export default function SignIn() {
   }
 
   return (
-    <div className="max-w-md mx-auto pt-16">
-      <Card>
-        <div className="flex items-center justify-between mb-3">
-          <h1 className="text-xl font-semibold">{mode === 'signin' ? 'Sign in' : 'Create your account'}</h1>
-          <span className="text-xs px-2 py-1 rounded-lg bg-cyan-500/15 text-cyan-500 border border-cyan-500/30">
+    <div className="max-w-md mx-auto pt-16 soft-fade">
+      <Card className="p-6 bg-[var(--glass-surface)] border border-[var(--glass-border)] shadow-[0_8px_28px_rgba(0,0,0,0.08)]">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-xl font-semibold gradient-text">
+            {mode === 'signin' ? 'Welcome back 🌿' : 'Create your account'}
+          </h1>
+          <span className="text-xs px-2 py-1 rounded-lg bg-[var(--tint-teal)]/30 text-[var(--accent2)] border border-[var(--accent2)]/30">
             Beta v{versionFromEnv} • {releaseDateFromEnv}
           </span>
         </div>
 
         {error && (
-          <div className="mb-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl p-2">
+          <div className="mb-3 text-sm text-red-600 bg-red-50 dark:bg-red-900/30 border border-red-500/30 rounded-xl p-2">
             {error}
           </div>
         )}
 
-        {/* Form */}
+        {/* Email Form */}
         <form
-          onSubmit={(e) => { e.preventDefault(); onEmailSubmit() }}
+          onSubmit={(e) => {
+            e.preventDefault()
+            onEmailSubmit()
+          }}
           className="space-y-3"
         >
           <Input
             placeholder="Email"
             type="email"
             value={email}
-            onChange={(e)=> setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             autoComplete="email"
             required
           />
@@ -127,16 +132,27 @@ export default function SignIn() {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e)=> setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
             required
           />
-          <Button className="text-ink w-full" type="submit" disabled={loading}>
-            {loading ? (mode === 'signin' ? 'Signing in…' : 'Creating…') : (mode === 'signin' ? 'Sign in' : 'Create account')}
+          <Button
+            className="text-[var(--ink)] w-full"
+            type="submit"
+            disabled={loading}
+          >
+            {loading
+              ? mode === 'signin'
+                ? 'Signing in…'
+                : 'Creating…'
+              : mode === 'signin'
+              ? 'Sign in'
+              : 'Create account'}
           </Button>
         </form>
 
-        <div className="text-center text-xs opacity-60 my-2">or</div>
+        <div className="text-center text-xs opacity-60 my-3">or</div>
+
         <GoogleButton />
 
         {/* Mode toggle */}
@@ -147,7 +163,7 @@ export default function SignIn() {
               <button
                 type="button"
                 onClick={() => setMode('signup')}
-                className="underline hover:opacity-80"
+                className="underline text-[var(--accent2)] hover:opacity-80 transition"
                 disabled={loading}
               >
                 Create an account
@@ -159,7 +175,7 @@ export default function SignIn() {
               <button
                 type="button"
                 onClick={() => setMode('signin')}
-                className="underline hover:opacity-80"
+                className="underline text-[var(--accent2)] hover:opacity-80 transition"
                 disabled={loading}
               >
                 Sign in
@@ -169,33 +185,28 @@ export default function SignIn() {
         </div>
 
         {/* Brand block */}
-        <div className="mt-6 rounded-2xl p-4 glass flex items-center gap-4">
+        <div className="mt-6 rounded-2xl p-4 glass flex items-center gap-4 border border-[var(--glass-border)] bg-[var(--surface-alt)]/50">
           <div className="relative inline-block w-20 h-20 shrink-0">
             {!imgErr ? (
               <img
                 key={mascotSrc}
                 src={mascotSrc}
                 alt="Dahon"
-                className="w-20 h-20 rounded-xl object-cover"
+                className="w-20 h-20 rounded-xl object-cover transition-transform duration-500 ease-out hover:scale-105"
                 onError={() => setImgErr(true)}
               />
             ) : (
-              <div
-                className="w-20 h-20 rounded-xl bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400"
-                title="fallback gradient"
-              />
+              <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400" />
             )}
           </div>
 
           <div>
             <div className="text-lg font-semibold tracking-tight">Dahon</div>
             <div className="text-sm opacity-80">
-              “Dahon” — Tagalog word for "leaf", and your friendly plant-care assistant.
+              “Dahon” — Tagalog for <em>leaf</em>, your calm, modern plant-care companion.
             </div>
           </div>
         </div>
-
-        {/* Feedback link intentionally NOT shown here (Dashboard only). */}
       </Card>
     </div>
   )

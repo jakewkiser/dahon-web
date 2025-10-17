@@ -1,20 +1,90 @@
-/* client/src/styles/tokens.css */
+/* ---------------------------------------------------------
+   Dahon Visual Design Tokens — v2
+   Inspired by Notion + Material Design + Brutalism
+   --------------------------------------------------------- */
+
 :root {
-  --surface: #f5f7fa;
-  --surface-alt: rgba(255,255,255,0.6);
-  --ink: #1e2329;
+  /* ✨ Core surfaces & ink */
+  --color-bg: #F9F9F8;
+  --color-surface: rgba(255, 255, 255, 0.6);
+  --color-surface-strong: #FFFFFF;
+  --color-ink: #222222;
+  --color-ink-muted: #444444;
+  --color-ink-subtle: #666666;
 
-  --accent: #00d4ff;   /* cyan */
-  --accent2: #9b5cff;  /* violet */
-  --accent3: #ff3cac;  /* magenta */
+  /* 🌿 Brand & accent colors */
+  --color-primary: #4A5C52; /* Sage green */
+  --color-primary-light: #6F8A7B;
+  --color-secondary: #1E1E1E; /* Charcoal */
+  --color-highlight: #D8F3DC; /* Mint glow accent */
+  --color-accent-glow: #6EE7B7; /* Soft neon highlight */
 
-  --ring: 0 0 0 2px var(--accent);
+  /* 🪟 Glassmorphism surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-blur: 16px;
+
+  /* 🌑 Shadows & depth */
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 8px 28px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 12px 48px rgba(0, 0, 0, 0.18);
+  --shadow-glow: 0 0 12px var(--color-accent-glow);
+
+  /* ✏️ Typography */
+  --font-display: 'Inter Tight', 'Satoshi', system-ui, sans-serif;
+  --font-body: 'Inter', 'Work Sans', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* 🧩 Radii & spacing */
+  --radius-lg: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-xs: 0.25rem;
+
+  /* ⚡ Focus & motion */
+  --focus-ring: 0 0 0 3px rgba(74, 92, 82, 0.35);
+  --transition-fast: 120ms ease-out;
+  --transition-medium: 200ms ease-out;
+  --transition-slow: 400ms ease-out;
+
+  /* 🌈 Thematic tints */
+  --tint-green: #E6F3EA;
+  --tint-cream: #F9F9F8;
+  --tint-charcoal: #1E1E1E;
+
+  /* 🪴 Layout bounds */
+  --max-content-width: 1200px;
 }
 
-/* Dark tokens apply when ThemeProvider sets class AND/OR data attribute */
+/* ---------------------------------------------------------
+   Dark Mode
+   --------------------------------------------------------- */
 :root[data-theme="dark"],
 html.dark {
-  --surface: #11161b;
-  --surface-alt: rgba(22,28,34,0.65);
-  --ink: #dfe6ee;
+  --color-bg: #101414;
+  --color-surface: rgba(28, 32, 30, 0.7);
+  --color-surface-strong: #161C18;
+  --color-ink: #E5EAE7;
+  --color-ink-muted: #C4CBC6;
+  --color-ink-subtle: #9CA5A0;
+
+  --color-primary: #6EE7B7; /* Mint highlight for dark mode */
+  --color-primary-light: #A7F3D0;
+  --color-secondary: #D8F3DC;
+  --color-highlight: rgba(110, 231, 183, 0.15);
+  --color-accent-glow: #84F9C1;
+
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 18px;
+
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-strong: 0 8px 28px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 14px var(--color-accent-glow);
+
+  --focus-ring: 0 0 0 3px rgba(110, 231, 183, 0.35);
 }

@@ -19,17 +19,18 @@ export default function AddPlant() {
   const { user } = useAuth()
   const [params] = useSearchParams()
 
-  // --- URL params ------------------------------------------------------------
+  // URL parameters
   const preId = useMemo(() => params.get('id'), [params])
   const preName = useMemo(() => params.get('name') ?? '', [params])
   const preSpecies = useMemo(() => params.get('species') ?? '', [params])
 
-  // --- Form state ------------------------------------------------------------
+  // Form state
   const [name, setName] = useState(preName)
   const [nickname, setNickname] = useState('')
   const [species, setSpecies] = useState(preSpecies)
   const [location, setLocation] = useState('')
   const [plantPhoto, setPlantPhoto] = useState<File | null>(null)
+  const [defaultImage, setDefaultImage] = useState<string | undefined>(undefined)
 
   const [logType, setLogType] = useState<'water' | 'sun' | 'fertilizer' | 'note'>('note')
   const [logNotes, setLogNotes] = useState('')
@@ -40,17 +41,18 @@ export default function AddPlant() {
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
 
-  // --- Prefill canonical data ------------------------------------------------
+  // Prefill data
   useEffect(() => {
-    if (preId) {
-      const canonical = findLocalGuide(preId)
-      if (canonical?.plant) {
-        setName(canonical.plant.name)
-        setSpecies(canonical.plant.species ?? '')
-      }
-    } else {
-      if (preName) setName(preName)
-      if (preSpecies) setSpecies(preSpecies)
+    let canonical
+
+    if (preId) canonical = findLocalGuide(preId)
+    else if (preName) canonical = findLocalGuide(preName)
+    else if (preSpecies) canonical = findLocalGuide(preSpecies)
+
+    if (canonical?.plant) {
+      setName((prev) => prev || canonical.plant.name)
+      setSpecies((prev) => prev || canonical.plant.species || '')
+      setDefaultImage(canonical.plant.image || undefined)
     }
   }, [preId, preName, preSpecies])
 
@@ -58,7 +60,7 @@ export default function AddPlant() {
     return logType !== 'note' || !!logNotes.trim() || !!logPhoto
   }
 
-  // --- Submit handler --------------------------------------------------------
+  // Submit
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
@@ -71,16 +73,15 @@ export default function AddPlant() {
     const warnings: string[] = []
 
     try {
-      // 🔍 Resolve canonical plant (by ID, name, or species)
       const canonical =
         findLocalGuide(preId ?? name.trim()) ?? findLocalGuide(species.trim())
 
-      // Coerce nulls to undefined for type safety
       const guideRefId = canonical?.plant?.id || undefined
       const guideRefName = canonical?.plant?.name || undefined
       const guideRefSpecies = canonical?.plant?.species || undefined
+      const guideImage = canonical?.plant?.image || undefined
 
-      // 🌱 Create Firestore plant record with canonical linkage
+      // Create plant record
       const created = await addPlant({
         userId: user.uid,
         name: name.trim(),
@@ -92,19 +93,26 @@ export default function AddPlant() {
         guideRefSpecies
       })
 
-      // 📷 Optional plant photo
+      let photoUrl: string | undefined
+      let photoSource: 'user' | 'default' | undefined
+
       if (plantPhoto) {
         try {
           const safe = `plants/${user.uid}/${created.id}/cover_${Date.now()}_${plantPhoto.name}`
-          const url = await uploadFileAndGetURL(plantPhoto, safe)
-          await updatePlant(created.id!, { photoUrl: url })
+          photoUrl = await uploadFileAndGetURL(plantPhoto, safe)
+          photoSource = 'user'
         } catch (err: any) {
           console.warn('Plant photo upload skipped:', err)
           warnings.push('Plant photo upload skipped (Storage not configured).')
         }
+      } else if (guideImage) {
+        photoUrl = guideImage
+        photoSource = 'default'
       }
 
-      // 🧾 Optional initial care log
+      if (photoUrl) await updatePlant(created.id!, { photoUrl, photoSource })
+
+      // Optional care log
       if (careFieldsUsed()) {
         const createdAt = new Date(`${logDate}T00:00:00`).getTime()
         let carePhotoUrl: string | undefined
@@ -113,7 +121,6 @@ export default function AddPlant() {
             const safe = `plants/${user.uid}/${created.id}/care/${Date.now()}_${logPhoto.name}`
             carePhotoUrl = await uploadFileAndGetURL(logPhoto, safe)
           } catch (err: any) {
-            console.warn('Care log photo upload skipped:', err)
             warnings.push('Care log photo upload skipped (Storage not configured).')
           }
         }
@@ -130,7 +137,6 @@ export default function AddPlant() {
       }
       if (warnings.length) setNotice(warnings.join(' '))
 
-      // ✅ Navigate to detail page
       nav(`/plant/${created.id}`)
     } catch (err: any) {
       console.error('Add plant failed:', err)
@@ -140,30 +146,32 @@ export default function AddPlant() {
     }
   }
 
-  // --- Render ---------------------------------------------------------------
+  // Render
   return (
-    <Card className="max-w-2xl mx-auto">
-      <h1 className="text-xl font-semibold mb-3">Add Plant</h1>
+    <Card className="max-w-2xl mx-auto soft-fade bg-[var(--glass-surface)] border border-[var(--glass-border)] shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
+      <h1 className="text-xl font-semibold mb-4 gradient-text tracking-tight">
+        Add a New Plant
+      </h1>
 
+      {/* Alerts */}
       {error && (
-        <div className="mb-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl p-2">
+        <div className="mb-3 text-sm text-red-600 bg-red-50 dark:bg-red-900/30 rounded-xl p-2 border border-red-500/30">
           {error}
         </div>
       )}
       {notice && (
-        <div className="mb-3 text-sm text-amber-700 bg-amber-50 dark:bg-amber-900/40 rounded-xl p-2">
+        <div className="mb-3 text-sm text-amber-700 bg-amber-50 dark:bg-amber-900/40 rounded-xl p-2 border border-amber-400/30">
           {notice}
         </div>
       )}
-
       {preId && (
-        <div className="mb-3 text-sm text-green-700 bg-green-50 dark:bg-green-900/40 rounded-xl p-2">
-          This plant is from the verified database and will automatically include its full care guide.
+        <div className="mb-3 text-sm text-emerald-700 bg-emerald-50 dark:bg-emerald-900/40 rounded-xl p-2 border border-emerald-400/30">
+          This plant is verified and will include its care guide automatically.
         </div>
       )}
 
       <form onSubmit={onSubmit} className="space-y-6">
-        <section className="grid sm:grid-cols-2 gap-3">
+        <section className="grid sm:grid-cols-2 gap-4">
           <div>
             <label className="text-sm opacity-70">Name *</label>
             <Input
@@ -200,13 +208,33 @@ export default function AddPlant() {
               onChange={(e) => setLocation(e.target.value)}
             />
           </div>
+
+          {/* Photo section */}
           <div className="sm:col-span-2">
             <label className="text-sm opacity-70">Photo (optional)</label>
             <input
               type="file"
               accept="image/*"
               onChange={(e) => setPlantPhoto(e.target.files?.[0] ?? null)}
+              className="text-sm mt-1"
             />
+            {preId && (
+              <p className="mt-1 text-xs text-gray-500 italic">
+                If you don’t choose an image, a default image from Dahon’s database will be used.
+              </p>
+            )}
+            {!plantPhoto && defaultImage && (
+              <div className="mt-3 flex items-center gap-3 text-xs text-emerald-600 bg-emerald-50/50 dark:bg-emerald-900/30 border border-emerald-500/20 rounded-lg p-2 transition-all duration-300">
+                <img
+                  src={defaultImage}
+                  alt="Default preview"
+                  className="w-14 h-14 rounded-md border border-emerald-400/30 object-cover"
+                />
+                <span>
+                  Using default image from <strong>Dahon’s</strong> plant library.
+                </span>
+              </div>
+            )}
           </div>
         </section>
 
@@ -252,13 +280,19 @@ export default function AddPlant() {
                 type="file"
                 accept="image/*"
                 onChange={(e) => setLogPhoto(e.target.files?.[0] ?? null)}
+                className="text-sm mt-1"
               />
             </div>
           </div>
         </section>
 
-        <Button type="submit" className="text-ink" disabled={saving}>
-          {saving ? 'Saving…' : 'Save'}
+        <Button
+          type="submit"
+          variant="primarySoft"
+          className="text-[var(--ink)] w-full mt-2"
+          disabled={saving}
+        >
+          {saving ? 'Saving…' : 'Save Plant'}
         </Button>
       </form>
     </Card>

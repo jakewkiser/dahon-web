@@ -26,7 +26,8 @@
         "title": "UNH Extension (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/1/snake_plant_dracaena_trifasciata.jpg"
   },
   {
     "id": "2",
@@ -51,7 +52,8 @@
         "title": "UNH Extension (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/2/zz_plant_zamioculcas_zamiifolia.jpg"
   },
   {
     "id": "3",
@@ -59,7 +61,7 @@
     "species": "Epipremnum aureum",
     "guide": {
       "water": "Water when top layer dries. (Home & Garden Information Center)",
-      "light": "Low\u2013bright, indirect. (Home & Garden Information Center)",
+      "light": "Low–bright, indirect. (Home & Garden Information Center)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Average. (Home & Garden Information Center)"
     },
@@ -80,7 +82,8 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/3/golden_pothos_epipremnum_aureum.jpg"
   },
   {
     "id": "4",
@@ -90,7 +93,7 @@
       "water": "Evenly moist, then allow partial dry-down. (Care discussed across 2025 edu pieces.) (Illinois Extension)",
       "light": "Bright, indirect; support as it climbs. (Integrated Pest Management)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Prefers moderate\u2013high. (Illinois Extension)"
+      "notes": "Prefers moderate–high. (Illinois Extension)"
     },
     "sources": [
       {
@@ -109,7 +112,8 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/4/monstera_monstera_deliciosa.jpg"
   },
   {
     "id": "5",
@@ -117,13 +121,13 @@
     "species": "Chlorophytum comosum",
     "guide": {
       "water": "Keep evenly moist; allow slight dry-down. (PlantTalk Colorado)",
-      "light": "Medium\u2013bright, indirect; avoid hot direct sun. (PlantTalk Colorado)",
+      "light": "Medium–bright, indirect; avoid hot direct sun. (PlantTalk Colorado)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Average; tolerates typical indoor RH. (PlantTalk Colorado)"
     },
     "sources": [
       {
-        "title": "Colorado State Univ. PlantTalk (\u00a92025)",
+        "title": "Colorado State Univ. PlantTalk (©2025)",
         "url": "https://planttalk.colostate.edu/topics/houseplants/1328-spider-plant/"
       },
       {
@@ -138,11 +142,12 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/5/spider_plant_chlorophytum_comosum.jpg"
   },
   {
     "id": "6",
-    "name": "Philodendron (\u2018Birkin\u2019 & relatives)",
+    "name": "Philodendron (‘Birkin’ & relatives)",
     "species": "Philodendron spp.",
     "guide": {
       "water": "Water when top soil is dry; avoid waterlogging. (MSU Extension)",
@@ -163,7 +168,8 @@
         "title": "UNH Extension (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/6/philodendron_birkin_and_relatives_philodendron_spp.jpg"
   },
   {
     "id": "7",
@@ -188,7 +194,8 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/7/dragon_tree_dracaena_marginata.jpg"
   },
   {
     "id": "8",
@@ -213,7 +220,8 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/8/areca_palm_dypsis_lutescens.jpg"
   },
   {
     "id": "9",
@@ -227,7 +235,7 @@
     },
     "sources": [
       {
-        "title": "UW\u2013Madison Extension (2025)",
+        "title": "UW–Madison Extension (2025)",
         "url": "https://hort.extension.wisc.edu/2025/01/06/keys-to-healthy-houseplants/"
       },
       {
@@ -238,7 +246,8 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/9/rubber_plant_ficus_elastica.jpg"
   },
   {
     "id": "10",
@@ -263,7 +272,8 @@
         "title": "UNH (2025)",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/10/parlor_palm_chamaedorea_elegans.jpg"
   },
   {
     "id": "11",
@@ -277,10 +287,11 @@
     },
     "sources": [
       {
-        "title": "University of Missouri IPM \u2014 \u201c2025: Year of the Monstera\u201d (Jan 10, 2025)",
+        "title": "University of Missouri IPM — “2025: Year of the Monstera” (Jan 10, 2025)",
         "url": "https://ipm.missouri.edu/meg/index.cfm?ID=813"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/11/swiss_cheese_plant_monstera_monstera_deliciosa.jpg"
   },
   {
     "id": "12",
@@ -294,10 +305,11 @@
     },
     "sources": [
       {
-        "title": "Mississippi State Extension \u2014 \u201cPhilodendron varieties add inspiration to indoor space\u201d (Feb 3, 2025)",
+        "title": "Mississippi State Extension — “Philodendron varieties add inspiration to indoor space” (Feb 3, 2025)",
         "url": "https://extension.msstate.edu/news/southern-gardening/2025/philodendron-varieties-add-inspiration-indoor-space"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/12/heartleaf_philodendron_philodendron_hederaceum.jpg"
   },
   {
     "id": "13",
@@ -311,27 +323,29 @@
     },
     "sources": [
       {
-        "title": "UW\u2013Madison Extension \u2014 \u201cKeys to Healthy Houseplants\u201d (Jan 6, 2025)",
+        "title": "UW–Madison Extension — “Keys to Healthy Houseplants” (Jan 6, 2025)",
         "url": "https://hort.extension.wisc.edu/2025/01/06/keys-to-healthy-houseplants/"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/13/weeping_fig_ficus_benjamina.jpg"
   },
   {
     "id": "14",
     "name": "Chinese Evergreen",
     "species": "Aglaonema commutatum (and cvs.)",
     "guide": {
-      "water": "Keep soil moist; let top 1\u20132\u2033 dry before watering",
+      "water": "Keep soil moist; let top 1–2″ dry before watering",
       "light": "Low to moderate, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Tolerates low; prefers moderate humidity"
     },
     "sources": [
       {
-        "title": "Clemson HGIC \u2014 \u201cChinese Evergreen (Aglaonema) Care, Cultivation & Growing Guide\u201d (Revised Oct 3, 2025)",
+        "title": "Clemson HGIC — “Chinese Evergreen (Aglaonema) Care, Cultivation & Growing Guide” (Revised Oct 3, 2025)",
         "url": "https://hgic.clemson.edu/factsheet/chinese-evergreen-aglaonema-care-cultivation-growing-guide/"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/14/chinese_evergreen_aglaonema_commutatum_and_cvs.jpg"
   },
   {
     "id": "15",
@@ -345,10 +359,11 @@
     },
     "sources": [
       {
-        "title": "Clemson HGIC \u2014 \u201cIndoor Plants \u2013 Waxflowers (Hoya)\u201d (Feb 17, 2025)",
+        "title": "Clemson HGIC — “Indoor Plants – Waxflowers (Hoya)” (Feb 17, 2025)",
         "url": "https://hgic.clemson.edu/factsheet/indoor-plants-waxflowers-hoya/"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/15/hoya_wax_plant_hoya_carnosa_representative.jpg"
   },
   {
     "id": "16",
@@ -362,10 +377,11 @@
     },
     "sources": [
       {
-        "title": "UF/IFAS Extension Santa Rosa \u2013 \u201cFiddleleaf Fig (Ficus lyrata)\u201d (Oct 2024)",
+        "title": "UF/IFAS Extension Santa Rosa – “Fiddleleaf Fig (Ficus lyrata)” (Oct 2024)",
         "url": "(sfyl.ifas.ufl.edu)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/16/fiddle_leaf_fig_ficus_lyrata.jpg"
   },
   {
     "id": "17",
@@ -379,10 +395,11 @@
     },
     "sources": [
       {
-        "title": "South Dakota State Univ. Extension \u2013 \u201cAloe Vera: Houseplant How-To\u201d (Apr 25, 2024)",
+        "title": "South Dakota State Univ. Extension – “Aloe Vera: Houseplant How-To” (Apr 25, 2024)",
         "url": "(SDSU Extension)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/17/aloe_vera_aloe_barbadensis_syn_aloe_vera.jpg"
   },
   {
     "id": "18",
@@ -396,10 +413,11 @@
     },
     "sources": [
       {
-        "title": "South Dakota State Univ. Extension \u2013 \u201cJade Plant: Houseplant How-To\u201d (Jan 29, 2024)",
+        "title": "South Dakota State Univ. Extension – “Jade Plant: Houseplant How-To” (Jan 29, 2024)",
         "url": "(SDSU Extension)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/18/jade_plant_crassula_ovata.jpg"
   },
   {
     "id": "19",
@@ -413,10 +431,11 @@
     },
     "sources": [
       {
-        "title": "Washington State Univ. Extension \u2013 \u201cHouseplants (Tip Sheet 15)\u201d (Jan 2024)",
+        "title": "Washington State Univ. Extension – “Houseplants (Tip Sheet 15)” (Jan 2024)",
         "url": "(Washington State University)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/19/boston_fern_nephrolepis_exaltata.jpg"
   },
   {
     "id": "20",
@@ -430,10 +449,11 @@
     },
     "sources": [
       {
-        "title": "Washington State Univ. Extension \u2013 \u201cHouseplants (Tip Sheet 15)\u201d (Jan 2024)",
+        "title": "Washington State Univ. Extension – “Houseplants (Tip Sheet 15)” (Jan 2024)",
         "url": "(Washington State University)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/20/dieffenbachia_dumb_cane_dieffenbachia_spp.jpg"
   },
   {
     "id": "21",
@@ -447,10 +467,11 @@
     },
     "sources": [
       {
-        "title": "UF/IFAS Gardening Solutions \u2013 \u201cPlant of the Month: Bird of Paradise\u201d (July 2023)",
+        "title": "UF/IFAS Gardening Solutions – “Plant of the Month: Bird of Paradise” (July 2023)",
         "url": "(Gardening Solutions)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/21/bird_of_paradise_strelitzia_reginae.jpg"
   },
   {
     "id": "22",
@@ -464,10 +485,11 @@
     },
     "sources": [
       {
-        "title": "UF/IFAS Extension Duval County \u2013 \u201cGardening Q&A: Does joining the houseplant craze tempt you?\u201d (Jul 3, 2023)",
+        "title": "UF/IFAS Extension Duval County – “Gardening Q&A: Does joining the houseplant craze tempt you?” (Jul 3, 2023)",
         "url": "(What's Happening Around Florida)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/22/ponytail_palm_beaucarnea_recurvata.jpg"
   },
   {
     "id": "23",
@@ -481,10 +503,11 @@
     },
     "sources": [
       {
-        "title": "UF/IFAS Extension Osceola County \u2013 \u201cGreat Plants for the Office\u201d (May 23, 2023)",
+        "title": "UF/IFAS Extension Osceola County – “Great Plants for the Office” (May 23, 2023)",
         "url": "(What's Happening Around Florida)"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/23/english_ivy_hedera_helix.jpg"
   },
   {
     "id": "24",
@@ -505,7 +528,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/24/boston_fern_nephrolepis_exaltata.jpg"
   },
   {
     "id": "25",
@@ -515,7 +539,7 @@
       "water": "Infrequent; let mix dry well (caudex stores water). (NC Extension Gardener Toolbox)",
       "light": "Bright light; sunny window ideal. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Low\u2013average."
+      "notes": "Low–average."
     },
     "sources": [
       {
@@ -526,7 +550,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/25/ponytail_palm_beaucarnea_recurvata.jpg"
   },
   {
     "id": "26",
@@ -547,7 +572,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/26/dracaena_marginata_dragon_tree_dracaena_reflexa_var_angustifolia.jpg"
   },
   {
     "id": "27",
@@ -568,7 +594,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/27/lucky_bamboo_dracaena_sanderiana.jpg"
   },
   {
     "id": "28",
@@ -589,7 +616,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/28/jade_plant_crassula_ovata.jpg"
   },
   {
     "id": "29",
@@ -610,7 +638,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/29/schefflera_umbrella_plant_schefflera_arboricola_syn_heptapleurum_arboricola.jpg"
   },
   {
     "id": "30",
@@ -631,7 +660,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/30/norfolk_island_pine_araucaria_heterophylla.jpg"
   },
   {
     "id": "31",
@@ -652,7 +682,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/31/cast_iron_plant_aspidistra_elatior.jpg"
   },
   {
     "id": "32",
@@ -673,7 +704,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/32/peperomia_baby_rubber_plant_peperomia_obtusifolia.jpg"
   },
   {
     "id": "33",
@@ -694,7 +726,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/33/croton_codiaeum_variegatum.jpg"
   },
   {
     "id": "34",
@@ -702,7 +735,7 @@
     "species": "Phalaenopsis (hybrids)",
     "guide": {
       "water": "Keep medium damp but not soggy; bark-based mix. (NC Extension Gardener Toolbox)",
-      "light": "Low\u2013medium light; east window ideal; warm temps; high humidity. (NC Extension Gardener Toolbox)",
+      "light": "Low–medium light; east window ideal; warm temps; high humidity. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "High humidity preferred. (NC Extension Gardener Toolbox)"
     },
@@ -715,7 +748,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/34/moth_orchid_phalaenopsis_hybrids.jpg"
   },
   {
     "id": "35",
@@ -736,17 +770,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/35/kalanchoe_kalanchoe_blossfeldiana.jpg"
   },
   {
     "id": "36",
     "name": "Begonia Rex",
     "species": "Begonia (Rex types)",
     "guide": {
-      "water": "Even moisture; don\u2019t waterlog; prefers airy mix.",
+      "water": "Even moisture; don’t waterlog; prefers airy mix.",
       "light": "Bright, indirect; avoid low humidity. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "High (\u226575% recommended). (NC Extension Gardener Toolbox)"
+      "notes": "High (≥75% recommended). (NC Extension Gardener Toolbox)"
     },
     "sources": [
       {
@@ -757,7 +792,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/36/begonia_rex_begonia_rex_types.jpg"
   },
   {
     "id": "37",
@@ -778,7 +814,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/37/oxalis_purple_shamrock_oxalis_triangularis.jpg"
   },
   {
     "id": "38",
@@ -799,7 +836,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/38/pilea_chinese_money_plant_pilea_peperomioides.jpg"
   },
   {
     "id": "39",
@@ -820,11 +858,12 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/39/money_tree_pachira_aquatica.jpg"
   },
   {
     "id": "40",
-    "name": "Burro\u2019s Tail",
+    "name": "Burro’s Tail",
     "species": "Sedum morganianum",
     "guide": {
       "water": "Infrequent; let mix dry (succulent).",
@@ -841,7 +880,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/40/burros_tail_sedum_morganianum.jpg"
   },
   {
     "id": "41",
@@ -862,7 +902,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/41/string_of_pearls_curio_rowleyanus_syn_senecio_rowleyanus.jpg"
   },
   {
     "id": "42",
@@ -872,7 +913,7 @@
       "water": "Allow to dry between waterings.",
       "light": "Bright, indirect; some morning sun.",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Low\u2013average."
+      "notes": "Low–average."
     },
     "sources": [
       {
@@ -883,7 +924,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/42/string_of_hearts_ceropegia_woodii.jpg"
   },
   {
     "id": "43",
@@ -904,7 +946,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/43/haworthia_zebra_types_haworthiopsis_spp_eg_h_fasciata_h_attenuata.jpg"
   },
   {
     "id": "44",
@@ -925,17 +968,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/44/echeveria_echeveria_elegans_rep.jpg"
   },
   {
     "id": "45",
     "name": "Sansevieria Moonshine",
-    "species": "Dracaena trifasciata \u2018Moonshine\u2019",
+    "species": "Dracaena trifasciata ‘Moonshine’",
     "guide": {
       "water": "Sparse; allow soil to dry",
       "light": "Low to bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Low\u2013avg"
+      "notes": "Low–avg"
     },
     "sources": [
       {
@@ -946,17 +990,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/45/sansevieria_moonshine_dracaena_trifasciata_moonshine.jpg"
   },
   {
     "id": "46",
     "name": "Philodendron Birkin",
-    "species": "Philodendron \u2018Birkin\u2019",
+    "species": "Philodendron ‘Birkin’",
     "guide": {
       "water": "Water when top inch dries; well-drained mix",
       "light": "Bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Moderate\u2013high"
+      "notes": "Moderate–high"
     },
     "sources": [
       {
@@ -967,17 +1012,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/46/philodendron_birkin_philodendron_birkin.jpg"
   },
   {
     "id": "47",
     "name": "Philodendron Brasil",
-    "species": "Philodendron hederaceum \u2018Brasil\u2019",
+    "species": "Philodendron hederaceum ‘Brasil’",
     "guide": {
       "water": "Let top dry between waterings",
-      "light": "Medium\u2013bright, indirect; tolerates low",
+      "light": "Medium–bright, indirect; tolerates low",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Avg\u2013high"
+      "notes": "Avg–high"
     },
     "sources": [
       {
@@ -988,15 +1034,16 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/47/philodendron_brasil_philodendron_hederaceum_brasil.jpg"
   },
   {
     "id": "48",
-    "name": "Aglaonema \u2018Silver Bay\u2019",
-    "species": "Aglaonema \u2018Silver Bay\u2019",
+    "name": "Aglaonema ‘Silver Bay’",
+    "species": "Aglaonema ‘Silver Bay’",
     "guide": {
-      "water": "Water when top 1\u20132\u2033 are dry",
-      "light": "Low\u2013moderate, indirect",
+      "water": "Water when top 1–2″ are dry",
+      "light": "Low–moderate, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Avg"
     },
@@ -1009,15 +1056,16 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/48/aglaonema_silver_bay_aglaonema_silver_bay.jpg"
   },
   {
     "id": "49",
     "name": "Neon Pothos",
-    "species": "Epipremnum aureum \u2018Neon\u2019",
+    "species": "Epipremnum aureum ‘Neon’",
     "guide": {
-      "water": "Water when top ~1\u2033 dries",
-      "light": "Low\u2013bright, indirect",
+      "water": "Water when top ~1″ dries",
+      "light": "Low–bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Avg"
     },
@@ -1030,7 +1078,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/49/neon_pothos_epipremnum_aureum_neon.jpg"
   },
   {
     "id": "50",
@@ -1051,7 +1100,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/50/scindapsus_satin_pothos_scindapsus_pictus.jpg"
   },
   {
     "id": "51",
@@ -1072,17 +1122,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/51/tradescantia_zebrina_tradescantia_zebrina.jpg"
   },
   {
     "id": "52",
-    "name": "ZZ \u2018Raven\u2019",
-    "species": "Zamioculcas zamiifolia Raven\u2122 \u2018Dowon\u2019",
+    "name": "ZZ ‘Raven’",
+    "species": "Zamioculcas zamiifolia Raven™ ‘Dowon’",
     "guide": {
       "water": "Infrequent; allow soil to dry",
-      "light": "Low\u2013bright, indirect",
+      "light": "Low–bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Low\u2013avg"
+      "notes": "Low–avg"
     },
     "sources": [
       {
@@ -1093,12 +1144,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/52/zz_raven_zamioculcas_zamiifolia_raventm_dowon.jpg"
   },
   {
     "id": "53",
     "name": "Alocasia Polly",
-    "species": "Alocasia \u00d7 amazonica \u2018Polly\u2019",
+    "species": "Alocasia × amazonica ‘Polly’",
     "guide": {
       "water": "Keep evenly moist; avoid waterlogging",
       "light": "Bright, indirect",
@@ -1114,7 +1166,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/53/alocasia_polly_alocasia_amazonica_polly.jpg"
   },
   {
     "id": "54",
@@ -1135,14 +1188,15 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/54/calathea_orbifolia_goeppertia_orbifolia_syn_calathea.jpg"
   },
   {
     "id": "55",
     "name": "Calathea Lancifolia (Rattlesnake)",
     "species": "Goeppertia insignis",
     "guide": {
-      "water": "Even moisture; don\u2019t let fully dry",
+      "water": "Even moisture; don’t let fully dry",
       "light": "Bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "High"
@@ -1156,7 +1210,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/55/calathea_lancifolia_rattlesnake_goeppertia_insignis.jpg"
   },
   {
     "id": "56",
@@ -1177,17 +1232,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/56/calathea_makoyana_peacock_goeppertia_makoyana.jpg"
   },
   {
     "id": "57",
-    "name": "Philodendron \u2018Xanadu\u2019",
+    "name": "Philodendron ‘Xanadu’",
     "species": "Thaumatophyllum xanadu (syn. Philodendron)",
     "guide": {
       "water": "Water when top dries; avoid soggy mix",
       "light": "Bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Avg\u2013high"
+      "notes": "Avg–high"
     },
     "sources": [
       {
@@ -1198,15 +1254,16 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/57/philodendron_xanadu_thaumatophyllum_xanadu_syn_philodendron.jpg"
   },
   {
     "id": "58",
-    "name": "Bird\u2019s Nest Fern",
+    "name": "Bird’s Nest Fern",
     "species": "Asplenium nidus",
     "guide": {
       "water": "Keep evenly moist; hates drying out",
-      "light": "Low\u2013medium, indirect; no hot sun",
+      "light": "Low–medium, indirect; no hot sun",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "High"
     },
@@ -1219,7 +1276,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/58/birds_nest_fern_asplenium_nidus.jpg"
   },
   {
     "id": "59",
@@ -1240,7 +1298,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/59/maidenhair_fern_adiantum_raddianum.jpg"
   },
   {
     "id": "60",
@@ -1250,7 +1309,7 @@
       "water": "Water when top layer dries; well-drained",
       "light": "Bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Avg\u2013high"
+      "notes": "Avg–high"
     },
     "sources": [
       {
@@ -1261,14 +1320,15 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/60/swiss_cheese_vine_monstera_adansonii.jpg"
   },
   {
     "id": "61",
     "name": "Rhaphidophora tetrasperma",
     "species": "Rhaphidophora tetrasperma",
     "guide": {
-      "water": "Water when top ~1\u2033 dries; moist but not soggy",
+      "water": "Water when top ~1″ dries; moist but not soggy",
       "light": "Bright, indirect; a bit of morning sun ok",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "High"
@@ -1282,12 +1342,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/61/rhaphidophora_tetrasperma_rhaphidophora_tetrasperma.jpg"
   },
   {
     "id": "62",
     "name": "Stromanthe Triostar",
-    "species": "Stromanthe sanguinea \u2018Triostar\u2019",
+    "species": "Stromanthe sanguinea ‘Triostar’",
     "guide": {
       "water": "Even moisture; never bone-dry",
       "light": "Bright, indirect",
@@ -1303,15 +1364,16 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/62/stromanthe_triostar_stromanthe_sanguinea_triostar.jpg"
   },
   {
     "id": "63",
-    "name": "Dieffenbachia \u2018Camille\u2019",
-    "species": "Dieffenbachia \u2018Camille\u2019 (rep. of D. seguine cvs.)",
+    "name": "Dieffenbachia ‘Camille’",
+    "species": "Dieffenbachia ‘Camille’ (rep. of D. seguine cvs.)",
     "guide": {
       "water": "Keep evenly moist; allow slight dry-down",
-      "light": "Low\u2013medium, indirect",
+      "light": "Low–medium, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Moderate"
     },
@@ -1324,15 +1386,16 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/63/dieffenbachia_camille_dieffenbachia_camille_rep_of_d_seguine_cvs.jpg"
   },
   {
     "id": "64",
-    "name": "Aglaonema \u2018Red Siam\u2019",
-    "species": "Aglaonema \u2018Red Siam\u2019 (Chinese evergreen cv.)",
+    "name": "Aglaonema ‘Red Siam’",
+    "species": "Aglaonema ‘Red Siam’ (Chinese evergreen cv.)",
     "guide": {
-      "water": "Water when top 1\u20132\u2033 are dry; avoid soggy soil",
-      "light": "Low\u2013moderate, indirect",
+      "water": "Water when top 1–2″ are dry; avoid soggy soil",
+      "light": "Low–moderate, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Average"
     },
@@ -1345,7 +1408,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/64/aglaonema_red_siam_aglaonema_red_siam_chinese_evergreen_cv.jpg"
   },
   {
     "id": "65",
@@ -1366,7 +1430,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/65/yucca_cane_yucca_gigantea_syn_y_elephantipes.jpg"
   },
   {
     "id": "66",
@@ -1376,7 +1441,7 @@
       "water": "Water when topsoil dries; avoid overwatering",
       "light": "Bright, indirect; some direct ok",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Average\u2013high"
+      "notes": "Average–high"
     },
     "sources": [
       {
@@ -1387,7 +1452,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/66/ficus_audrey_ficus_benghalensis.jpg"
   },
   {
     "id": "67",
@@ -1401,19 +1467,20 @@
     },
     "sources": [
       {
-        "title": "UW\u2013Madison Extension",
+        "title": "UW–Madison Extension",
         "url": "https://hort.extension.wisc.edu/articles/ficus-ornamental-figs/"
       },
       {
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/67/ficus_alii_ficus_maclellandii_syn_f_binnendijkii.jpg"
   },
   {
     "id": "68",
-    "name": "Schefflera \u2018Amate\u2019",
-    "species": "Schefflera arboricola \u2018Amate\u2019",
+    "name": "Schefflera ‘Amate’",
+    "species": "Schefflera arboricola ‘Amate’",
     "guide": {
       "water": "Water when surface dries",
       "light": "Bright, indirect; tolerates medium",
@@ -1429,7 +1496,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/68/schefflera_amate_schefflera_arboricola_amate.jpg"
   },
   {
     "id": "69",
@@ -1450,7 +1518,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/69/nerve_plant_fittonia_fittonia_albivenis.jpg"
   },
   {
     "id": "70",
@@ -1471,7 +1540,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/70/polka_dot_plant_hypoestes_phyllostachya.jpg"
   },
   {
     "id": "71",
@@ -1492,7 +1562,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/71/zebra_haworthia_haworthiopsis_attenuata_syn_haworthia.jpg"
   },
   {
     "id": "72",
@@ -1513,12 +1584,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/72/cactus_golden_barrel_echinocactus_grusonii.jpg"
   },
   {
     "id": "73",
     "name": "Christmas Cactus",
-    "species": "Schlumbergera \u00d7 buckleyi (holiday cactus grp.)",
+    "species": "Schlumbergera × buckleyi (holiday cactus grp.)",
     "guide": {
       "water": "Keep evenly moist during bloom; reduce after",
       "light": "Bright, indirect; short days for bloom",
@@ -1534,7 +1606,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/73/christmas_cactus_schlumbergera_buckleyi_holiday_cactus_grp.jpg"
   },
   {
     "id": "74",
@@ -1555,7 +1628,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/74/thanksgiving_cactus_schlumbergera_truncata.jpg"
   },
   {
     "id": "75",
@@ -1576,7 +1650,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/75/euphorbia_trigona_african_milk_tree_euphorbia_trigona.jpg"
   },
   {
     "id": "76",
@@ -1597,7 +1672,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/76/peruvian_apple_cactus_cereus_repandus_syn_c_peruvianus.jpg"
   },
   {
     "id": "77",
@@ -1618,7 +1694,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/77/prickly_pear_opuntia_spp.jpg"
   },
   {
     "id": "78",
@@ -1639,12 +1716,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/78/jelly_bean_plant_sedum_rubrotinctum.jpg"
   },
   {
     "id": "79",
-    "name": "Gasteria \u2018Little Warty\u2019",
-    "species": "Gasteria \u2018Little Warty\u2019 (cv.)",
+    "name": "Gasteria ‘Little Warty’",
+    "species": "Gasteria ‘Little Warty’ (cv.)",
     "guide": {
       "water": "Sparse; allow mix to dry",
       "light": "Bright, indirect",
@@ -1660,7 +1738,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/79/gasteria_little_warty_gasteria_little_warty_cv.jpg"
   },
   {
     "id": "80",
@@ -1681,17 +1760,18 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/80/aeonium_arboreum_aeonium_arboreum.jpg"
   },
   {
     "id": "81",
     "name": "Tillandsia (Air Plant)",
     "species": "Tillandsia spp.",
     "guide": {
-      "water": "Mist/soak 1\u20132\u00d7 weekly; dry thoroughly",
+      "water": "Mist/soak 1–2× weekly; dry thoroughly",
       "light": "Bright, indirect; good air circulation",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Moderate\u2013high"
+      "notes": "Moderate–high"
     },
     "sources": [
       {
@@ -1702,7 +1782,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/81/tillandsia_air_plant_tillandsia_spp.jpg"
   },
   {
     "id": "82",
@@ -1712,7 +1793,7 @@
       "water": "Keep central cup filled; water potting mix lightly",
       "light": "Bright, indirect; avoid harsh sun",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Moderate\u2013high"
+      "notes": "Moderate–high"
     },
     "sources": [
       {
@@ -1723,7 +1804,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/82/bromeliad_guzmania_guzmania_lingulata.jpg"
   },
   {
     "id": "83",
@@ -1733,7 +1815,7 @@
       "water": "Keep central cup filled; light, even moisture in mix",
       "light": "Bright, indirect",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Moderate\u2013high"
+      "notes": "Moderate–high"
     },
     "sources": [
       {
@@ -1744,12 +1826,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/83/bromeliad_aechmea_aechmea_fasciata.jpg"
   },
   {
     "id": "84",
     "name": "Banana Plant (Dwarf Cavendish)",
-    "species": "Musa acuminata (cv. \u2018Dwarf Cavendish\u2019)",
+    "species": "Musa acuminata (cv. ‘Dwarf Cavendish’)",
     "guide": {
       "water": "Keep evenly moist; well-drained mix. (NC Extension Gardener Toolbox)",
       "light": "Bright light; some direct sun. (NC Extension Gardener Toolbox)",
@@ -1765,12 +1848,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/84/banana_plant_dwarf_cavendish_musa_acuminata_cv_dwarf_cavendish.jpg"
   },
   {
     "id": "85",
     "name": "Citrus (Meyer Lemon)",
-    "species": "Citrus \u00d7 limon \u2018Meyer\u2019",
+    "species": "Citrus × limon ‘Meyer’",
     "guide": {
       "water": "Water when top inch dries; avoid waterlogging. (NC Extension Gardener Toolbox)",
       "light": "Bright light; full sun indoors best. (NC Extension Gardener Toolbox)",
@@ -1786,7 +1870,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/85/citrus_meyer_lemon_citrus_limon_meyer.jpg"
   },
   {
     "id": "86",
@@ -1796,7 +1881,7 @@
       "water": "Infrequent; allow surface to dry; excellent drainage. (NC Extension Gardener Toolbox)",
       "light": "Full sun/very bright light. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Low\u2013average."
+      "notes": "Low–average."
     },
     "sources": [
       {
@@ -1807,7 +1892,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/86/olive_tree_indoor_olea_europaea.jpg"
   },
   {
     "id": "87",
@@ -1828,7 +1914,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/87/lavender_indoor_lavandula_angustifolia.jpg"
   },
   {
     "id": "88",
@@ -1838,7 +1925,7 @@
       "water": "Allow to dry slightly; avoid constant wet. (NC Extension Gardener Toolbox)",
       "light": "Full sun/very bright light. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Low\u2013average."
+      "notes": "Low–average."
     },
     "sources": [
       {
@@ -1849,7 +1936,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/88/rosemary_indoor_salvia_rosmarinus.jpg"
   },
   {
     "id": "89",
@@ -1870,7 +1958,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/89/bay_laurel_indoor_laurus_nobilis.jpg"
   },
   {
     "id": "90",
@@ -1891,7 +1980,8 @@
         "title": "Extension Gardener Handbook",
         "url": "https://content.ces.ncsu.edu/extension-gardener-handbook/18-plants-grown-in-containers"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/90/coffee_plant_coffea_arabica.jpg"
   },
   {
     "id": "91",
@@ -1912,7 +2002,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/91/tea_plant_camellia_sinensis.jpg"
   },
   {
     "id": "92",
@@ -1933,7 +2024,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/92/jasmine_indoor_jasminum_spp_eg_j_sambac.jpg"
   },
   {
     "id": "93",
@@ -1954,7 +2046,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/93/gardenia_indoor_gardenia_jasminoides.jpg"
   },
   {
     "id": "94",
@@ -1975,7 +2068,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/94/camellia_japonica_indoor_camellia_japonica.jpg"
   },
   {
     "id": "95",
@@ -1996,7 +2090,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/95/paperwhite_narcissus_narcissus_tazetta_paperwhite_group.jpg"
   },
   {
     "id": "96",
@@ -2017,7 +2112,8 @@
         "title": "N.C. Cooperative Extension",
         "url": "https://pender.ces.ncsu.edu/2021/12/amaryllis-a-gift-that-keeps-on-giving/"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/96/amaryllis_hippeastrum_hybrids.jpg"
   },
   {
     "id": "97",
@@ -2038,7 +2134,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/97/orchid_oncidium_oncidium_spp.jpg"
   },
   {
     "id": "98",
@@ -2059,7 +2156,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/98/orchid_dendrobium_dendrobium_spp.jpg"
   },
   {
     "id": "99",
@@ -2080,12 +2178,13 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/99/anthurium_clarinervium_anthurium_clarinervium_in_anthurium_genus.jpg"
   },
   {
     "id": "100",
-    "name": "Alocasia \u2018Frydek\u2019",
-    "species": "Alocasia micholitziana \u2018Frydek\u2019 (represented by Alocasia genus)",
+    "name": "Alocasia ‘Frydek’",
+    "species": "Alocasia micholitziana ‘Frydek’ (represented by Alocasia genus)",
     "guide": {
       "water": "Keep evenly moist; do not let fully dry. (NC Extension Gardener Toolbox)",
       "light": "Bright, indirect; warm; avoid drafts. (NC Extension Gardener Toolbox)",
@@ -2097,15 +2196,16 @@
         "title": "NC State Extension",
         "url": "https://plants.ces.ncsu.edu/plants/alocasia/"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/100/alocasia_frydek_alocasia_micholitziana_frydek_represented_by_alocasia_genus.jpg"
   },
   {
     "id": "101",
-    "name": "Pothos \u2018Marble Queen\u2019",
-    "species": "Epipremnum aureum \u2018Marble Queen\u2019",
+    "name": "Pothos ‘Marble Queen’",
+    "species": "Epipremnum aureum ‘Marble Queen’",
     "guide": {
-      "water": "Water when top ~1\u2033 dries; avoid overwatering. (NC Extension Gardener Toolbox)",
-      "light": "Low\u2013bright, indirect. (NC Extension Gardener Toolbox)",
+      "water": "Water when top ~1″ dries; avoid overwatering. (NC Extension Gardener Toolbox)",
+      "light": "Low–bright, indirect. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
       "notes": "Average."
     },
@@ -2118,7 +2218,8 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/101/pothos_marble_queen_epipremnum_aureum_marble_queen.jpg"
   },
   {
     "id": "102",
@@ -2126,9 +2227,9 @@
     "species": "Syngonium podophyllum",
     "guide": {
       "water": "Keep moist; slight dry-down ok. (NC State Extension)",
-      "light": "Medium\u2013bright, indirect. (NC Extension Gardener Toolbox)",
+      "light": "Medium–bright, indirect. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Average\u2013high. (NC Extension Gardener Toolbox)"
+      "notes": "Average–high. (NC Extension Gardener Toolbox)"
     },
     "sources": [
       {
@@ -2139,17 +2240,18 @@
         "title": "Extension Gardener Handbook",
         "url": "https://content.ces.ncsu.edu/extension-gardener-handbook/18-plants-grown-in-containers"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/102/syngonium_arrowhead_plant_syngonium_podophyllum.jpg"
   },
   {
     "id": "103",
-    "name": "Philodendron \u2018Pink Princess\u2019",
-    "species": "Philodendron erubescens \u2018Pink Princess\u2019",
+    "name": "Philodendron ‘Pink Princess’",
+    "species": "Philodendron erubescens ‘Pink Princess’",
     "guide": {
       "water": "Water when top layer dries; well-drained aroid mix. (NC Extension Gardener Toolbox)",
       "light": "Bright, indirect. (NC Extension Gardener Toolbox)",
       "fertilizer": "Balanced houseplant fertilizer during growing season",
-      "notes": "Average\u2013high. (NC Extension Gardener Toolbox)"
+      "notes": "Average–high. (NC Extension Gardener Toolbox)"
     },
     "sources": [
       {
@@ -2160,6 +2262,7 @@
         "title": "UNH Extension",
         "url": "https://extension.unh.edu/blog/2025/02/can-house-plants-make-you-happier"
       }
-    ]
+    ],
+    "image": "/plants_local_examples/103/philodendron_pink_princess_philodendron_erubescens_pink_princess.jpg"
   }
 ]
