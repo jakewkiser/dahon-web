@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from "react"
+// client/src/pages/AISearch.tsx
+import { useEffect, useState } from "react"
 import Card from "../components/ui/Card"
 import Input from "../components/ui/Input"
 import Button from "../components/ui/Button"
 import { useNavigate } from "react-router-dom"
-import { aiSearchStatus, localSearch } from "../lib/search"
+import { localSearch } from "../lib/search"
 
 type Row = ReturnType<typeof localSearch>[number]
 
@@ -12,22 +13,6 @@ export default function AISearch() {
   const [rows, setRows] = useState<Row[]>([])
   const [expanded, setExpanded] = useState<Record<number, boolean>>({})
   const nav = useNavigate()
-
-  // 📊 Search status snapshot
-  const status = useMemo(() => {
-    try {
-      const s: any = aiSearchStatus()
-      if (!s) return "—"
-      if (typeof s === "string") return s
-      if (typeof s === "object" && "provider" in s)
-        return `${s.provider} • ${s.count ?? "?"} plants • ${
-          s.ready ? "ready" : "loading"
-        }`
-      return String(s)
-    } catch {
-      return "—"
-    }
-  }, [])
 
   // 🔍 Perform local search
   useEffect(() => {
@@ -50,42 +35,41 @@ export default function AISearch() {
 
   // 🧽 Clean parenthetical notes
   function cleanText(s?: string) {
-    return (s || "").replace(/\s*\([^)]*\)/g, "").trim()
+    return (s || "").replace(/\s*\\([^)]*\\)/g, "").trim()
   }
 
   return (
     <div className="max-w-4xl mx-auto animate-fadeIn space-y-6">
       {/* 🌿 Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-start">
         <h1 className="text-2xl font-semibold tracking-tight">Add Plant</h1>
-        <div className="text-xs px-2 py-1 rounded-lg border border-white/10 bg-white/5 dark:bg-white/5">
-          {status}
-        </div>
       </div>
 
       {/* 🔍 Search Bar */}
       <Card className="p-6 glass">
         <div className="flex gap-3 items-center">
           <Input
-            placeholder="🔎 Search your plant library (type 2+ letters)…"
+            placeholder="🔎 Search for your plant by name or description…"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="flex-1 rounded-xl text-base"
           />
-          <Button
-            className="rounded-xl px-4 py-2 text-sm bg-white/10 dark:bg-white/10 hover:bg-white/20 border border-white/10 transition-all"
-            onClick={() => setQ("")}
-          >
-            Clear
-          </Button>
+          {q.trim().length > 0 && (
+            <Button
+              className="rounded-xl px-4 py-2 text-sm bg-white/10 dark:bg-white/10 hover:bg-white/20 border border-white/10 transition-all animate-fadeIn"
+              onClick={() => setQ("")}
+            >
+              Clear
+            </Button>
+          )}
         </div>
 
         {/* 🌱 Search Results */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {rows.length === 0 && q.trim().length < 2 && (
             <div className="col-span-full text-center opacity-80 text-sm py-8">
-              🌿 Start typing to explore Dahon’s living library of plant
-              companions. Each one comes with care wisdom and personality.
+              Start typing to explore Dahon’s living library of plant
+              companions.
             </div>
           )}
 
@@ -203,7 +187,7 @@ export default function AISearch() {
 
           {rows.length === 0 && q.trim().length >= 2 && (
             <div className="col-span-full text-center opacity-70 text-sm py-6">
-              😔 No plants matched your search. Try a different name!
+              No plants matched your search. Try a different name!
             </div>
           )}
         </div>

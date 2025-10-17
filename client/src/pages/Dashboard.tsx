@@ -4,14 +4,14 @@ import Card from '../components/ui/Card'
 import { listPlants, Plant } from '../lib/firebase'
 import { useAuth } from '../lib/auth'
 import { Link } from 'react-router-dom'
-import { formatNextCare } from '../lib/schedule'
+import { computeNextCareFromLogs, formatNextCare } from '../lib/schedule'
 // @ts-ignore
 import pkg from '../../package.json'
 
 const fmt = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric',
-  year: 'numeric'
+  year: 'numeric',
 })
 
 export default function Dashboard() {
@@ -81,8 +81,19 @@ export default function Dashboard() {
       {!loading && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {plants.map((p) => {
-            const last = p.lastCareAt || p.createdAt || Date.now()
-            const next = { label: 'Water', dueAt: last + 7 * 24 * 60 * 60 * 1000 }
+            const next = computeNextCareFromLogs(p, p.careLogs || [])
+            const nextText = formatNextCare({
+              ...next,
+              label: next.phrasedLabel ?? next.label,
+            })
+
+            // Dynamic badge color based on care status
+            const badgeClass =
+              next?.phrasedLabel?.includes('overdue')
+                ? 'bg-[var(--tint-red)]/20 text-[var(--tint-red)] border-[var(--tint-red)]/40'
+                : next?.phrasedLabel?.includes('today')
+                ? 'bg-[var(--tint-yellow)]/20 text-[var(--tint-yellow)] border-[var(--tint-yellow)]/40'
+                : 'bg-[var(--tint-teal)]/25 text-[var(--accent2)] border-[var(--accent2)]/30'
 
             return (
               <Card
@@ -122,8 +133,12 @@ export default function Dashboard() {
                   <div className="text-xs opacity-70">
                     Last cared: {p.lastCareAt ? fmt.format(new Date(p.lastCareAt)) : '—'}
                   </div>
-                  <div className="inline-block mt-1 px-2 py-0.5 text-xs rounded-lg bg-[var(--tint-teal)]/20 text-[var(--accent2)] font-medium">
-                    {formatNextCare(next)}
+
+                  {/* Dynamic next care badge */}
+                  <div
+                    className={`inline-block mt-1 px-2 py-0.5 text-xs rounded-lg border font-medium transition-all duration-300 ${badgeClass}`}
+                  >
+                    {nextText}
                   </div>
                 </div>
 

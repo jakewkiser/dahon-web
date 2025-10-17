@@ -79,7 +79,7 @@ export default function Settings() {
 
       {/* Version info footer */}
       <Card className="text-center text-xs opacity-70 py-3 bg-[var(--surface-alt)] border border-[var(--glass-border)]">
-        Built with <span className="text-[var(--accent2)] font-medium">Dahon</span> 🌿
+        Contact creator or provide feedback at <span className="text-[var(--accent2)] font-medium">https://github.com/jakewkiser</span> 🌿
       </Card>
     </div>
   )

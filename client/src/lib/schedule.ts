@@ -1,7 +1,7 @@
 // client/src/lib/schedule.ts
 import { CareLog, Plant } from './firebase'
 
-// Default cadence (days) when we don't have a species-specific guide
+// Default cadence (days) when no species-specific guide is available
 const DEFAULTS = {
   water: 7,        // weekly watering default
   fertilizer: 30,  // monthly
@@ -12,11 +12,9 @@ function isFiniteMillis(v: unknown): v is number {
   return typeof v === 'number' && Number.isFinite(v)
 }
 
-// CareLog.createdAt is already a number in our data layer, but be defensive
 function getMillis(v: unknown): number | null {
   if (typeof v === 'number' && Number.isFinite(v)) return v
   if (v instanceof Date && Number.isFinite(v.getTime())) return v.getTime()
-  // Firestore Timestamp-like objects from older code paths
   if (v && typeof (v as any).toDate === 'function') {
     const d = (v as any).toDate()
     return Number.isFinite(d.getTime()) ? d.getTime() : null
@@ -28,13 +26,13 @@ function getMillis(v: unknown): number | null {
 }
 
 function lastOfType(logs: CareLog[], type: CareLog['type']): number | null {
-  const l = logs.find((x) => x.type === type) // logs should already be newest-first
+  const l = logs.find((x) => x.type === type) // logs sorted newest-first
   return getMillis(l?.createdAt)
 }
 
 // ---- core API ----
 export function computeNextCareFromLogs(plant: Plant, logs: CareLog[]) {
-  // Prefer type-specific last logs; pick the soonest upcoming date
+  const now = Date.now()
   const lastWater =
     lastOfType(logs, 'water') ??
     getMillis(plant.lastCareAt) ??
@@ -46,38 +44,54 @@ export function computeNextCareFromLogs(plant: Plant, logs: CareLog[]) {
 
   if (isFiniteMillis(lastWater)) {
     const dueAt = lastWater + DEFAULTS.water * 24 * 60 * 60 * 1000
-    if (isFiniteMillis(dueAt)) candidates.push({ type: 'water', dueAt, label: 'Water' })
+    candidates.push({ type: 'water', dueAt, label: 'Water' })
   }
   if (isFiniteMillis(lastFert)) {
     const dueAt = lastFert + DEFAULTS.fertilizer * 24 * 60 * 60 * 1000
-    if (isFiniteMillis(dueAt)) candidates.push({ type: 'fertilizer', dueAt, label: 'Fertilize' })
+    candidates.push({ type: 'fertilizer', dueAt, label: 'Fertilize' })
   }
 
+  // If no care logs exist yet
   if (candidates.length === 0) {
-    // No usable history at all — offer a gentle start
-    const dueAt = Date.now() + 3 * 24 * 60 * 60 * 1000
-    return { type: 'water' as const, dueAt, label: 'Start with a light watering' }
+    return { type: 'water' as const, dueAt: now, label: 'Start with a light watering' }
   }
 
+  // Find next due event
   candidates.sort((a, b) => a.dueAt - b.dueAt)
-  return candidates[0]
+  const next = candidates[0]
+
+  // Add contextual info for overdue or soon-due
+  const daysUntil = Math.round((next.dueAt - now) / (1000 * 60 * 60 * 24))
+  let phrasedLabel = next.label
+
+  if (daysUntil < 0) {
+    phrasedLabel = `${next.label} overdue by ${Math.abs(daysUntil)} day${Math.abs(daysUntil) === 1 ? '' : 's'}`
+  } else if (daysUntil === 0) {
+    phrasedLabel = `${next.label} today`
+  } else if (daysUntil === 1) {
+    phrasedLabel = `${next.label} tomorrow`
+  } else if (daysUntil <= 5) {
+    phrasedLabel = `${next.label} in ${daysUntil} days`
+  }
+
+  return { ...next, phrasedLabel }
 }
 
-export function formatNextCare(next?: { label: string; dueAt?: number } | null) {
-  if (!next || !isFiniteMillis(next.dueAt)) {
-    // No valid date — return just the label or a placeholder
-    return next?.label ?? '—'
+export function formatNextCare(next?: { label?: string; phrasedLabel?: string; dueAt?: number } | null) {
+  if (!next) return '—'
+
+  // Use contextual label if available
+  const label = next.phrasedLabel || next.label || '—'
+
+  if (!isFiniteMillis(next.dueAt)) {
+    return label
   }
+
   try {
     const fmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' })
     const when = fmt.format(new Date(next.dueAt))
-    return `${next.label} • ${when}`
+    return `${label} • ${when}`
   } catch {
-    return next.label ?? '—'
+    return label
   }
 }
-
-// Optional convenience if you want a one-liner:
-// export function nextCareText(plant: Plant, logs: CareLog[]) {
-//   return formatNextCare(computeNextCareFromLogs(plant, logs))
-// }

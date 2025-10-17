@@ -5,7 +5,7 @@ export type PlantGuide = PlantRecord // maintain expected type alias
 
 /** Report whether local AI search is ready and how many plants are indexed. */
 export function aiSearchStatus() {
-  return { provider: 'local', ready: ALL_PLANTS.length > 0, count: ALL_PLANTS.length }
+  return { provider: 'Dahon Plant Library', ready: ALL_PLANTS.length > 0, count: ALL_PLANTS.length }
 }
 
 function norm(s: string) {
