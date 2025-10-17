@@ -4,7 +4,6 @@ import Card from '../components/ui/Card'
 import { listPlants, Plant } from '../lib/firebase'
 import { useAuth } from '../lib/auth'
 import { Link } from 'react-router-dom'
-import KawaiiMascot from '../components/ui/KawaiiMascot'
 import { formatNextCare } from '../lib/schedule'
 // @ts-ignore
 import pkg from '../../package.json'
@@ -140,10 +139,17 @@ export default function Dashboard() {
 
           {/* Empty state */}
           {!plants.length && !loading && (
-            <div className="col-span-full flex flex-col items-center justify-center text-center opacity-80 mt-10">
-              <KawaiiMascot className="w-24 h-24 mb-3 opacity-80" />
+            <div className="col-span-full flex flex-col items-center justify-center text-center opacity-80 mt-10 animate-fadeIn">
+              <img
+                src="/mascot_smile.svg"
+                alt="Smiling monstera mascot"
+                className="w-24 h-24 mb-3 opacity-90"
+                loading="lazy"
+              />
               <p className="text-sm font-medium">No plants yet</p>
-              <p className="text-xs opacity-70">Add your first plant to begin your journey 🌱</p>
+              <p className="text-xs opacity-70">
+                Add your first plant to begin your journey 🌱
+              </p>
             </div>
           )}
         </div>
