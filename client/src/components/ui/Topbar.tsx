@@ -2,7 +2,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import { Home, Plus, Settings } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
 import { useAuth } from '../../lib/auth'
 
 export default function Topbar() {
@@ -75,11 +74,6 @@ export default function Topbar() {
 
         {/* 🌗 Right-aligned group */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* 🌓 Theme toggle */}
-          <div className="ctrl-btn">
-            <ThemeToggle />
-          </div>
-
           {/* ⚙️ Settings */}
           <NavLink
             to="/settings"
