@@ -64,8 +64,12 @@ export default function Settings() {
                   Sign out
                 </Button>
               ) : (
-                <Button asChild variant="primarySoft">
-                  <a href="/signin">Sign in</a>
+                <Button
+                  variant="primarySoft"
+                  className="text-[var(--ink)]"
+                  onClick={() => (window.location.href = '/signin')}
+                >
+                  Sign in
                 </Button>
               )}
             </div>
