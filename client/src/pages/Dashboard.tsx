@@ -81,19 +81,23 @@ export default function Dashboard() {
       {!loading && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {plants.map((p) => {
-            const next = computeNextCareFromLogs(p, p.careLogs || [])
+            // Guard careLogs existence
+            const careLogs: any[] = (p as any).careLogs || []
+            const next = computeNextCareFromLogs(p, careLogs)
+
+            // Optional chaining for phrasedLabel (backwards compatible)
+            const phrased = (next as any)?.phrasedLabel || next?.label
             const nextText = formatNextCare({
-              ...next,
-              label: next.phrasedLabel ?? next.label,
+              label: phrased,
+              dueAt: next?.dueAt,
             })
 
-            // Dynamic badge color based on care status
-            const badgeClass =
-              next?.phrasedLabel?.includes('overdue')
-                ? 'bg-[var(--tint-red)]/20 text-[var(--tint-red)] border-[var(--tint-red)]/40'
-                : next?.phrasedLabel?.includes('today')
-                ? 'bg-[var(--tint-yellow)]/20 text-[var(--tint-yellow)] border-[var(--tint-yellow)]/40'
-                : 'bg-[var(--tint-teal)]/25 text-[var(--accent2)] border-[var(--accent2)]/30'
+            // Dynamic badge color based on phrasing
+            const badgeClass = phrased?.toLowerCase().includes('overdue')
+              ? 'bg-[var(--tint-red)]/20 text-[var(--tint-red)] border-[var(--tint-red)]/40'
+              : phrased?.toLowerCase().includes('today')
+              ? 'bg-[var(--tint-yellow)]/20 text-[var(--tint-yellow)] border-[var(--tint-yellow)]/40'
+              : 'bg-[var(--tint-teal)]/25 text-[var(--accent2)] border-[var(--accent2)]/30'
 
             return (
               <Card
