@@ -8,7 +8,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 /**
- * Dahon Input Component — v2
+ * Dahon Input Component — v2.1
  * ----------------------------------------------------------
  * Design: Minimal glass with material clarity and brutalist edge.
  * Variants:
@@ -56,12 +56,17 @@ export default function Input({
     `,
   }
 
+  // ✅ Use motion.div wrapper to keep soft scale animations w/o TS conflict
   return (
-    <motion.input
+    <motion.div
       whileFocus={{ scale: 1.01 }}
       whileTap={{ scale: 0.995 }}
-      className={`${base} ${variants[variant]} ${className}`}
-      {...props}
-    />
+      className="w-full"
+    >
+      <input
+        {...props}
+        className={`${base} ${variants[variant]} ${className}`}
+      />
+    </motion.div>
   )
 }

@@ -50,6 +50,8 @@ export const HAS_STORAGE = !!firebaseConfig.storageBucket
 export const storage = getStorage(app)
 
 // ---- Types ----
+export type PhotoSource = 'user' | 'default'
+
 export type Plant = {
   id?: string
   userId: string
@@ -58,6 +60,8 @@ export type Plant = {
   species?: string
   location?: string
   photoUrl?: string
+  /** where the photo came from; used when defaulting to the database image */
+  photoSource?: PhotoSource
   lastCareAt?: number
   createdAt?: number
 

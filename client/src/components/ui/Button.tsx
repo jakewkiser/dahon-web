@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import type React from 'react'
 
-type Variant = 'primary' | 'neutral' | 'ghost'
+type Variant = 'primary' | 'primarySoft' | 'neutral' | 'ghost'
 
 type MotionButtonProps = React.ComponentProps<typeof motion.button>
 
@@ -11,7 +11,7 @@ type Props = Omit<MotionButtonProps, 'ref'> & {
 }
 
 /**
- * Dahon Button Component — v2
+ * Dahon Button Component — v2.1
  * ----------------------------------------------------------
  * A minimal, geometric button system blending Notion calm,
  * Material clarity, and a touch of brutalist solidity.
@@ -43,6 +43,28 @@ export default function Button({
         style={{
           border: '1px solid rgba(0,0,0,0.05)',
           boxShadow: '0 2px 8px rgba(74,92,82,0.2)',
+          ...style,
+        }}
+        {...props}
+      />
+    )
+  }
+
+  // 🌿 PrimarySoft: Subtle tinted background with calm border
+  if (variant === 'primarySoft') {
+    return (
+      <motion.button
+        whileTap={{ scale: 0.97 }}
+        whileHover={{ y: -1 }}
+        className={[
+          base,
+          'text-[var(--color-ink)] bg-[var(--tint-green)]/20 border border-[var(--color-primary)]/20',
+          'hover:bg-[var(--tint-green)]/30 hover:shadow-[var(--shadow-soft)]',
+          'dark:bg-[var(--tint-green)]/10 dark:hover:bg-[var(--tint-green)]/20',
+          className,
+        ].join(' ')}
+        style={{
+          backdropFilter: 'blur(6px)',
           ...style,
         }}
         {...props}
