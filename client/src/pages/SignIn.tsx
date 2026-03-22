@@ -31,7 +31,7 @@ function GoogleGIcon() {
 }
 
 export default function SignIn() {
-  const { emailSignIn, googleSignIn, user } = useAuth()
+  const { emailSignIn, googleSignIn, resetPassword, user } = useAuth()
   const nav = useNavigate()
 
   const [mode, setMode] = useState<'signin' | 'signup'>('signin')
@@ -39,6 +39,21 @@ export default function SignIn() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [resetSent, setResetSent] = useState(false)
+
+  async function onForgotPassword() {
+    if (!email.trim()) return setError('Enter your email address above first.')
+    setError(null)
+    setLoading(true)
+    try {
+      await resetPassword(email.trim())
+      setResetSent(true)
+    } catch (e: any) {
+      setError(e?.message || String(e))
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const [imgErr, setImgErr] = useState(false)
   const mascotSrc = '/mascot_excited.svg'
@@ -155,32 +170,51 @@ export default function SignIn() {
 
         <GoogleButton />
 
-        {/* Mode toggle */}
-        <div className="mt-3 text-xs text-center">
+        {/* Mode toggle + forgot password */}
+        <div className="mt-3 text-xs text-center space-y-1.5">
           {mode === 'signin' ? (
             <>
-              New here?{' '}
-              <button
-                type="button"
-                onClick={() => setMode('signup')}
-                className="underline text-[var(--accent2)] hover:opacity-80 transition"
-                disabled={loading}
-              >
-                Create an account
-              </button>
+              <div>
+                New here?{' '}
+                <button
+                  type="button"
+                  onClick={() => { setMode('signup'); setResetSent(false); setError(null) }}
+                  className="underline text-[var(--accent2)] hover:opacity-80 transition"
+                  disabled={loading}
+                >
+                  Create an account
+                </button>
+              </div>
+              {resetSent ? (
+                <div className="text-emerald-600 dark:text-emerald-400">
+                  ✓ Reset email sent — check your inbox.
+                </div>
+              ) : (
+                <div className="opacity-60">
+                  Forgot your password?{' '}
+                  <button
+                    type="button"
+                    onClick={onForgotPassword}
+                    className="underline hover:opacity-80 transition"
+                    disabled={loading}
+                  >
+                    Send reset link
+                  </button>
+                </div>
+              )}
             </>
           ) : (
-            <>
+            <div>
               Have an account?{' '}
               <button
                 type="button"
-                onClick={() => setMode('signin')}
+                onClick={() => { setMode('signin'); setResetSent(false); setError(null) }}
                 className="underline text-[var(--accent2)] hover:opacity-80 transition"
                 disabled={loading}
               >
                 Sign in
               </button>
-            </>
+            </div>
           )}
         </div>
 

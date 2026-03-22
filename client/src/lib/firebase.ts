@@ -69,6 +69,10 @@ export type Plant = {
   guideRefId?: string
   guideRefName?: string
   guideRefSpecies?: string
+
+  // 📅 Custom care cadence (overrides schedule defaults)
+  waterEveryDays?: number
+  fertilizeEveryDays?: number
 }
 
 export type CareLog = {
@@ -224,6 +228,14 @@ export async function addCareLog(plantId: string, log: CareLog) {
 
   const d = await getDoc(refDoc)
   return mapCareLog(refDoc.id, d.data()) as CareLog
+}
+
+export async function updateCareLog(plantId: string, logId: string, data: Partial<Pick<CareLog, 'type' | 'notes'>>) {
+  await updateDoc(doc(db, 'plants', plantId, 'careLogs', logId), clean(data) as any)
+}
+
+export async function deleteCareLog(plantId: string, logId: string) {
+  await deleteDoc(doc(db, 'plants', plantId, 'careLogs', logId))
 }
 
 export async function listCareLogs(plantId: string, howMany = 10) {

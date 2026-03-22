@@ -17,11 +17,15 @@ import { RouterProvider } from 'react-router-dom'
 import router from './routing/router'
 import './styles/index.css'
 import { ThemeProvider } from './lib/theme'
+import ToastContainer from './components/ui/Toast'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
-      <AuthProvider><RouterProvider router={router} /></AuthProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </AuthProvider>
     </ThemeProvider>
   </StrictMode>
 )

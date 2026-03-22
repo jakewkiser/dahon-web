@@ -4,6 +4,8 @@
     "fs-extra": "^11.3.2",
     "lucide-react": "^0.545.0",
     "openai": "^6.4.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "slugify": "^1.6.6"
   }
 }

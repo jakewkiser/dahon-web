@@ -2,7 +2,7 @@
 import { CareLog, Plant } from './firebase'
 
 // Default cadence (days) when no species-specific guide is available
-const DEFAULTS = {
+export const DEFAULTS = {
   water: 7,        // weekly watering default
   fertilizer: 30,  // monthly
 }
@@ -33,6 +33,11 @@ function lastOfType(logs: CareLog[], type: CareLog['type']): number | null {
 // ---- core API ----
 export function computeNextCareFromLogs(plant: Plant, logs: CareLog[]) {
   const now = Date.now()
+
+  // Use per-plant custom cadence if set, else fall back to defaults
+  const waterEvery = plant.waterEveryDays ?? DEFAULTS.water
+  const fertEvery = plant.fertilizeEveryDays ?? DEFAULTS.fertilizer
+
   const lastWater =
     lastOfType(logs, 'water') ??
     getMillis(plant.lastCareAt) ??
@@ -43,11 +48,11 @@ export function computeNextCareFromLogs(plant: Plant, logs: CareLog[]) {
   const candidates: { type: 'water' | 'fertilizer'; dueAt: number; label: string }[] = []
 
   if (isFiniteMillis(lastWater)) {
-    const dueAt = lastWater + DEFAULTS.water * 24 * 60 * 60 * 1000
+    const dueAt = lastWater + waterEvery * 24 * 60 * 60 * 1000
     candidates.push({ type: 'water', dueAt, label: 'Water' })
   }
   if (isFiniteMillis(lastFert)) {
-    const dueAt = lastFert + DEFAULTS.fertilizer * 24 * 60 * 60 * 1000
+    const dueAt = lastFert + fertEvery * 24 * 60 * 60 * 1000
     candidates.push({ type: 'fertilizer', dueAt, label: 'Fertilize' })
   }
 
@@ -94,4 +99,15 @@ export function formatNextCare(next?: { label?: string; phrasedLabel?: string; d
   } catch {
     return label
   }
+}
+
+// ---- health score (derived from next-care urgency) ----
+export type HealthScore = 'good' | 'fair' | 'poor'
+
+export function computeHealthScore(plant: Plant, logs: CareLog[]): HealthScore {
+  const next = computeNextCareFromLogs(plant, logs)
+  const daysUntil = Math.round((next.dueAt - Date.now()) / (1000 * 60 * 60 * 24))
+  if (daysUntil < -2) return 'poor'
+  if (daysUntil < 0) return 'fair'
+  return 'good'
 }
